@@ -1,0 +1,353 @@
+/**
+ * Design Tokens — CSS Custom Properties
+ * Source: tokens.json (W3C DTCG)
+ *
+ * 네이밍 규칙:
+ *   color.brand.primary        → --color-brand-primary
+ *   semantic.color.text.*      → --color-text-*          (semantic. 접두어 제거)
+ *   spacing.8                  → --space-8               (spacing → space)
+ *   zIndex.modal               → --z-modal               (zIndex → z)
+ *   border.radius.md           → --border-radius-md
+ *   elevation.2                → --elevation-2
+ *   transition.fade            → --transition-fade
+ */
+
+:root {
+
+  /* ================================================================
+   * Color — Primitives
+   * ================================================================ */
+
+  /* Brand */
+  --color-brand-primary:    #2D3378;
+  --color-brand-secondary:  #5B63A8;
+  --color-brand-tertiary:   #8E96D3;
+  --color-brand-quaternary: #E8EAF6;
+
+  /* State */
+  --color-state-info:    #2F80ED;
+  --color-state-success: #27AE60;
+  --color-state-warning: #E2B93B;
+  --color-state-error:   #EB5757;
+
+  /* Black */
+  --color-black-1: #000000;
+  --color-black-2: #1D1D1D;
+  --color-black-3: #282828;
+
+  /* White */
+  --color-white: #FFFFFF;
+
+  /* Gray */
+  --color-gray-1: #333333;
+  --color-gray-2: #4F4F4F;
+  --color-gray-3: #828282;
+  --color-gray-4: #BDBDBD;
+  --color-gray-5: #E0E0E0;
+
+  /* ================================================================
+   * Spacing  (key × 2px / CSS 변수: --space-{n})
+   * ================================================================ */
+
+  --space-1:  2px;
+  --space-2:  4px;
+  --space-4:  8px;
+  --space-6:  12px;
+  --space-8:  16px;
+  --space-12: 24px;
+  --space-16: 32px;
+
+  /* ================================================================
+   * Typography
+   * ================================================================ */
+
+  --font-family-base: 'Pretendard', 'Noto Sans KR', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --font-size-display-2xl: 64px;
+  --font-size-display-xl:  48px;
+  --font-size-display-lg:  40px;
+  --font-size-display-md:  32px;
+  --font-size-display-sm:  24px;
+  --font-size-heading-1:   32px;
+  --font-size-heading-2:   24px;
+  --font-size-heading-3:   20px;
+  --font-size-heading-4:   18px;
+  --font-size-heading-5:   16px;
+  --font-size-body-lg:     18px;
+  --font-size-body-md:     16px;
+  --font-size-body-sm:     14px;
+
+  --font-weight-regular: 400;
+  --font-weight-bold:    700;
+
+  --line-height-normal:     1.5;
+  --letter-spacing-normal:  0em;
+
+  /* ================================================================
+   * Border
+   * ================================================================ */
+
+  --border-width-thin:   1px;
+  --border-width-medium: 2px;
+  --border-width-thick:  3px;
+
+  --border-color-default:   #E0E0E0;
+  --border-color-primary:   #2D3378;
+  --border-color-secondary: #5B63A8;
+  --border-color-error:     #EB5757;
+  --border-color-success:   #27AE60;
+  --border-color-disabled:  #BDBDBD;
+
+  --border-radius-none: 0px;
+  --border-radius-xs:   2px;
+  --border-radius-sm:   4px;
+  --border-radius-md:   8px;
+  --border-radius-lg:   12px;
+  --border-radius-xl:   16px;
+  --border-radius-full: 9999px;
+
+  /* ================================================================
+   * Elevation
+   * ================================================================ */
+
+  --elevation-0: none;
+  --elevation-1: 0px 1px 3px rgba(45,51,120,0.08);
+  --elevation-2: 0px 2px 8px rgba(45,51,120,0.12);
+  --elevation-3: 0px 4px 16px rgba(45,51,120,0.16);
+  --elevation-4: 0px 8px 32px rgba(45,51,120,0.20);
+
+  /* ================================================================
+   * Motion
+   * ================================================================ */
+
+  --motion-duration-instant: 0ms;
+  --motion-duration-fast:    100ms;
+  --motion-duration-normal:  200ms;
+  --motion-duration-slow:    300ms;
+  --motion-duration-slower:  500ms;
+
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-easing-in:     cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-out:    cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ================================================================
+   * Grid
+   * ================================================================ */
+
+  --breakpoint-mobile:     320px;
+  --breakpoint-tablet:     768px;
+  --breakpoint-desktop:    1024px;
+  --breakpoint-desktop-hd: 1440px;
+
+  --grid-columns-mobile:     2;
+  --grid-columns-tablet:     6;
+  --grid-columns-desktop:    12;
+  --grid-columns-desktop-hd: 12;
+  --grid-gutter:             30px;
+
+  --grid-margin-mobile:     16px;
+  --grid-margin-tablet:     24px;
+  --grid-margin-desktop:    32px;
+  --grid-margin-desktop-hd: auto;
+
+  /* ================================================================
+   * zIndex  (zIndex → z)
+   * ================================================================ */
+
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
+
+  /* ================================================================
+   * Transition
+   * ================================================================ */
+
+  --transition-fade:   opacity 200ms cubic-bezier(0,0,0.2,1);
+  --transition-slide:  transform 300ms cubic-bezier(0,0,0.2,1);
+  --transition-expand: height 300ms cubic-bezier(0.4,0,0.2,1);
+  --transition-scale:  transform 100ms cubic-bezier(0.34,1.56,0.64,1);
+  --transition-color:  color 100ms cubic-bezier(0,0,0.2,1), background-color 100ms cubic-bezier(0,0,0.2,1);
+  --transition-shadow: box-shadow 200ms cubic-bezier(0,0,0.2,1);
+  --transition-all:    all 200ms cubic-bezier(0,0,0.2,1);
+
+  /* ================================================================
+   * Semantic — Text  ("semantic." 접두어 제거)
+   * ================================================================ */
+
+  --color-text-primary:     #000000;
+  --color-text-secondary:   #333333;
+  --color-text-tertiary:    #4F4F4F;
+  --color-text-disabled:    #828282;
+  --color-text-placeholder: #828282;
+  --color-text-inverse:     #FFFFFF;
+  --color-text-link:        #5B63A8;
+  --color-text-link-hover:  #2D3378;
+  --color-text-brand:       #2D3378;
+  --color-text-error:       #EB5757;
+  --color-text-success:     #27AE60;
+  --color-text-warning:     #E2B93B;
+  --color-text-info:        #2F80ED;
+
+  /* ================================================================
+   * Semantic — Background
+   * ================================================================ */
+
+  --color-bg-page:         #FFFFFF;
+  --color-bg-surface:      #F8F8FB;
+  --color-bg-elevated:     #FFFFFF;
+  --color-bg-muted:        #E0E0E0;
+  --color-bg-overlay:      rgba(0,0,0,0.5);
+  --color-bg-brand:        #2D3378;
+  --color-bg-brand-subtle: #E8EAF6;
+  --color-bg-error:        #FDEEEE;
+  --color-bg-success:      #EDFAF4;
+  --color-bg-warning:      #FDF8E6;
+  --color-bg-info:         #EEF2FD;
+
+  /* ================================================================
+   * Semantic — Border
+   * ================================================================ */
+
+  --color-border-default:  #E0E0E0;
+  --color-border-focus:    #2F80ED;
+  --color-border-error:    #EB5757;
+  --color-border-success:  #27AE60;
+  --color-border-disabled: #BDBDBD;
+
+  /* ================================================================
+   * Semantic — Interactive
+   * ================================================================ */
+
+  --color-interactive-primary:          #2D3378;
+  --color-interactive-primary-hover:    #232968;
+  --color-interactive-primary-active:   #1A1F52;
+  --color-interactive-primary-disabled: #BDBDBD;
+  --color-interactive-secondary:        #5B63A8;
+  --color-interactive-danger:           #EB5757;
+  --color-interactive-danger-hover:     #C94040;
+
+  /* ================================================================
+   * Layout
+   * ================================================================ */
+
+  --container-max-sm: 640px;
+  --container-max-md: 960px;
+  --container-max-lg: 1280px;
+  --container-max-xl: 1440px;
+
+  --form-label-gap:   6px;
+  --form-group-gap:   20px;
+  --form-section-gap: 32px;
+  --form-helper-gap:  5px;
+  --form-inline-gap:  12px;
+  --form-two-col-gap: 16px;
+
+  /* ================================================================
+   * Skeleton
+   * ================================================================ */
+
+  --skeleton-bg:        #E0E0E0;
+  --skeleton-shimmer:   rgba(255,255,255,0.6);
+  --skeleton-radius:    4px;
+  --skeleton-radius-lg: 8px;
+  --skeleton-duration:  1.5s;
+
+  /* ================================================================
+   * Opacity
+   * ================================================================ */
+
+  --opacity-disabled: 0.38;
+  --opacity-overlay:  0.5;
+
+  /* ================================================================
+   * Icon
+   * ================================================================ */
+
+  --icon-size-xs: 16px;
+  --icon-size-sm: 20px;
+  --icon-size-md: 24px;
+  --icon-size-lg: 32px;
+  --icon-size-xl: 40px;
+
+  /* ================================================================
+   * Focus
+   * ================================================================ */
+
+  --focus-ring-width:  2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color:  #2F80ED;
+
+  /* ================================================================
+   * Overlay
+   * ================================================================ */
+
+  --overlay-bg: rgba(0,0,0,0.5);
+
+}
+
+/* ================================================================
+ * Dark Mode Override  ([data-theme="dark"])
+ * ================================================================ */
+
+[data-theme="dark"] {
+
+  /* Text */
+  --color-text-primary:     #F0F0F0;
+  --color-text-secondary:   #C5C5C5;
+  --color-text-tertiary:    #9B9B9B;
+  --color-text-disabled:    #4F4F4F;
+  --color-text-placeholder: #6B6B6B;
+  --color-text-inverse:     #000000;
+  --color-text-link:        #6BA8E8;
+  --color-text-link-hover:  #A9A5E8;
+  --color-text-brand:       #A9A5E8;
+  --color-text-error:       #F07878;
+  --color-text-success:     #4FD48A;
+  --color-text-warning:     #F5D040;
+  --color-text-info:        #6BA8E8;
+
+  /* Background */
+  --color-bg-page:         #0F0F12;
+  --color-bg-surface:      #1A1A1F;
+  --color-bg-elevated:     #252529;
+  --color-bg-muted:        #333338;
+  --color-bg-overlay:      rgba(0,0,0,0.72);
+  --color-bg-brand:        #1E1A5E;
+  --color-bg-brand-subtle: rgba(45,51,120,0.25);
+  --color-bg-error:        rgba(235,87,87,0.15);
+  --color-bg-success:      rgba(39,174,96,0.15);
+  --color-bg-warning:      rgba(226,185,59,0.15);
+  --color-bg-info:         rgba(47,128,237,0.15);
+
+  /* Border */
+  --color-border-default:  #2E2E34;
+  --color-border-focus:    #6BA8E8;
+  --color-border-error:    #F07878;
+  --color-border-success:  #4FD48A;
+  --color-border-disabled: #2E2E34;
+
+  /* Interactive */
+  --color-interactive-primary:          #A9A5E8;
+  --color-interactive-primary-hover:    #C5C2F0;
+  --color-interactive-primary-active:   #8B86C8;
+  --color-interactive-primary-disabled: #333338;
+  --color-interactive-secondary:        #6BA8E8;
+  --color-interactive-danger:           #F07878;
+  --color-interactive-danger-hover:     #F59090;
+
+  /* Elevation */
+  --elevation-0: none;
+  --elevation-1: 0px 1px 3px rgba(0,0,0,0.40);
+  --elevation-2: 0px 4px 8px rgba(0,0,0,0.50);
+  --elevation-3: 0px 8px 16px rgba(0,0,0,0.60);
+  --elevation-4: 0px 16px 32px rgba(0,0,0,0.72);
+
+}
