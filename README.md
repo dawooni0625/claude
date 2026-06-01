@@ -1,263 +1,81 @@
-# KIRBS Design System
+# KIRBS Design System (Final Production Version)
 
-A token-driven, dark-mode-ready design system for KIRBS — a B2B admin/console
-visual language built around a deep indigo primary (`#2D3378`), Pretendard Korean
-type, and a rigorously semantic token layer.
+A token-driven, dark-mode-ready design system for KIRBS — a B2B admin/console visual language built around a deep indigo primary (`#2D3378`), Pretendard Korean type, and a rigorously semantic token layer.
 
-This project repackages and visualises the upstream design tokens at
-**[github.com/dawooni0625/dw](https://github.com/dawooni0625/dw)** (W3C DTCG JSON
-+ generated CSS/SCSS) into a browsable system: a fonts + semantic stylesheet,
-visual specimens, and a working UI kit that demonstrates how the tokens compose
-into a real product surface. See `tokens/UPSTREAM_README.md` and
-`tokens/UPSTREAM_CLAUDE.md` for the original Korean documentation.
+This project repackages and visualises the upstream design tokens at **[github.com/dawooni0625/claude](https://github.com/dawooni0625/claude)** (W3C DTCG JSON + generated CSS/SCSS) into a browsable system.
 
 ---
 
-## Index
+## 🚨 CRITICAL AI DIRECTIVE: 레이아웃 일관성 절대 규칙 (AI 가이드라인)
 
-| File / Folder | Purpose |
-|---|---|
-| `tokens.css` | All CSS custom properties — primitives, semantic, **and the full `--component-*` layer** (290 vars, light + dark). **The source of truth at runtime.** Imported by everything. |
-| `colors_and_type.css` | Semantic layer — webfont imports, `<h1>`/`<p>`/`<code>` defaults, `.text-*` colour helpers, the `.prose` long-form scope (lists, blockquote, hr, figure, tables), focus ring, selection. |
-| `tokens/` | Upstream JSON sources (W3C DTCG, 18 categories) + the generated `tokens.scss`. The build-time origin of `tokens.css`. |
-| `preview/` | One-concept-per-card design system specimens (Colors, Type, Spacing, Components, Brand). |
-| `icon/` | Full 113-icon set in 10 categories (`navigation`/`action`/`data`/`content`/`media`/`commerce`/`notification`/`user`/`system`/`social` — social has filled + `-line` variants). `currentColor`. |
-| `brand/` | Official logos — `kirbs-logo.svg` (full lockup) + `kirbs-wordmark.svg` (compact), each with a `*-mono.svg` `currentColor` variant for dark/inverse surfaces. |
-| `ui_kits/admin/` | Working UI kit — sidebar + topbar shell, login → dashboard / members / settings click-through, light/dark toggle. |
-| `SKILL.md` | Agent Skills manifest so this folder can be dropped into Claude Code. |
-| `fonts/PretendardVariable.woff2` | Self-hosted Pretendard variable font (weight axis 100–900). |
+클로드코드(Claude Code)가 여러 페이지를 생성하거나 동일 컴포넌트를 활용할 때, 화면 간 레이아웃이 미세하게 틀어지거나 다르게 렌더링되는 현상을 방지하기 위해 다음 4가지 개발 규칙을 **반드시 강제(Hard Enforcement)**합니다.
 
----
+### 1. 다크 모드 버그 및 컴포넌트 컬러 토큰 사용 금지
 
-## Quick start
+- `[data-theme="dark"]` 속성이 켜지면 시맨틱 토큰은 자동으로 상응하는 다크 모드 색상으로 스왑됩니다.
+- ⛔ **절대 금지:** `--component-*-color-*` 형태의 컴포넌트 고유 컬러 토큰은 라이트 모드 고정 hex 값(`#2D3378` 등)이므로 다크 모드에서 변환되지 않습니다.
+- ✅ **해결책:** 모든 인터랙션, 배경, 텍스트 색상은 반드시 아래 **시맨틱 토큰 매핑 테이블**을 기준으로 코드를 작성해야 레이아웃과 테마가 깨지지 않고 일치합니다.
 
-```html
-<link rel="stylesheet" href="colors_and_type.css">
-<!-- tokens.css is auto-imported by colors_and_type.css -->
+| 잘못된 사용 (컴포넌트 고정 컬러)         | 올바른 사용 (다크모드 대응 시맨틱 토큰)           | 적용 대상                       |
+| :--------------------------------------- | :------------------------------------------------ | :------------------------------ |
+| `--component-button-color-primary-bg`    | `--color-interactive-primary`                     | 기본 버튼 배경색                |
+| `--component-button-color-primary-text`  | `--color-text-inverse`                            | 기본 버튼 텍스트색              |
+| `--component-*-color-bg` / `-bg-default` | `--color-bg-elevated` / `--color-bg-surface`      | 카드 레이아웃 및 섹션 배경      |
+| `--component-*-color-border*`            | `--color-border-default` / `--color-border-focus` | 컴포넌트 테두리 및 라인         |
+| `--component-*-color-text*`              | `--color-text-primary` / `--color-text-secondary` | 메인 타이틀 및 라벨/서브 텍스트 |
 
-<button class="btn-primary">버튼</button>
+### 2. 글로벌 레이아웃 그리드 (Fixed Grid & Margins)
 
-<style>
-.btn-primary {
-  background: var(--color-interactive-primary);
-  color:      var(--color-text-inverse);
-  height:     56px;
-  padding:    0 var(--space-12);
-  border:     0;
-  border-radius: var(--border-radius-md);
-  font:       700 var(--font-size-body-md) var(--font-family-base);
-  transition: var(--transition-color);
-}
-.btn-primary:hover { background: var(--color-interactive-primary-hover); }
-</style>
-```
+- 모든 관리자 페이지, 대시보드, 컨텐츠 영역의 그리드는 **30px 고정 거터(Gutter)**를 유지합니다.
+- 양 끝 여백(Margin)은 뷰포트에 따라 아래 수치로 고정하며, 임의의 flex gap이나 패딩을 페이지별로 다르게 부여하지 않습니다.
+  - **Mobile:** `16px` | **Tablet:** `24px` | **Desktop:** `32px`
 
-Dark mode: `<html data-theme="dark">`. Every **semantic** token swaps automatically — see the policy below for how component tokens behave.
+### 3. 섹션 패딩 및 리듬감 통일
+
+- 컨텐츠 섹션 간의 여백을 줄 때는 하드코딩 수치를 배제하고, 통일된 시맨틱 섹션 토큰을 적용하여 상하 스페이싱 레이아웃을 완전히 일치시킵니다.
+  - `--section-pad-sm` (64px) / `--section-pad-md` (96px) / `--section-pad-lg` (120px)
+
+### 4. 타이포그래피 제약 조건
+
+- 폰트는 Pretendard(UI 본문)와 JetBrains Mono(영문/숫자/코드 표기) 조합으로 고정합니다.
+- 폰트 두께(Weight)는 오직 **`400` (Regular)**과 **`700` (Bold)** 두 가지만 사용합니다. 시스템에 존재하지 않는 `500`이나 `600` 단계를 임의로 적용하면 레이아웃 정렬이 무너지는 원인이 됩니다.
 
 ---
 
-## Dark mode & the component-token policy
+## 📂 파일 및 폴더 인덱스 (Directory Index)
 
-Dark mode flips on `[data-theme="dark"]`. What swaps and what doesn't is a hard rule, not a preference:
-
-- ✅ **Semantic tokens swap.** `--color-text-*`, `--color-bg-*`, `--color-border-*`, `--color-interactive-*`, and `--elevation-*` all have dark overrides. Build product colour from these and dark mode "just works."
-- ✅ **Component sizing is theme-safe.** Every non-colour `--component-*` token (height, padding, radius, font-size, gap, transition, `*-min-width`, `*-max-width`, shadows expressed as dimensions) is identical in both themes. Use freely anywhere.
-- ⛔ **Component colour tokens are LIGHT-MODE literals.** Every `--component-*-color-*` value is a fixed hex from `tokens/component.json`. **They do _not_ change under `[data-theme="dark"]`** — upstream defines no dark component layer.
-
-**The rule:** any colour that must adapt to theme MUST come from a semantic token, never from a `--component-*-color-*` token. Reach for component colour tokens only for (a) surfaces that are intentionally light-only, or (b) reading the canonical light-mode reference value.
-
-This is enforced by convention, not by the cascade — a primary button built from `--component-button-color-primary-bg` (`#2D3378`) will stay indigo in dark mode instead of lightening to the dark-theme `--color-interactive-primary` (`#A9A5E8`). That is the bug this policy prevents.
-
-### Mapping — component colour → semantic to use for dark-safe builds
-
-| If you reach for… | Use instead (dark-safe) |
-|---|---|
-| `--component-button-color-primary-bg` | `--color-interactive-primary` (+ `-hover` / `-active`) |
-| `--component-button-color-primary-text` | `--color-text-inverse` |
-| `--component-*-color-bg` / `-bg-default` | `--color-bg-elevated` / `--color-bg-surface` |
-| `--component-*-color-border*` | `--color-border-default` / `--color-border-focus` |
-| `--component-*-color-text*` | `--color-text-primary` / `--color-text-secondary` / `--color-text-tertiary` |
-| `--component-toast-color-*-bg` / state fills | `--color-bg-{success,warning,error,info}` |
-| `--component-*-color-*-text` (state) | `--color-text-{success,warning,error,info}` |
-
-> The admin UI kit (`ui_kits/admin/`) already follows this: it styles from semantic tokens and toggles cleanly, which is why the theme switch works end-to-end.
+| 파일 / 폴더 경로      | 용도 및 목적                                                                                          |
+| :-------------------- | :---------------------------------------------------------------------------------------------------- |
+| `tokens.css`          | 런타임 소스 오브 트루스(Source of Truth). 프리미티브, 시맨틱, 컴포넌트 전체 레이어(290개 변수) 포함.  |
+| `colors_and_type.css` | 웹폰트 임포트 및 글로벌 기본 태그(`<h1>`, `<p>`, `<code>`, `.prose` 명세) 스타일시트.                 |
+| `tokens/`             | 빌드타임 오리진. DTCG JSON 소스 및 제너레이팅된 `tokens.scss` 포함.                                   |
+| `icon/`               | 10개 카테고리, 총 113개의 `currentColor` 스트로크 SVG 아이콘 세트.                                    |
+| `brand/`              | 공식 로고 에셋. 통합 로고(`kirbs-logo.svg`, 362×56) 및 컴팩트 워드마크(`kirbs-wordmark.svg`, 130×42). |
+| `ui_kits/admin/`      | 컴포넌트 조합 및 테마 스위칭이 사전 검증된 사이드바/탑바 쉘 및 대시보드 UI 키트 예시.                 |
 
 ---
 
-## Brand principles
+## 🎨 시각 기반 및 UI 요소 가이드라인 (Visual Foundations)
 
-- **Primary** `#2D3378` — deep indigo. Used for headlines, primary actions, brand surfaces.
-- **Type** Pretendard (UI body) + JetBrains Mono (code / numerals). Korean-first; Latin coverage via Pretendard's subset.
-- **Grid** 30px gutter, fixed. Margins: mobile 16 / tablet 24 / desktop 32.
-- **Spacing** `--space-{n}` = *n* × 2px. Component-scale runs `--space-1`…`--space-16` (32px); the extended scale `--space-20`…`--space-60` (40–120px) covers public-web section rhythm. For section padding prefer the semantic `--section-pad-{sm,md,lg}` (64/96/120px) + `--section-block-gap` / `--section-stack-gap`.
-- **Shadows** are indigo-tinted (`rgba(45,51,120,…)`), not neutral black. This is a signature.
-- **Semantic-first** Never use `var(--color-gray-1)` in product code; always reach for `var(--color-text-secondary)` so dark mode just works.
+### 카드 및 컨테이너 스타일 (Cards & Elevation)
 
----
+- **표준 카드 형태:** 배경색 White(`#FFF`), 베이스 표면 Surface(`--color-bg-surface`, `#F8F8FB`) 위에 배치.
+- **보더 및 라운딩:** `1px hairline border(#E0E0E0)` + `--border-radius-md` (8px 고정).
+- **시그니처 그림자:** 검은색 계열을 배제하고 인디고가 가미된 틴트 그림자(`rgba(45,51,120, ... )`)와 `--elevation-1`을 기본 레이아웃 카드로 활용합니다.
+- **글래스모피즘 / 그라데이션:** 시스템 전체에서 일체 허용하지 않으며 플랫한 컬러 표면만 사용합니다.
 
-## Content fundamentals
+### 인터랙션 가이드 (Hover / Press / Disabled)
 
-The upstream documentation is **bilingual Korean-first**: token names and CSS
-variables are English (machine-friendly), descriptions are Korean (human-
-friendly). Product copy in the UI kit follows the same convention.
-
-- **Language** Korean-primary. English used for product nouns ("Dashboard", proper nouns, code).
-- **Voice** Formal-polite (`-요`/`-습니다`). Honorific level high but not stiff. No second-person pronouns; address the user implicitly via verb endings.
-- **Tone** Calm, factual, technical. No exclamation points outside celebratory toasts. No marketing puffery.
-- **Microcopy patterns**
-  - Buttons: short verb phrases — `저장`, `추가`, `취소`, `로그아웃`. Two-character verbs preferred over full sentences.
-  - Labels: nouns with no trailing colon — `이메일`, `비밀번호`.
-  - Helper text: short sentence ending with `요`/`다` — `회사 이메일을 입력해 주세요.`
-  - Errors: state the problem, not the rule — `유효하지 않은 입력입니다.`
-  - Empty states: cause + next action — `아직 항목이 없어요 / 첫 항목을 추가하면 여기에 표시됩니다.`
-- **Numerals** Use Arabic numerals with thousands separator. Currency: `₩ 42.8M`, not `42,800,000원` in summaries.
-- **Casing** English UI strings sentence-case (`Continue`, `With icon`), not Title Case. Tokens are kebab-case.
-- **Emoji** Not used in product UI. The brand voice is professional.
-- **Code-style nouns** Token references appear in mono with the `--` prefix preserved: `--color-text-primary`.
+- **Hover (마우스 오버):** 프라이머리 배경은 약 10% 어둡게(`#232968`), 텍스트 링크는 `--color-text-link-hover`로 전환합니다. 서브 요소는 brand-quaternary(`#E8EAF6`) 컬러로 채우며 오파시티(투명도) 페이드는 지양합니다.
+- **Disabled (비활성화):** 배경색은 그레이-4(`#BDBDBD`) 혹은 요소 투명도 `opacity: 0.38`을 부여하고, 커서는 무조건 `not-allowed`로 정렬 레이아웃을 고정합니다.
+- **Focus (초점):** 인디고 배경에서의 명시성을 위해 브랜드 컬러가 아닌 2px 솔리드 블루(`#2F80ED`) 아웃라인을 2px 오프셋으로 노출합니다.
 
 ---
 
-## Visual foundations
+## ✍️ 컨텐츠 및 마이크로카피 패턴 (Content Fundamentals)
 
-### Colour
+두 레이아웃이 텍스트 길이 등으로 인해 시각적으로 틀어지는 현상을 방지하기 위해 컨텐츠 포맷팅을 제한합니다.
 
-- **Hue strategy** A single saturated indigo (`#2D3378`) anchors the system. Three brand tints (`#5B63A8`, `#8E96D3`, `#E8EAF6`) extend it — quaternary is the only token used as a *background* tint; the others are foreground/interactive accents.
-- **Neutrals** Two true blacks (`#000`, `#1D1D1D`) for text only; five grays (`#333` → `#E0E0E0`) for everything else. There is no off-white in the primitive palette; `#F8F8FB` is *derived* and exists only at the semantic layer as `--color-bg-surface`.
-- **State colours** Saturated, conventional web semantics: `#2F80ED` info / `#27AE60` success / `#E2B93B` warning / `#EB5757` error. Warning is the only one that pairs with black text — its yellow is too bright for white.
-- **Semantic-first rule** Product code MUST use `--color-text-*` / `--color-bg-*` / `--color-border-*` / `--color-interactive-*`. Primitives exist only for the token layer to alias.
-
-### Type
-
-- **Pretendard** Korean-first geometric sans. Self-hosted variable font (`fonts/PretendardVariable.woff2`), weights 400 + 700 in product use (variable axis 100–900 available for displays).
-- **JetBrains Mono** Code, token references, numerals in tables/KPIs.
-- **Scale** 13 sizes split into Display (5) for marketing, Heading (5) for h1–h5, Body (3) for everything else. Line-height is a flat `1.5` everywhere — even displays, which then get a tighter override (`1.1`) per the specimen.
-- **Weights** Only `400` (regular) and `700` (bold). No 500/600 in the token system.
-- **Letter spacing** `0em` globally. Large displays tighten to `−1.5%` to `−2.5%` (applied in `colors_and_type.css`, not a token).
-
-### Surfaces & elevation
-
-- **Cards** White (`#FFF`) on surface (`#F8F8FB`). 1px hairline border (`#E0E0E0`) + `--elevation-1` shadow. Radius `--border-radius-md` (8px). No glassmorphism, no gradients on surfaces.
-- **Shadows are tinted indigo** — `rgba(45,51,120,…)` at opacities .08 / .12 / .16 / .20. This is what makes the system feel KIRBS-y vs generic Material.
-- **Elevation rules**
-  - `0` flat (default body content)
-  - `1` resting cards, table rows on hover
-  - `2` dropdowns, tooltips, floating action buttons
-  - `3` modals, dialogs, side panels
-  - `4` full-screen overlays, top-of-stack popups
-- **Background imagery** Not part of the system. No hero photography, no illustration set, no patterns. Surfaces are flat colour. If a product needs imagery, it lives at the product layer, not the system.
-
-### Borders & corners
-
-- **Border widths** `1px` / `2px` / `3px`. Form inputs use `1.5px` (component-token only — not a primitive).
-- **Radius scale** `0 / 2 / 4 / 8 / 12 / 16 / 9999`. Cards/inputs default to `8`, modals to `12`, badges/avatars to `9999`. Nothing in the system uses `xs` (2px) except focus-ring fallback.
-- **Pill vs square** Buttons offer both — `square` (8px) for forms and dense UI, `round` (99px) for marketing CTAs.
-
-### Motion
-
-- **Duration scale** `0 / 100 / 200 / 300 / 500ms`. `200` is the default ("normal").
-- **Easing**
-  - `out` (`cubic-bezier(0,0,.2,1)`) is the default. Use for anything appearing.
-  - `in` for anything leaving.
-  - `in-out` for state changes / position moves.
-  - `spring` (`cubic-bezier(.34,1.56,.64,1)`) for celebratory: toasts, badge pops.
-  - `linear` only for progress bars.
-- **No bounces** outside `spring`. No parallax, no scroll-driven animations defined at the system level.
-
-### Hover / press / disabled
-
-- **Hover**
-  - Primary background: darken ~10% (`#232968`).
-  - Tertiary / secondary backgrounds: fill with `#E8EAF6` (brand-quaternary). Never opacity-fade.
-  - Links: shift to `--color-text-link-hover` (deeper indigo).
-- **Press / active**
-  - Primary background: darken ~20% (`#1A1F52`). No transform/scale.
-  - Tertiary: fill with `#D0D5EA`.
-- **Disabled**
-  - `--color-interactive-primary-disabled` = `#BDBDBD` (gray-4). Or `opacity: 0.38` on the element (`--opacity-disabled`).
-  - Disabled cursor: `not-allowed`.
-- **Transitions** 100ms on colour/background, 200ms on shadow, 300ms on size/position. Always `cubic-bezier(0,0,.2,1)`.
-
-### Focus
-
-- **Always visible** `:focus-visible` shows a 2px solid `#2F80ED` outline at 2px offset. The focus colour is deliberately blue, not brand-indigo, to ensure contrast on indigo backgrounds.
-- Form fields *also* get a 3px indigo-tinted glow (`focus-shadow` component token) in addition to the outline.
-
-### Transparency & blur
-
-- **Used sparingly.** Modal/overlay backdrop is `rgba(0,0,0,0.5)` light / `rgba(0,0,0,0.72)` dark. No backdrop-blur defined at the token layer.
-- **Tooltips** are opaque (`#1D1D1D`), not translucent.
-- **No glass surfaces** in the system.
-
-### Iconography
-
-See the `ICONOGRAPHY` section below.
-
----
-
-## Iconography
-
-The full **113-icon set in 10 categories** lives in `icon/<category>/<name>.svg`:
-
-| Category | Count | Examples |
-|---|---|---|
-| `navigation` | 15 | home, search, menu, chevron-{up,down,left,right}, arrow-{…}, x |
-| `action` | 29 | check, plus, edit, trash-2, download, upload, filter, link, send, heart, zap |
-| `data` | 10 | bar-chart, bar-chart-2, pie-chart, trending-{up,down}, table, database |
-| `content` | 13 | mail, calendar, file, folder, star, image, phone, map-pin |
-| `media` | 8 | play, pause, skip-{forward,back}, volume-{2,x}, camera, mic |
-| `commerce` | 6 | shopping-cart, shopping-bag, credit-card, dollar-sign, gift, percent |
-| `notification` | 8 | bell, info, alert-{circle,triangle}, check-circle-2, x-circle, clock |
-| `user` | 7 | user, users, user-plus, settings, lock, key, log-out |
-| `system` | 5 | sun, moon, unlock, shield, wifi |
-| `social` | 6 + 6 | google, kakao, naver, github, apple, facebook — each as a filled mark **and** a `-line` outline variant |
-
-**Format.** Every icon is a `currentColor` stroke SVG (round caps/joins) on a
-`20`–`24` viewBox. Monochrome — colour is controlled entirely by the host's CSS
-`color` (social marks like Google use `currentColor` with opacity shading rather
-than brand colours, so they tint cleanly too).
-
-**Usage.** Two patterns, both colour via `color`:
-
-```html
-<!-- Static HTML: CSS mask, tinted by background-color -->
-<span style="width:24px;height:24px;background:var(--color-text-brand);
-  -webkit-mask:url(icon/navigation/home.svg) center/contain no-repeat;
-  mask:url(icon/navigation/home.svg) center/contain no-repeat;"></span>
-```
-
-```jsx
-// React (admin kit): fetch + inline so currentColor inherits natively
-<Icon name="navigation/home" size={24} color="var(--color-text-brand)" />
-```
-
-- **Sizes** `xs` 16 · `sm` 20 · `md` 24 (default) · `lg` 32 · `xl` 40
-- **Colour** Always inherits via `currentColor` / mask `background`. Never hardcode fills.
-- **Where used** Buttons (`sm`), GNB/sidebar (`md`), empty states (`lg`/`xl`).
-- **Emoji** Not used. Unicode symbols not used outside ▲/▼ for delta indicators in metrics.
-- **Brand illustrations** None defined. The system is glyph-driven.
-
-`ui_kits/admin/Icons.jsx` maps the legacy `Icon*` component names (e.g. `IconHome`,
-`IconBell`) to files in this set, so existing screens keep working.
-
----
-
-## Caveats & substitutions
-
-1. **Icons** — ✅ Resolved. The full 76-icon set is in `icon/<category>/` and the admin kit + preview card use it directly. (Lucide is no longer used.)
-2. **Logos** — ✅ Resolved. Official artwork lives in `brand/`: `kirbs-logo.svg` (full lockup — ring wordmark + 한글 회사명 + EN tagline, 362×56) and `kirbs-wordmark.svg` (compact ring + KIRBS, 130×42), plus `*-mono.svg` `currentColor` variants for dark/inverse surfaces. See `preview/brand-logo.html`. (KIRBS = 한국행동과학연구소 · Korea Institute for Research in the Behavioral Sciences.)
-3. **Product surfaces** — The upstream repo is a pure-token system with no example product UI. The `ui_kits/admin/` here is the most plausible interpretation given the `component.json` shape (heavy emphasis on `table`, `nav-sidebar`, `dropdown`, `modal`) — i.e. a B2B admin/console. *Action: confirm or redirect.*
-4. **Font** — Pretendard is self-hosted from `fonts/PretendardVariable.woff2` via `@font-face` in `colors_and_type.css` (one variable file, weight axis 100–900). JetBrains Mono is still loaded from Google Fonts; swap to a local woff2 if your CSP blocks third-party CDNs.
-
----
-
-## Further reading
-
-The upstream repo carries deep context this overview doesn't:
-
-- **Original Korean docs** — `tokens/UPSTREAM_README.md`, `tokens/UPSTREAM_CLAUDE.md`
-- **Per-category tokens** — `tokens/{color,spacing,typography,…}.json` (W3C DTCG)
-- **Component tokens** — `tokens/component.json` defines exact sizing/colour for 21 components (textfield, button, modal, footer, …). These are also compiled into `tokens.css` as `--component-{component}-{...path}` CSS variables (e.g. `var(--component-button-height-md)` → `56px`, `var(--component-table-row-height)` → `48px`), so you can reference them at runtime without reading the JSON. **Sizing/spacing component vars are theme-safe; colour component vars are light-mode literals** — for dark-mode-aware surfaces use the semantic `--color-*` tokens, which swap under `[data-theme="dark"]`. Reach for these *before* hardcoding any number.
-- **Live source** — [github.com/dawooni0625/dw](https://github.com/dawooni0625/dw)
-
-Browse the upstream repo for the design rationale and edge cases — this
-folder is an opinionated subset focused on getting designs out the door.
+- **어조:** 정중하고 정제된 경어체(`-요`, `-습니다`)를 유지하며, UI 내부에서 이모지나 문장 끝 느낌표(`!`)는 사용하지 않습니다.
+- **버튼 명명 규칙:** 문장형 표현을 금지하고 2글자 내외의 명확한 명사형 동사로 레이아웃 부피를 최소화합니다. (예: `저장`, `추가`, `취소`, `로그아웃`)
+- **데이터 및 숫자 표기:** 숫자는 아라비아 숫자를 원칙으로 하며 천 단위 콤마를 적용합니다. 특히 대시보드 카드 등의 요약 지표에서는 `42,800,000원`과 같은 긴 국문 표기 대신 `₩ 42.8M` 형태로 규격을 통일하여 텍스트 오버플로우로 인한 레이아웃 깨짐을 방지합니다.
