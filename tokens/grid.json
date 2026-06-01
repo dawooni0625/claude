@@ -1,0 +1,28 @@
+{
+  "grid": {
+    "breakpoint": {
+      "mobile":     { "$value": "320px",  "$type": "dimension" },
+      "tablet":     { "$value": "768px",  "$type": "dimension" },
+      "desktop":    { "$value": "1024px", "$type": "dimension" },
+      "desktop-hd": { "$value": "1440px", "$type": "dimension" }
+    },
+    "columns": {
+      "mobile":     { "$value": 2,  "$type": "number" },
+      "tablet":     { "$value": 6,  "$type": "number" },
+      "desktop":    { "$value": 12, "$type": "number" },
+      "desktop-hd": { "$value": 12, "$type": "number" }
+    },
+    "gutter": {
+      "mobile":     { "$value": "30px", "$type": "dimension", "$description": "전 브레이크포인트 고정값" },
+      "tablet":     { "$value": "30px", "$type": "dimension" },
+      "desktop":    { "$value": "30px", "$type": "dimension" },
+      "desktop-hd": { "$value": "30px", "$type": "dimension" }
+    },
+    "margin": {
+      "mobile":     { "$value": "16px", "$type": "dimension" },
+      "tablet":     { "$value": "24px", "$type": "dimension" },
+      "desktop":    { "$value": "32px", "$type": "dimension" },
+      "desktop-hd": { "$value": "auto", "$type": "dimension", "$description": "1440px 초과 시 좌우 auto 중앙 정렬" }
+    }
+  }
+}

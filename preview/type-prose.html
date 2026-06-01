@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Prose · long-form content</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .ph {
+    width: 100%; aspect-ratio: 16 / 7; border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border-default);
+    background-image: repeating-linear-gradient(45deg, var(--color-bg-surface) 0 12px, var(--color-bg-muted) 12px 24px);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ph span { font-family: var(--font-family-mono); font-size: 12px; color: var(--color-text-tertiary); background: var(--color-bg-page); padding: 4px 10px; border-radius: var(--border-radius-xs); }
+</style>
+</head><body>
+<article class="prose">
+  <h1>워크스페이스 설계 원칙</h1>
+  <p>KIRBS는 <strong>팀이 매일 마주하는 운영 화면</strong>을 위한 디자인 시스템입니다. 이 글은 긴 본문(blog·docs·약관)에서 프로즈 스타일이 어떻게 적용되는지 보여주는 예시입니다. 본문은 <a href="#">시맨틱 토큰</a>만 사용하므로 다크 모드에서도 그대로 동작합니다.</p>
+
+  <h2>핵심 가치</h2>
+  <p>모든 결정은 다음 세 가지 기준을 따릅니다.</p>
+  <ul>
+    <li>명료함 — 한 화면은 한 가지 일을 한다.</li>
+    <li>일관성 — 같은 동작은 어디서나 같은 모양으로.
+      <ul>
+        <li>색·간격·모서리는 토큰에서만 가져온다.</li>
+        <li>예외는 제품 레이어에서만 허용한다.</li>
+      </ul>
+    </li>
+    <li>절제 — 더할 이유가 없으면 더하지 않는다.</li>
+  </ul>
+
+  <blockquote>
+    <p>좋은 시스템은 눈에 띄지 않는다. 사용자는 도구가 아니라 일을 본다.</p>
+    <cite>— KIRBS 디자인 원칙 0.1</cite>
+  </blockquote>
+
+  <h2>적용 순서</h2>
+  <ol>
+    <li>토큰을 읽는다 (<code>--color-text-primary</code>).</li>
+    <li>시맨틱 레이어를 우선한다.</li>
+    <li>컴포넌트 토큰으로 치수를 맞춘다.</li>
+  </ol>
+
+  <figure>
+    <div class="ph"><span>이미지 자리 · 16:7</span></div>
+    <figcaption>그림 1. 프로즈 안의 이미지는 둥근 모서리와 1px 보더가 자동 적용됩니다.</figcaption>
+  </figure>
+
+  <h2>토큰 참조표</h2>
+  <table>
+    <thead>
+      <tr><th>용도</th><th>토큰</th><th>값</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>섹션 여백 (중)</td><td><code>--section-pad-md</code></td><td>96px</td></tr>
+      <tr><td>본문 색</td><td><code>--color-text-secondary</code></td><td>가변 (테마)</td></tr>
+      <tr><td>인용 보더</td><td><code>--color-border-focus</code></td><td>가변 (테마)</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <p><small>이 문서는 <code>.prose</code> 스코프 안에서 렌더링되었습니다. 앱/관리자 레이아웃에는 영향을 주지 않습니다.</small></p>
+</article>
+</body></html>

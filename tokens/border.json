@@ -1,0 +1,26 @@
+{
+  "border": {
+    "width": {
+      "thin":   { "$value": "1px", "$type": "dimension", "$description": "기본 — 인풋, 카드, 구분선" },
+      "medium": { "$value": "2px", "$type": "dimension", "$description": "포커스 링, 활성 탭 인디케이터" },
+      "thick":  { "$value": "3px", "$type": "dimension", "$description": "활성 사이드바 항목, 진행 강조 선" }
+    },
+    "color": {
+      "default":   { "$value": "#E0E0E0", "$type": "color", "$description": "모든 기본 상태" },
+      "primary":   { "$value": "#2D3378", "$type": "color", "$description": "포커스, 선택, 활성 상태" },
+      "secondary": { "$value": "#5B63A8", "$type": "color", "$description": "보조 강조, 호버 상태" },
+      "error":     { "$value": "#EB5757", "$type": "color", "$description": "에러 상태" },
+      "success":   { "$value": "#27AE60", "$type": "color", "$description": "성공 상태" },
+      "disabled":  { "$value": "#BDBDBD", "$type": "color", "$description": "비활성 컴포넌트" }
+    },
+    "radius": {
+      "none": { "$value": "0px",    "$type": "dimension", "$description": "테이블 셀, 직각 레이아웃" },
+      "xs":   { "$value": "2px",    "$type": "dimension", "$description": "뱃지, 태그, 코드 블록" },
+      "sm":   { "$value": "4px",    "$type": "dimension", "$description": "Input 필드, 텍스트에리어" },
+      "md":   { "$value": "8px",    "$type": "dimension", "$description": "카드, 드롭다운, 툴팁" },
+      "lg":   { "$value": "12px",   "$type": "dimension", "$description": "모달, 큰 카드, 사이드 패널" },
+      "xl":   { "$value": "16px",   "$type": "dimension", "$description": "바텀시트, 대형 팝업" },
+      "full": { "$value": "9999px", "$type": "dimension", "$description": "알약형 버튼, 아바타, 토글" }
+    }
+  }
+}

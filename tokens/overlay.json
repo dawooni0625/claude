@@ -1,0 +1,5 @@
+{
+  "overlay": {
+    "bg": { "$value": "rgba(0,0,0,0.5)", "$type": "color", "$description": "모달·드로어 딤 배경" }
+  }
+}

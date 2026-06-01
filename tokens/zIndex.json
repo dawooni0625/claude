@@ -1,0 +1,12 @@
+{
+  "zIndex": {
+    "base":     { "$value": "0",   "$type": "number", "$description": "기본 페이지 요소" },
+    "raised":   { "$value": "10",  "$type": "number", "$description": "카드, 강조 요소" },
+    "dropdown": { "$value": "100", "$type": "number", "$description": "드롭다운, 팝오버" },
+    "sticky":   { "$value": "200", "$type": "number", "$description": "sticky 헤더, 사이드바" },
+    "overlay":  { "$value": "300", "$type": "number", "$description": "딤 레이어" },
+    "modal":    { "$value": "400", "$type": "number", "$description": "모달 창" },
+    "toast":    { "$value": "500", "$type": "number", "$description": "토스트 알림" },
+    "tooltip":  { "$value": "600", "$type": "number", "$description": "툴팁 — 최상위" }
+  }
+}

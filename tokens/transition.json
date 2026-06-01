@@ -1,0 +1,11 @@
+{
+  "transition": {
+    "fade":   { "$value": "opacity 200ms cubic-bezier(0,0,0.2,1)",                                                              "$type": "transition", "$description": "요소 나타남·사라짐" },
+    "slide":  { "$value": "transform 300ms cubic-bezier(0,0,0.2,1)",                                                            "$type": "transition", "$description": "드로어·패널 슬라이드" },
+    "expand": { "$value": "height 300ms cubic-bezier(0.4,0,0.2,1)",                                                             "$type": "transition", "$description": "아코디언·확장 패널" },
+    "scale":  { "$value": "transform 100ms cubic-bezier(0.34,1.56,0.64,1)",                                                     "$type": "transition", "$description": "팝오버·메뉴 등장" },
+    "color":  { "$value": "color 100ms cubic-bezier(0,0,0.2,1), background-color 100ms cubic-bezier(0,0,0.2,1)",                "$type": "transition", "$description": "hover 색상 전환" },
+    "shadow": { "$value": "box-shadow 200ms cubic-bezier(0,0,0.2,1)",                                                           "$type": "transition", "$description": "카드 hover elevation" },
+    "all":    { "$value": "all 200ms cubic-bezier(0,0,0.2,1)",                                                                  "$type": "transition", "$description": "범용 전환" }
+  }
+}

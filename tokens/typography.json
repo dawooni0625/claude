@@ -1,0 +1,33 @@
+{
+  "typography": {
+    "fontFamily": {
+      "base": { "$value": "'Pretendard', 'Noto Sans KR', sans-serif", "$type": "fontFamily", "$description": "전체 UI 기본 폰트" },
+      "mono": { "$value": "'JetBrains Mono', 'Courier New', monospace", "$type": "fontFamily", "$description": "코드·숫자 모노스페이스" }
+    },
+    "fontSize": {
+      "display-2xl": { "$value": "64px", "$type": "dimension", "$description": "히어로 배너, 랜딩 최상단" },
+      "display-xl":  { "$value": "48px", "$type": "dimension", "$description": "섹션 히어로, 마케팅 타이틀" },
+      "display-lg":  { "$value": "40px", "$type": "dimension", "$description": "프로모션 헤드라인" },
+      "display-md":  { "$value": "32px", "$type": "dimension", "$description": "서브 배너, 보조 헤드라인" },
+      "display-sm":  { "$value": "24px", "$type": "dimension", "$description": "인포그래픽 수치 강조" },
+      "heading-1":   { "$value": "32px", "$type": "dimension", "$description": "h1 — 페이지 제목, 모달 주요 헤더" },
+      "heading-2":   { "$value": "24px", "$type": "dimension", "$description": "h2 — 섹션 제목, 카드 그룹 헤더" },
+      "heading-3":   { "$value": "20px", "$type": "dimension", "$description": "h3 — 카드 제목, 아코디언 헤더" },
+      "heading-4":   { "$value": "18px", "$type": "dimension", "$description": "h4 — 서브 타이틀, 설정 항목 그룹" },
+      "heading-5":   { "$value": "16px", "$type": "dimension", "$description": "h5 — 폼 레이블, 사이드바 섹션명" },
+      "body-lg":     { "$value": "18px", "$type": "dimension", "$description": "KPI 수치, 리드 텍스트" },
+      "body-md":     { "$value": "16px", "$type": "dimension", "$description": "기본값 — 버튼, 탭, 일반 본문" },
+      "body-sm":     { "$value": "14px", "$type": "dimension", "$description": "부가 설명, 캡션, 툴팁, 힌트" }
+    },
+    "fontWeight": {
+      "regular": { "$value": "400", "$type": "fontWeight", "$description": "일반 본문 텍스트" },
+      "bold":    { "$value": "700", "$type": "fontWeight", "$description": "Display, Title, 버튼, 레이블 강조" }
+    },
+    "lineHeight": {
+      "normal": { "$value": "1.5", "$type": "number", "$description": "전체 공통 행간 150%" }
+    },
+    "letterSpacing": {
+      "normal": { "$value": "0em", "$type": "dimension", "$description": "전체 공통 자간 0" }
+    }
+  }
+}

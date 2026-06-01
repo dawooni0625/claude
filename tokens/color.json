@@ -1,0 +1,29 @@
+{
+  "color": {
+    "brand": {
+      "primary":    { "$value": "#2D3378", "$type": "color", "$description": "로고, 헤드라인, 브랜드 버튼" },
+      "secondary":  { "$value": "#5B63A8", "$type": "color", "$description": "서브 버튼, 아이콘, 호버" },
+      "tertiary":   { "$value": "#8E96D3", "$type": "color", "$description": "일러스트 요소, 보조 그래픽" },
+      "quaternary": { "$value": "#E8EAF6", "$type": "color", "$description": "배경톤, 연한 브랜드 배경" }
+    },
+    "state": {
+      "info":    { "$value": "#2F80ED", "$type": "color", "$description": "안내, 중립 메시지" },
+      "success": { "$value": "#27AE60", "$type": "color", "$description": "완료, 성공 상태" },
+      "warning": { "$value": "#E2B93B", "$type": "color", "$description": "주의, 경고 상태" },
+      "error":   { "$value": "#EB5757", "$type": "color", "$description": "오류, 실패 상태" }
+    },
+    "black": {
+      "1": { "$value": "#000000", "$type": "color", "$description": "가장 진한 텍스트·아이콘" },
+      "2": { "$value": "#1D1D1D", "$type": "color", "$description": "텍스트·아이콘" },
+      "3": { "$value": "#282828", "$type": "color", "$description": "텍스트·아이콘 (옅음)" }
+    },
+    "white": { "$value": "#FFFFFF", "$type": "color", "$description": "배경, 반전 텍스트" },
+    "gray": {
+      "1": { "$value": "#333333", "$type": "color", "$description": "주요 본문 텍스트" },
+      "2": { "$value": "#4F4F4F", "$type": "color", "$description": "보조 텍스트" },
+      "3": { "$value": "#828282", "$type": "color", "$description": "플레이스홀더, 힌트" },
+      "4": { "$value": "#BDBDBD", "$type": "color", "$description": "비활성, 구분선" },
+      "5": { "$value": "#E0E0E0", "$type": "color", "$description": "배경 구분선, 테두리" }
+    }
+  }
+}

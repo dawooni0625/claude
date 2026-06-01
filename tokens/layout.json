@@ -1,0 +1,25 @@
+{
+  "layout": {
+    "container": {
+      "max-sm": { "$value": "640px",  "$type": "dimension", "$description": "모바일 콘텐츠 최대 너비" },
+      "max-md": { "$value": "960px",  "$type": "dimension", "$description": "태블릿 콘텐츠 최대 너비" },
+      "max-lg": { "$value": "1280px", "$type": "dimension", "$description": "데스크탑 콘텐츠 최대 너비" },
+      "max-xl": { "$value": "1440px", "$type": "dimension", "$description": "와이드 콘텐츠 최대 너비" }
+    },
+    "form": {
+      "label-gap":   { "$value": "6px",  "$type": "dimension", "$description": "레이블–인풋 수직 간격" },
+      "group-gap":   { "$value": "20px", "$type": "dimension", "$description": "폼 그룹 사이 수직 간격" },
+      "section-gap": { "$value": "32px", "$type": "dimension", "$description": "폼 섹션 사이 간격" },
+      "helper-gap":  { "$value": "5px",  "$type": "dimension", "$description": "인풋–헬퍼텍스트 간격" },
+      "inline-gap":  { "$value": "12px", "$type": "dimension", "$description": "인라인 요소 사이 간격" },
+      "two-col-gap": { "$value": "16px", "$type": "dimension", "$description": "2컬럼 폼 사이 간격" }
+    },
+    "section": {
+      "pad-sm":    { "$value": "64px",  "$type": "dimension", "$description": "섹션 상하 패딩 (소) — 콤팩트 블록" },
+      "pad-md":    { "$value": "96px",  "$type": "dimension", "$description": "섹션 상하 패딩 (중) — 기본 랜딩 섹션" },
+      "pad-lg":    { "$value": "120px", "$type": "dimension", "$description": "섹션 상하 패딩 (대) — 히어로/주요 섹션" },
+      "block-gap": { "$value": "48px",  "$type": "dimension", "$description": "섹션 내 블록(헤더–콘텐츠) 사이 간격" },
+      "stack-gap": { "$value": "24px",  "$type": "dimension", "$description": "섹션 헤더 내 제목–설명 간격" }
+    }
+  }
+}

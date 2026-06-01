@@ -1,0 +1,713 @@
+/**
+ * Design Tokens — CSS Custom Properties
+ * Source: tokens.json (W3C DTCG)
+ *
+ * 네이밍 규칙:
+ *   color.brand.primary        → --color-brand-primary
+ *   semantic.color.text.*      → --color-text-*          (semantic. 접두어 제거)
+ *   spacing.8                  → --space-8               (spacing → space)
+ *   zIndex.modal               → --z-modal               (zIndex → z)
+ *   border.radius.md           → --border-radius-md
+ *   elevation.2                → --elevation-2
+ *   transition.fade            → --transition-fade
+ */
+
+:root {
+
+  /* ================================================================
+   * Color — Primitives
+   * ================================================================ */
+
+  /* Brand */
+  --color-brand-primary:    #2D3378;
+  --color-brand-secondary:  #5B63A8;
+  --color-brand-tertiary:   #8E96D3;
+  --color-brand-quaternary: #E8EAF6;
+
+  /* State */
+  --color-state-info:    #2F80ED;
+  --color-state-success: #27AE60;
+  --color-state-warning: #E2B93B;
+  --color-state-error:   #EB5757;
+
+  /* Black */
+  --color-black-1: #000000;
+  --color-black-2: #1D1D1D;
+  --color-black-3: #282828;
+
+  /* White */
+  --color-white: #FFFFFF;
+
+  /* Gray */
+  --color-gray-1: #333333;
+  --color-gray-2: #4F4F4F;
+  --color-gray-3: #828282;
+  --color-gray-4: #BDBDBD;
+  --color-gray-5: #E0E0E0;
+
+  /* ================================================================
+   * Spacing  (key × 2px / CSS 변수: --space-{n})
+   * ================================================================ */
+
+  --space-1:  2px;
+  --space-2:  4px;
+  --space-4:  8px;
+  --space-6:  12px;
+  --space-8:  16px;
+  --space-12: 24px;
+  --space-16: 32px;
+  /* Extended scale (key × 2px) — section rhythm for public web pages */
+  --space-20: 40px;
+  --space-24: 48px;
+  --space-32: 64px;
+  --space-40: 80px;
+  --space-48: 96px;
+  --space-60: 120px;
+
+  /* ================================================================
+   * Typography
+   * ================================================================ */
+
+  --font-family-base: 'Pretendard', 'Noto Sans KR', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --font-size-display-2xl: 64px;
+  --font-size-display-xl:  48px;
+  --font-size-display-lg:  40px;
+  --font-size-display-md:  32px;
+  --font-size-display-sm:  24px;
+  --font-size-heading-1:   32px;
+  --font-size-heading-2:   24px;
+  --font-size-heading-3:   20px;
+  --font-size-heading-4:   18px;
+  --font-size-heading-5:   16px;
+  --font-size-body-lg:     18px;
+  --font-size-body-md:     16px;
+  --font-size-body-sm:     14px;
+
+  --font-weight-regular: 400;
+  --font-weight-bold:    700;
+
+  --line-height-normal:     1.5;
+  --letter-spacing-normal:  0em;
+
+  /* ================================================================
+   * Border
+   * ================================================================ */
+
+  --border-width-thin:   1px;
+  --border-width-medium: 2px;
+  --border-width-thick:  3px;
+
+  --border-color-default:   #E0E0E0;
+  --border-color-primary:   #2D3378;
+  --border-color-secondary: #5B63A8;
+  --border-color-error:     #EB5757;
+  --border-color-success:   #27AE60;
+  --border-color-disabled:  #BDBDBD;
+
+  --border-radius-none: 0px;
+  --border-radius-xs:   2px;
+  --border-radius-sm:   4px;
+  --border-radius-md:   8px;
+  --border-radius-lg:   12px;
+  --border-radius-xl:   16px;
+  --border-radius-full: 9999px;
+
+  /* ================================================================
+   * Elevation
+   * ================================================================ */
+
+  --elevation-0: none;
+  --elevation-1: 0px 1px 3px rgba(45,51,120,0.08);
+  --elevation-2: 0px 2px 8px rgba(45,51,120,0.12);
+  --elevation-3: 0px 4px 16px rgba(45,51,120,0.16);
+  --elevation-4: 0px 8px 32px rgba(45,51,120,0.20);
+
+  /* ================================================================
+   * Motion
+   * ================================================================ */
+
+  --motion-duration-instant: 0ms;
+  --motion-duration-fast:    100ms;
+  --motion-duration-normal:  200ms;
+  --motion-duration-slow:    300ms;
+  --motion-duration-slower:  500ms;
+
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-easing-in:     cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-out:    cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ================================================================
+   * Grid
+   * ================================================================ */
+
+  --breakpoint-mobile:     320px;
+  --breakpoint-tablet:     768px;
+  --breakpoint-desktop:    1024px;
+  --breakpoint-desktop-hd: 1440px;
+
+  --grid-columns-mobile:     2;
+  --grid-columns-tablet:     6;
+  --grid-columns-desktop:    12;
+  --grid-columns-desktop-hd: 12;
+  --grid-gutter:             30px;
+
+  --grid-margin-mobile:     16px;
+  --grid-margin-tablet:     24px;
+  --grid-margin-desktop:    32px;
+  --grid-margin-desktop-hd: auto;
+
+  /* ================================================================
+   * zIndex  (zIndex → z)
+   * ================================================================ */
+
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
+
+  /* ================================================================
+   * Transition
+   * ================================================================ */
+
+  --transition-fade:   opacity 200ms cubic-bezier(0,0,0.2,1);
+  --transition-slide:  transform 300ms cubic-bezier(0,0,0.2,1);
+  --transition-expand: height 300ms cubic-bezier(0.4,0,0.2,1);
+  --transition-scale:  transform 100ms cubic-bezier(0.34,1.56,0.64,1);
+  --transition-color:  color 100ms cubic-bezier(0,0,0.2,1), background-color 100ms cubic-bezier(0,0,0.2,1);
+  --transition-shadow: box-shadow 200ms cubic-bezier(0,0,0.2,1);
+  --transition-all:    all 200ms cubic-bezier(0,0,0.2,1);
+
+  /* ================================================================
+   * Semantic — Text  ("semantic." 접두어 제거)
+   * ================================================================ */
+
+  --color-text-primary:     #000000;
+  --color-text-secondary:   #333333;
+  --color-text-tertiary:    #4F4F4F;
+  --color-text-disabled:    #828282;
+  --color-text-placeholder: #828282;
+  --color-text-inverse:     #FFFFFF;
+  --color-text-link:        #5B63A8;
+  --color-text-link-hover:  #2D3378;
+  --color-text-brand:       #2D3378;
+  --color-text-error:       #EB5757;
+  --color-text-success:     #27AE60;
+  --color-text-warning:     #E2B93B;
+  --color-text-info:        #2F80ED;
+
+  /* ================================================================
+   * Semantic — Background
+   * ================================================================ */
+
+  --color-bg-page:         #FFFFFF;
+  --color-bg-surface:      #F8F8FB;
+  --color-bg-elevated:     #FFFFFF;
+  --color-bg-muted:        #E0E0E0;
+  --color-bg-overlay:      rgba(0,0,0,0.5);
+  --color-bg-brand:        #2D3378;
+  --color-bg-brand-subtle: #E8EAF6;
+  --color-bg-error:        #FDEEEE;
+  --color-bg-success:      #EDFAF4;
+  --color-bg-warning:      #FDF8E6;
+  --color-bg-info:         #EEF2FD;
+
+  /* ================================================================
+   * Semantic — Border
+   * ================================================================ */
+
+  --color-border-default:  #E0E0E0;
+  --color-border-focus:    #2F80ED;
+  --color-border-error:    #EB5757;
+  --color-border-success:  #27AE60;
+  --color-border-disabled: #BDBDBD;
+
+  /* ================================================================
+   * Semantic — Interactive
+   * ================================================================ */
+
+  --color-interactive-primary:          #2D3378;
+  --color-interactive-primary-hover:    #232968;
+  --color-interactive-primary-active:   #1A1F52;
+  --color-interactive-primary-disabled: #BDBDBD;
+  --color-interactive-secondary:        #5B63A8;
+  --color-interactive-danger:           #EB5757;
+  --color-interactive-danger-hover:     #C94040;
+
+  /* ================================================================
+   * Layout
+   * ================================================================ */
+
+  --container-max-sm: 640px;
+  --container-max-md: 960px;
+  --container-max-lg: 1280px;
+  --container-max-xl: 1440px;
+
+  --form-label-gap:   6px;
+  --form-group-gap:   20px;
+  --form-section-gap: 32px;
+  --form-helper-gap:  5px;
+  --form-inline-gap:  12px;
+  --form-two-col-gap: 16px;
+
+  /* Section rhythm — vertical padding & gaps for public web page sections */
+  --section-pad-sm:   64px;
+  --section-pad-md:   96px;
+  --section-pad-lg:   120px;
+  --section-block-gap: 48px;
+  --section-stack-gap: 24px;
+
+  /* ================================================================
+   * Skeleton
+   * ================================================================ */
+
+  --skeleton-bg:        #E0E0E0;
+  --skeleton-shimmer:   rgba(255,255,255,0.6);
+  --skeleton-radius:    4px;
+  --skeleton-radius-lg: 8px;
+  --skeleton-duration:  1.5s;
+
+  /* ================================================================
+   * Opacity
+   * ================================================================ */
+
+  --opacity-disabled: 0.38;
+  --opacity-overlay:  0.5;
+
+  /* ================================================================
+   * Icon
+   * ================================================================ */
+
+  --icon-size-xs: 16px;
+  --icon-size-sm: 20px;
+  --icon-size-md: 24px;
+  --icon-size-lg: 32px;
+  --icon-size-xl: 40px;
+
+  /* ================================================================
+   * Focus
+   * ================================================================ */
+
+  --focus-ring-width:  2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color:  #2F80ED;
+
+  /* ================================================================
+   * Overlay
+   * ================================================================ */
+
+  --overlay-bg: rgba(0,0,0,0.5);
+
+  /* ================================================================
+   * Component tokens  (source: tokens/component.json)
+   * --component-{component}-{...path}
+   *
+   * 1:1 build of the upstream component layer. COLOUR values here are
+   * LIGHT-MODE literals that DO NOT swap under [data-theme="dark"] — the
+   * upstream defines no dark variants for the component layer. For any
+   * theme-adaptive colour use the semantic tokens (--color-text-*,
+   * --color-bg-*, --color-border-*, --color-interactive-*) instead.
+   * Non-colour --component-* vars (sizing/spacing/radius/transition) are
+   * theme-safe — use anywhere. Full policy + mapping: README.md ›
+   * "Dark mode & the component-token policy".
+   * ================================================================ */
+
+  /* --- textfield --- */
+  --component-textfield-height-sm:            32px;
+  --component-textfield-height-md:            48px;
+  --component-textfield-height-lg:            56px;
+  --component-textfield-padding-x-sm:         10px;
+  --component-textfield-padding-x-md:         14px;
+  --component-textfield-padding-x-lg:         16px;
+  --component-textfield-padding-y-sm:         6px;
+  --component-textfield-padding-y-md:         8px;
+  --component-textfield-padding-y-lg:         10px;
+  --component-textfield-font-label:           13px;
+  --component-textfield-font-label-weight:    700;
+  --component-textfield-font-value:           14px;
+  --component-textfield-font-placeholder:     14px;
+  --component-textfield-font-helper:          12px;
+  --component-textfield-font-helper-weight:   400;
+  --component-textfield-border-radius:        8px;
+  --component-textfield-border-width:         1.5px;
+  --component-textfield-focus-shadow:         0 0 0 3px rgba(45,51,120,0.12);
+  --component-textfield-icon-padding-left:    38px;
+  --component-textfield-textarea-min-height:  88px;
+  --component-textfield-color-bg-default:     #FFFFFF;
+  --component-textfield-color-bg-disabled:    #E0E0E0;
+  --component-textfield-color-bg-filled:      #F5F5F8;
+  --component-textfield-color-border-default: #E0E0E0;
+  --component-textfield-color-text-value:     #1D1D1D;
+  --component-textfield-color-text-label:     #333333;
+  --component-textfield-color-text-helper:    #4F4F4F;
+  --component-textfield-color-text-error:     #EB5757;
+  --component-textfield-color-text-success:   #27AE60;
+
+  /* --- button --- */
+  --component-button-height-sm:                 45px;
+  --component-button-height-md:                 56px;
+  --component-button-height-lg:                 63px;
+  --component-button-height-xl:                 70px;
+  --component-button-min-width-sm:              70px;
+  --component-button-min-width-md:              80px;
+  --component-button-min-width-lg:              90px;
+  --component-button-min-width-xl:              100px;
+  --component-button-font-size-sm:              14px;
+  --component-button-font-size-md:              16px;
+  --component-button-font-size-lg:              18px;
+  --component-button-font-size-xl:              20px;
+  --component-button-icon-gap:                  8px;
+  --component-button-border-radius-square:      8px;
+  --component-button-border-radius-round:       99px;
+  --component-button-transition:                all 100ms cubic-bezier(0,0,0.2,1);
+  --component-button-color-primary-bg:          #2D3378;
+  --component-button-color-primary-bg-hover:    #232860;
+  --component-button-color-primary-bg-active:   #1A1F4D;
+  --component-button-color-primary-bg-disabled: #BDBDBD;
+  --component-button-color-primary-text:        #FFFFFF;
+  --component-button-color-secondary-bg:        #FFFFFF;
+  --component-button-color-secondary-bg-hover:  #E8EAF6;
+  --component-button-color-secondary-bg-active: #D0D5EA;
+  --component-button-color-secondary-border:    #2D3378;
+  --component-button-color-secondary-text:      #2D3378;
+  --component-button-color-tertiary-bg:         transparent;
+  --component-button-color-tertiary-bg-hover:   #E8EAF6;
+  --component-button-color-tertiary-bg-active:  #D0D5EA;
+  --component-button-color-tertiary-text:       #2D3378;
+
+  /* --- badge --- */
+  --component-badge-padding-x:          12px;
+  --component-badge-padding-y:          4px;
+  --component-badge-font-size:          12px;
+  --component-badge-font-weight:        700;
+  --component-badge-border-radius:      99px;
+  --component-badge-color-brand-bg:     #2D3378;
+  --component-badge-color-brand-text:   #FFFFFF;
+  --component-badge-color-info-bg:      #2F80ED;
+  --component-badge-color-info-text:    #FFFFFF;
+  --component-badge-color-success-bg:   #27AE60;
+  --component-badge-color-success-text: #FFFFFF;
+  --component-badge-color-warning-bg:   #E2B93B;
+  --component-badge-color-warning-text: #000000;
+  --component-badge-color-error-bg:     #EB5757;
+  --component-badge-color-error-text:   #FFFFFF;
+  --component-badge-color-neutral-bg:   #E0E0E0;
+  --component-badge-color-neutral-text: #333333;
+
+  /* --- tooltip --- */
+  --component-tooltip-sm-padding-x:  8px;
+  --component-tooltip-sm-padding-y:  5px;
+  --component-tooltip-sm-arrow-size: 6px;
+  --component-tooltip-lg-padding-x:  14px;
+  --component-tooltip-lg-padding-y:  10px;
+  --component-tooltip-lg-min-width:  160px;
+  --component-tooltip-font-size:     12px;
+  --component-tooltip-border-radius: 4px;
+  --component-tooltip-bg:            #1D1D1D;
+  --component-tooltip-text:          #FFFFFF;
+  --component-tooltip-elevation:     0px 2px 8px rgba(45,51,120,0.12);
+
+  /* --- avatar --- */
+  --component-avatar-size-sm:       40px;
+  --component-avatar-size-md:       64px;
+  --component-avatar-size-lg:       80px;
+  --component-avatar-border-radius: 50%;
+  --component-avatar-border-width:  2px;
+  --component-avatar-border-color:  #FFFFFF;
+
+  /* --- card --- */
+  --component-card-padding-md:      20px;
+  --component-card-padding-lg:      24px;
+  --component-card-border-radius:   8px;
+  --component-card-border-width:    1px;
+  --component-card-bg:              #FFFFFF;
+  --component-card-border-color:    #E0E0E0;
+  --component-card-elevation:       0px 1px 3px rgba(45,51,120,0.08);
+  --component-card-elevation-hover: 0px 2px 8px rgba(45,51,120,0.12);
+
+  /* --- modal --- */
+  --component-modal-max-width-sm:  480px;
+  --component-modal-max-width-md:  720px;
+  --component-modal-max-width-lg:  960px;
+  --component-modal-border-radius: 12px;
+  --component-modal-padding-x:     24px;
+  --component-modal-padding-y:     24px;
+  --component-modal-header-height: 64px;
+  --component-modal-footer-height: 72px;
+  --component-modal-bg:            #FFFFFF;
+  --component-modal-elevation:     0px 4px 16px rgba(45,51,120,0.16);
+
+  /* --- checkbox --- */
+  --component-checkbox-size:                  18px;
+  --component-checkbox-border-radius:         4px;
+  --component-checkbox-border-width:          1.5px;
+  --component-checkbox-check-icon-size:       12px;
+  --component-checkbox-label-gap:             8px;
+  --component-checkbox-color-border-default:  #BDBDBD;
+  --component-checkbox-color-border-hover:    #5B63A8;
+  --component-checkbox-color-checked-bg:      #2D3378;
+  --component-checkbox-color-checked-border:  #2D3378;
+  --component-checkbox-color-checked-icon:    #FFFFFF;
+  --component-checkbox-color-disabled-bg:     #E0E0E0;
+  --component-checkbox-color-disabled-border: #BDBDBD;
+  --component-checkbox-color-error-border:    #EB5757;
+
+  /* --- radio --- */
+  --component-radio-size:                  18px;
+  --component-radio-dot-size:              8px;
+  --component-radio-border-width:          1.5px;
+  --component-radio-label-gap:             8px;
+  --component-radio-color-border-default:  #BDBDBD;
+  --component-radio-color-border-hover:    #5B63A8;
+  --component-radio-color-checked-border:  #2D3378;
+  --component-radio-color-checked-dot:     #2D3378;
+  --component-radio-color-disabled-bg:     #E0E0E0;
+  --component-radio-color-disabled-border: #BDBDBD;
+  --component-radio-color-error-border:    #EB5757;
+
+  /* --- toggle --- */
+  --component-toggle-track-width:     44px;
+  --component-toggle-track-height:    24px;
+  --component-toggle-thumb-size:      20px;
+  --component-toggle-thumb-offset:    2px;
+  --component-toggle-border-radius:   9999px;
+  --component-toggle-transition:      background-color 100ms cubic-bezier(0,0,0.2,1), transform 100ms cubic-bezier(0,0,0.2,1);
+  --component-toggle-color-off-track: #BDBDBD;
+  --component-toggle-color-on-track:  #2D3378;
+  --component-toggle-color-thumb:     #FFFFFF;
+  --component-toggle-color-disabled:  #E0E0E0;
+
+  /* --- tabs --- */
+  --component-tabs-height:             44px;
+  --component-tabs-padding-x:          16px;
+  --component-tabs-gap:                8px;
+  --component-tabs-font-size:          16px;
+  --component-tabs-font-weight-active: 700;
+  --component-tabs-indicator-height:   2px;
+  --component-tabs-color-text-default: #828282;
+  --component-tabs-color-text-hover:   #4F4F4F;
+  --component-tabs-color-text-active:  #2D3378;
+  --component-tabs-color-indicator:    #2D3378;
+  --component-tabs-color-bg-hover:     #E8EAF6;
+
+  /* --- dropdown --- */
+  --component-dropdown-item-height:              40px;
+  --component-dropdown-padding-x:                14px;
+  --component-dropdown-padding-y:                10px;
+  --component-dropdown-border-radius:            8px;
+  --component-dropdown-max-height:               280px;
+  --component-dropdown-font-size:                14px;
+  --component-dropdown-elevation:                0px 2px 8px rgba(45,51,120,0.12);
+  --component-dropdown-color-bg:                 #FFFFFF;
+  --component-dropdown-color-border:             #E0E0E0;
+  --component-dropdown-color-item-hover-bg:      #E8EAF6;
+  --component-dropdown-color-item-active-bg:     #D0D5EA;
+  --component-dropdown-color-item-selected-bg:   #E8EAF6;
+  --component-dropdown-color-item-selected-text: #2D3378;
+
+  /* --- pagination --- */
+  --component-pagination-item-size:           32px;
+  --component-pagination-border-radius:       4px;
+  --component-pagination-font-size:           14px;
+  --component-pagination-gap:                 4px;
+  --component-pagination-color-text-default:  #4F4F4F;
+  --component-pagination-color-text-hover:    #2D3378;
+  --component-pagination-color-active-bg:     #2D3378;
+  --component-pagination-color-active-text:   #FFFFFF;
+  --component-pagination-color-hover-bg:      #E8EAF6;
+  --component-pagination-color-disabled-text: #BDBDBD;
+
+  /* --- table --- */
+  --component-table-header-height:         40px;
+  --component-table-row-height:            48px;
+  --component-table-cell-padding-x:        16px;
+  --component-table-cell-padding-y:        12px;
+  --component-table-header-font-size:      13px;
+  --component-table-header-font-weight:    700;
+  --component-table-body-font-size:        14px;
+  --component-table-border-width:          1px;
+  --component-table-color-border:          #E0E0E0;
+  --component-table-color-header-bg:       #F8F8FB;
+  --component-table-color-header-text:     #333333;
+  --component-table-color-row-bg:          #FFFFFF;
+  --component-table-color-row-hover-bg:    #F0F0F5;
+  --component-table-color-row-selected-bg: #E8EAF6;
+  --component-table-color-row-striped-bg:  #F8F8FB;
+
+  /* --- progress --- */
+  --component-progress-height-sm:     4px;
+  --component-progress-height-md:     8px;
+  --component-progress-height-lg:     12px;
+  --component-progress-border-radius: 9999px;
+  --component-progress-transition:    width 300ms cubic-bezier(0.4,0,0.2,1);
+  --component-progress-color-track:   #E0E0E0;
+  --component-progress-color-primary: #2D3378;
+  --component-progress-color-success: #27AE60;
+  --component-progress-color-warning: #E2B93B;
+  --component-progress-color-error:   #EB5757;
+
+  /* --- spinner --- */
+  --component-spinner-size-sm:      16px;
+  --component-spinner-size-md:      24px;
+  --component-spinner-size-lg:      40px;
+  --component-spinner-stroke-width: 2px;
+  --component-spinner-duration:     700ms;
+  --component-spinner-color-track:  #E0E0E0;
+  --component-spinner-color-fill:   #2D3378;
+
+  /* --- toast --- */
+  --component-toast-min-width:          320px;
+  --component-toast-max-width:          480px;
+  --component-toast-padding-x:          16px;
+  --component-toast-padding-y:          14px;
+  --component-toast-border-radius:      8px;
+  --component-toast-icon-size:          20px;
+  --component-toast-gap:                10px;
+  --component-toast-font-size:          14px;
+  --component-toast-font-weight:        400;
+  --component-toast-elevation:          0px 4px 16px rgba(45,51,120,0.16);
+  --component-toast-color-default-bg:   #1D1D1D;
+  --component-toast-color-default-text: #FFFFFF;
+  --component-toast-color-success-bg:   #EDFAF4;
+  --component-toast-color-success-text: #27AE60;
+  --component-toast-color-warning-bg:   #FDF8E6;
+  --component-toast-color-warning-text: #B08000;
+  --component-toast-color-error-bg:     #FDEEEE;
+  --component-toast-color-error-text:   #EB5757;
+  --component-toast-color-info-bg:      #EEF2FD;
+  --component-toast-color-info-text:    #2F80ED;
+
+  /* --- empty-state --- */
+  --component-empty-state-icon-size:               48px;
+  --component-empty-state-gap:                     12px;
+  --component-empty-state-max-width:               360px;
+  --component-empty-state-font-size-title:         16px;
+  --component-empty-state-font-size-description:   14px;
+  --component-empty-state-font-weight-title:       700;
+  --component-empty-state-font-weight-description: 400;
+  --component-empty-state-color-icon:              #BDBDBD;
+  --component-empty-state-color-title:             #333333;
+  --component-empty-state-color-description:       #828282;
+
+  /* --- nav-header --- */
+  --component-nav-header-height:            64px;
+  --component-nav-header-padding-x:         32px;
+  --component-nav-header-logo-height:       28px;
+  --component-nav-header-item-gap:          8px;
+  --component-nav-header-font-size:         14px;
+  --component-nav-header-font-weight:       500;
+  --component-nav-header-border-width:      1px;
+  --component-nav-header-color-bg:          #FFFFFF;
+  --component-nav-header-color-border:      #E0E0E0;
+  --component-nav-header-color-text:        #333333;
+  --component-nav-header-color-text-active: #2D3378;
+  --component-nav-header-color-icon:        #4F4F4F;
+
+  /* --- nav-sidebar --- */
+  --component-nav-sidebar-width:                  240px;
+  --component-nav-sidebar-collapsed-width:        64px;
+  --component-nav-sidebar-item-height:            44px;
+  --component-nav-sidebar-item-padding-x:         16px;
+  --component-nav-sidebar-item-gap:               4px;
+  --component-nav-sidebar-section-gap:            20px;
+  --component-nav-sidebar-icon-size:              20px;
+  --component-nav-sidebar-font-size:              14px;
+  --component-nav-sidebar-font-weight-active:     700;
+  --component-nav-sidebar-border-radius:          6px;
+  --component-nav-sidebar-transition:             width 200ms cubic-bezier(0,0,0.2,1);
+  --component-nav-sidebar-color-bg:               #FFFFFF;
+  --component-nav-sidebar-color-border:           #E0E0E0;
+  --component-nav-sidebar-color-item-text:        #4F4F4F;
+  --component-nav-sidebar-color-item-text-hover:  #2D3378;
+  --component-nav-sidebar-color-item-text-active: #2D3378;
+  --component-nav-sidebar-color-item-bg-hover:    #E8EAF6;
+  --component-nav-sidebar-color-item-bg-active:   #E8EAF6;
+  --component-nav-sidebar-color-section-label:    #828282;
+
+  /* --- footer --- */
+  --component-footer-max-width:         1280px;
+  --component-footer-padding-y:         64px;
+  --component-footer-padding-x:         32px;
+  --component-footer-column-gap:        48px;
+  --component-footer-row-gap:           32px;
+  --component-footer-link-gap:          12px;
+  --component-footer-bottom-bar-gap:    24px;
+  --component-footer-border-width:      1px;
+  --component-footer-heading-font-size: 13px;
+  --component-footer-heading-weight:    700;
+  --component-footer-link-font-size:    14px;
+  --component-footer-meta-font-size:    13px;
+  --component-footer-color-bg:          #F8F8FB;
+  --component-footer-color-border:      #E0E0E0;
+  --component-footer-color-heading:     #1D1D1D;
+  --component-footer-color-link:        #4F4F4F;
+  --component-footer-color-link-hover:  #2D3378;
+  --component-footer-color-meta:        #828282;
+
+}
+
+/* ================================================================
+ * Dark Mode Override  ([data-theme="dark"])
+ * ================================================================ */
+
+[data-theme="dark"] {
+
+  /* Text */
+  --color-text-primary:     #F0F0F0;
+  --color-text-secondary:   #C5C5C5;
+  --color-text-tertiary:    #9B9B9B;
+  --color-text-disabled:    #4F4F4F;
+  --color-text-placeholder: #6B6B6B;
+  --color-text-inverse:     #000000;
+  --color-text-link:        #6BA8E8;
+  --color-text-link-hover:  #A9A5E8;
+  --color-text-brand:       #A9A5E8;
+  --color-text-error:       #F07878;
+  --color-text-success:     #4FD48A;
+  --color-text-warning:     #F5D040;
+  --color-text-info:        #6BA8E8;
+
+  /* Background */
+  --color-bg-page:         #0F0F12;
+  --color-bg-surface:      #1A1A1F;
+  --color-bg-elevated:     #252529;
+  --color-bg-muted:        #333338;
+  --color-bg-overlay:      rgba(0,0,0,0.72);
+  --color-bg-brand:        #1E1A5E;
+  --color-bg-brand-subtle: rgba(45,51,120,0.25);
+  --color-bg-error:        rgba(235,87,87,0.15);
+  --color-bg-success:      rgba(39,174,96,0.15);
+  --color-bg-warning:      rgba(226,185,59,0.15);
+  --color-bg-info:         rgba(47,128,237,0.15);
+
+  /* Border */
+  --color-border-default:  #2E2E34;
+  --color-border-focus:    #6BA8E8;
+  --color-border-error:    #F07878;
+  --color-border-success:  #4FD48A;
+  --color-border-disabled: #2E2E34;
+
+  /* Interactive */
+  --color-interactive-primary:          #A9A5E8;
+  --color-interactive-primary-hover:    #C5C2F0;
+  --color-interactive-primary-active:   #8B86C8;
+  --color-interactive-primary-disabled: #333338;
+  --color-interactive-secondary:        #6BA8E8;
+  --color-interactive-danger:           #F07878;
+  --color-interactive-danger-hover:     #F59090;
+
+  /* Elevation */
+  --elevation-0: none;
+  --elevation-1: 0px 1px 3px rgba(0,0,0,0.40);
+  --elevation-2: 0px 4px 8px rgba(0,0,0,0.50);
+  --elevation-3: 0px 8px 16px rgba(0,0,0,0.60);
+  --elevation-4: 0px 16px 32px rgba(0,0,0,0.72);
+
+}

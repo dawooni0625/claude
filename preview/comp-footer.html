@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Footer · component.footer</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 0; }
+  .ft {
+    background: var(--component-footer-color-bg);
+    border-top: var(--component-footer-border-width) solid var(--component-footer-color-border);
+  }
+  .ft__inner {
+    max-width: var(--component-footer-max-width);
+    margin: 0 auto;
+    padding: var(--component-footer-padding-y) var(--component-footer-padding-x);
+  }
+  .ft__top {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: var(--component-footer-row-gap) var(--component-footer-column-gap);
+  }
+  .ft__brand { display: flex; flex-direction: column; gap: var(--space-6); }
+  .ft__mark { display: inline-flex; align-items: center; gap: 10px; }
+  .ft__logo {
+    width: 36px; height: 36px;
+    background: var(--color-interactive-primary);
+    color: #fff; border-radius: var(--border-radius-md);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 20px; letter-spacing: -0.04em;
+  }
+  .ft__wordmark { font-weight: 800; font-size: 22px; letter-spacing: -0.025em; color: var(--color-text-primary); }
+  .ft__tagline { font-size: var(--component-footer-link-font-size); color: var(--component-footer-color-link); max-width: 30ch; line-height: 1.6; }
+  .ft__col { display: flex; flex-direction: column; gap: var(--component-footer-link-gap); }
+  .ft__heading {
+    font-size: var(--component-footer-heading-font-size);
+    font-weight: var(--component-footer-heading-weight);
+    color: var(--component-footer-color-heading);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: var(--space-2);
+  }
+  .ft__col a {
+    font-size: var(--component-footer-link-font-size);
+    color: var(--component-footer-color-link);
+    text-decoration: none;
+    transition: var(--transition-color);
+  }
+  .ft__col a:hover { color: var(--component-footer-color-link-hover); }
+  .ft__bottom {
+    max-width: var(--component-footer-max-width);
+    margin: 0 auto;
+    padding: var(--space-8) var(--component-footer-padding-x);
+    border-top: var(--component-footer-border-width) solid var(--component-footer-color-border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+    gap: var(--component-footer-bottom-bar-gap);
+  }
+  .ft__meta { font-size: var(--component-footer-meta-font-size); color: var(--component-footer-color-meta); }
+  .ft__legal { display: flex; gap: var(--component-footer-bottom-bar-gap); }
+  .ft__legal a { font-size: var(--component-footer-meta-font-size); color: var(--component-footer-color-meta); text-decoration: none; }
+  .ft__legal a:hover { color: var(--component-footer-color-link-hover); }
+</style>
+</head><body>
+<footer class="ft">
+  <div class="ft__inner">
+    <div class="ft__top">
+      <div class="ft__brand">
+        <span class="ft__mark"><span class="ft__logo">K</span><span class="ft__wordmark">KIRBS</span></span>
+        <p class="ft__tagline">팀의 일하는 방식을 한곳에서. 워크스페이스 운영을 위한 B2B 콘솔.</p>
+      </div>
+      <nav class="ft__col">
+        <div class="ft__heading">제품</div>
+        <a href="#">대시보드</a>
+        <a href="#">멤버 관리</a>
+        <a href="#">분석</a>
+        <a href="#">요금제</a>
+      </nav>
+      <nav class="ft__col">
+        <div class="ft__heading">회사</div>
+        <a href="#">소개</a>
+        <a href="#">블로그</a>
+        <a href="#">채용</a>
+        <a href="#">고객 사례</a>
+      </nav>
+      <nav class="ft__col">
+        <div class="ft__heading">지원</div>
+        <a href="#">도움말 센터</a>
+        <a href="#">개발자 문서</a>
+        <a href="#">시스템 상태</a>
+        <a href="#">문의하기</a>
+      </nav>
+    </div>
+  </div>
+  <div class="ft__bottom">
+    <span class="ft__meta">© 2026 KIRBS, Inc. 모든 권리 보유.</span>
+    <div class="ft__legal">
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">쿠키 설정</a>
+    </div>
+  </div>
+</footer>
+</body></html>

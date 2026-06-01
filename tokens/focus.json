@@ -1,0 +1,7 @@
+{
+  "focus": {
+    "ring-width":  { "$value": "2px",     "$type": "dimension", "$description": "포커스 링 두께" },
+    "ring-offset": { "$value": "2px",     "$type": "dimension", "$description": "포커스 링 오프셋" },
+    "ring-color":  { "$value": "#2F80ED", "$type": "color",     "$description": "접근성 포커스 인디케이터 ← state-info" }
+  }
+}

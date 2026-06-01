@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Buttons · sizes</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    height:56px; min-width:80px; padding:0 20px;
+    font-family:var(--font-family-base); font-weight:700; font-size:16px;
+    border-radius:8px; border:0; cursor:pointer;
+    transition: all 100ms cubic-bezier(0,0,0.2,1);
+    line-height:1; gap:8px;
+  }
+  .btn-primary { background:#2D3378; color:#FFFFFF; }
+  .btn-primary:hover { background:#232860; }
+  .btn-secondary { background:#FFFFFF; color:#2D3378; border:1.5px solid #2D3378; }
+  .btn-secondary:hover { background:#E8EAF6; }
+  .btn-tertiary { background:transparent; color:#2D3378; }
+  .btn-tertiary:hover { background:#E8EAF6; }
+  .btn-danger { background:#EB5757; color:#FFFFFF; }
+  .btn-disabled { background:#BDBDBD; color:#FFFFFF; cursor:not-allowed; }
+  .btn-sm { height:45px; min-width:70px; font-size:14px; padding:0 14px; }
+  .btn-md { height:56px; min-width:80px; font-size:16px; padding:0 20px; }
+  .btn-lg { height:63px; min-width:90px; font-size:18px; padding:0 24px; }
+  .btn-xl { height:70px; min-width:100px; font-size:20px; padding:0 28px; }
+  .btn-pill { border-radius:99px; }
+  
+</style>
+</head><body>
+<div class="stack-md">
+  <div class="label-eyebrow">SIZES · sm 45 / md 56 / lg 63 / xl 70</div>
+  <div style="display:flex;gap:10px;align-items:flex-end;">
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-primary btn-md">Medium</button>
+    <button class="btn btn-primary btn-lg">Large</button>
+    <button class="btn btn-primary btn-xl">XLarge</button>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center;margin-top:8px;">
+    <button class="btn btn-secondary btn-sm">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      With icon
+    </button>
+    <button class="btn btn-primary btn-md">
+      Continue
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,60 @@
+{
+  "theme": {
+    "dark": {
+      "$description": "[data-theme='dark'] 셀렉터에 적용되는 semantic 토큰 오버라이드",
+      "color": {
+        "text": {
+          "primary":     { "$value": "#F0F0F0", "$type": "color" },
+          "secondary":   { "$value": "#C5C5C5", "$type": "color" },
+          "tertiary":    { "$value": "#9B9B9B", "$type": "color" },
+          "disabled":    { "$value": "#4F4F4F", "$type": "color" },
+          "placeholder": { "$value": "#6B6B6B", "$type": "color" },
+          "inverse":     { "$value": "#000000", "$type": "color" },
+          "link":        { "$value": "#6BA8E8", "$type": "color" },
+          "link-hover":  { "$value": "#A9A5E8", "$type": "color" },
+          "brand":       { "$value": "#A9A5E8", "$type": "color" },
+          "error":       { "$value": "#F07878", "$type": "color" },
+          "success":     { "$value": "#4FD48A", "$type": "color" },
+          "warning":     { "$value": "#F5D040", "$type": "color" },
+          "info":        { "$value": "#6BA8E8", "$type": "color" }
+        },
+        "bg": {
+          "page":         { "$value": "#0F0F12", "$type": "color" },
+          "surface":      { "$value": "#1A1A1F", "$type": "color" },
+          "elevated":     { "$value": "#252529", "$type": "color" },
+          "muted":        { "$value": "#333338", "$type": "color" },
+          "overlay":      { "$value": "rgba(0,0,0,0.72)", "$type": "color" },
+          "brand":        { "$value": "#1E1A5E", "$type": "color" },
+          "brand-subtle": { "$value": "rgba(45,51,120,0.25)", "$type": "color" },
+          "error":        { "$value": "rgba(235,87,87,0.15)", "$type": "color" },
+          "success":      { "$value": "rgba(39,174,96,0.15)", "$type": "color" },
+          "warning":      { "$value": "rgba(226,185,59,0.15)", "$type": "color" },
+          "info":         { "$value": "rgba(47,128,237,0.15)", "$type": "color" }
+        },
+        "border": {
+          "default":  { "$value": "#2E2E34", "$type": "color" },
+          "focus":    { "$value": "#6BA8E8", "$type": "color" },
+          "error":    { "$value": "#F07878", "$type": "color" },
+          "success":  { "$value": "#4FD48A", "$type": "color" },
+          "disabled": { "$value": "#2E2E34", "$type": "color" }
+        },
+        "interactive": {
+          "primary":          { "$value": "#A9A5E8", "$type": "color" },
+          "primary-hover":    { "$value": "#C5C2F0", "$type": "color" },
+          "primary-active":   { "$value": "#8B86C8", "$type": "color" },
+          "primary-disabled": { "$value": "#333338", "$type": "color" },
+          "secondary":        { "$value": "#6BA8E8", "$type": "color" },
+          "danger":           { "$value": "#F07878", "$type": "color" },
+          "danger-hover":     { "$value": "#F59090", "$type": "color" }
+        }
+      },
+      "elevation": {
+        "0": { "$value": "none",                             "$type": "shadow" },
+        "1": { "$value": "0px 1px 3px rgba(0,0,0,0.40)",    "$type": "shadow" },
+        "2": { "$value": "0px 4px 8px rgba(0,0,0,0.50)",    "$type": "shadow" },
+        "3": { "$value": "0px 8px 16px rgba(0,0,0,0.60)",   "$type": "shadow" },
+        "4": { "$value": "0px 16px 32px rgba(0,0,0,0.72)",  "$type": "shadow" }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "skeleton": {
+    "bg":        { "$value": "#E0E0E0",               "$type": "color",       "$description": "스켈레톤 기본 배경 — gray-5" },
+    "shimmer":   { "$value": "rgba(255,255,255,0.6)", "$type": "color",       "$description": "shimmer 하이라이트" },
+    "radius":    { "$value": "4px",                   "$type": "dimension",   "$description": "텍스트·버튼 스켈레톤 — radius-sm" },
+    "radius-lg": { "$value": "8px",                   "$type": "dimension",   "$description": "카드·이미지 스켈레톤 — radius-md" },
+    "duration":  { "$value": "1.5s",                  "$type": "duration",    "$description": "shimmer 애니메이션 주기" },
+    "timing":    { "$value": "cubic-bezier(0.4,0,0.6,1)", "$type": "cubicBezier", "$description": "shimmer ease" }
+  }
+}

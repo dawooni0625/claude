@@ -1,0 +1,243 @@
+/**
+ * KIRBS Design System — Colors & Type
+ * Layers semantic CSS classes (h1, body, code, etc.) on top of `tokens.css`
+ * (which provides every CSS Custom Property — colors, spacing, type sizes, etc).
+ *
+ * Load order:
+ *   <link rel="stylesheet" href="tokens.css">
+ *   <link rel="stylesheet" href="colors_and_type.css">
+ *
+ * Dark mode: set `data-theme="dark"` on <html> or container.
+ */
+
+/* ── Web fonts ────────────────────────────────────────────────────── */
+/* @import rules MUST come before any other at-rule (per CSS spec) — keep
+   token + Google Fonts imports at the top, then declare local @font-face. */
+@import url('./tokens.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* Pretendard — self-hosted variable font (Korean + Latin).
+   Source: fonts/PretendardVariable.woff2 (uploaded by user). */
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 45 920;            /* variable weight axis */
+  font-style:  normal;
+  font-display: swap;
+  src: url('./fonts/PretendardVariable.woff2') format('woff2-variations'),
+       url('./fonts/PretendardVariable.woff2') format('woff2');
+}
+
+/* ── Base reset ───────────────────────────────────────────────────── */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'ss03', 'cv11';
+  text-rendering: optimizeLegibility;
+}
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-page);
+}
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ── Display ──────────────────────────────────────────────────────── */
+.text-display-2xl { font-size: var(--font-size-display-2xl); line-height: 1.1;  font-weight: var(--font-weight-bold); letter-spacing: -0.02em; }
+.text-display-xl  { font-size: var(--font-size-display-xl);  line-height: 1.15; font-weight: var(--font-weight-bold); letter-spacing: -0.015em; }
+.text-display-lg  { font-size: var(--font-size-display-lg);  line-height: 1.2;  font-weight: var(--font-weight-bold); letter-spacing: -0.01em; }
+.text-display-md  { font-size: var(--font-size-display-md);  line-height: 1.25; font-weight: var(--font-weight-bold); }
+.text-display-sm  { font-size: var(--font-size-display-sm);  line-height: 1.3;  font-weight: var(--font-weight-bold); }
+
+/* ── Headings ─────────────────────────────────────────────────────── */
+h1, .text-h1 { font-size: var(--font-size-heading-1); line-height: 1.3; font-weight: var(--font-weight-bold); margin: 0; color: var(--color-text-primary); }
+h2, .text-h2 { font-size: var(--font-size-heading-2); line-height: 1.35; font-weight: var(--font-weight-bold); margin: 0; color: var(--color-text-primary); }
+h3, .text-h3 { font-size: var(--font-size-heading-3); line-height: 1.4; font-weight: var(--font-weight-bold); margin: 0; color: var(--color-text-primary); }
+h4, .text-h4 { font-size: var(--font-size-heading-4); line-height: 1.4; font-weight: var(--font-weight-bold); margin: 0; color: var(--color-text-primary); }
+h5, .text-h5 { font-size: var(--font-size-heading-5); line-height: 1.5; font-weight: var(--font-weight-bold); margin: 0; color: var(--color-text-primary); }
+
+/* ── Body ─────────────────────────────────────────────────────────── */
+.text-body-lg { font-size: var(--font-size-body-lg); line-height: var(--line-height-normal); }
+.text-body-md { font-size: var(--font-size-body-md); line-height: var(--line-height-normal); }
+.text-body-sm { font-size: var(--font-size-body-sm); line-height: var(--line-height-normal); }
+
+p { margin: 0 0 var(--space-8) 0; }
+p:last-child { margin-bottom: 0; }
+
+/* ── Mono / code ──────────────────────────────────────────────────── */
+code, kbd, samp, pre, .text-mono {
+  font-family: var(--font-family-mono);
+  font-feature-settings: 'liga' 0, 'calt' 0;
+}
+code {
+  font-size: 0.92em;
+  padding: 2px 6px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-xs);
+  color: var(--color-text-secondary);
+}
+pre {
+  margin: 0;
+  padding: var(--space-12);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-normal);
+  overflow-x: auto;
+}
+pre code { padding: 0; background: transparent; border: 0; }
+
+/* ── Inline helpers ───────────────────────────────────────────────── */
+strong, b { font-weight: var(--font-weight-bold); }
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--motion-duration-fast) var(--motion-easing-out);
+}
+a:hover { color: var(--color-text-link-hover); text-decoration: underline; }
+
+small, .text-caption {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  line-height: 1.4;
+}
+
+/* ── Semantic text colors ─────────────────────────────────────────── */
+.text-primary    { color: var(--color-text-primary); }
+.text-secondary  { color: var(--color-text-secondary); }
+.text-tertiary   { color: var(--color-text-tertiary); }
+.text-disabled   { color: var(--color-text-disabled); }
+.text-inverse    { color: var(--color-text-inverse); }
+.text-brand      { color: var(--color-text-brand); }
+.text-link       { color: var(--color-text-link); }
+.text-error      { color: var(--color-text-error); }
+.text-success    { color: var(--color-text-success); }
+.text-warning    { color: var(--color-text-warning); }
+.text-info       { color: var(--color-text-info); }
+
+/* ── Focus ring helper ────────────────────────────────────────────── */
+.focus-ring:focus-visible,
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--border-radius-xs);
+}
+
+/* ── Selection ────────────────────────────────────────────────────── */
+::selection { background: var(--color-bg-brand-subtle); color: var(--color-text-brand); }
+
+/* ── Prose / long-form content ────────────────────────────────────── */
+/* Scope long-form defaults to `.prose` so they never leak into app/admin
+   layouts (which use raw <ul>/<table> for UI). Wrap article/blog/docs/
+   legal body copy in <div class="prose"> … </div>. Dark-mode safe — every
+   value reads from a semantic token. */
+.prose {
+  max-width: 68ch;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-body-md);
+  line-height: 1.7;
+}
+.prose > :first-child { margin-top: 0; }
+.prose > :last-child { margin-bottom: 0; }
+
+/* Headings get top rhythm + tighter leading inside prose */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5 {
+  color: var(--color-text-primary);
+  margin: var(--space-12) 0 var(--space-6);
+  line-height: 1.3;
+}
+.prose h1 { margin-top: 0; }
+.prose > h2 { margin-top: var(--space-16); }
+
+.prose p { margin: 0 0 var(--space-8); }
+
+/* Lists */
+.prose ul, .prose ol {
+  margin: 0 0 var(--space-8);
+  padding-left: var(--space-12);
+}
+.prose li { margin: var(--space-4) 0; padding-left: var(--space-2); }
+.prose li::marker { color: var(--color-text-tertiary); }
+.prose ul > li::marker { color: var(--color-text-brand); }
+.prose ul ul, .prose ol ol, .prose ul ol, .prose ol ul { margin: var(--space-4) 0 0; }
+
+/* Definition lists */
+.prose dt { font-weight: var(--font-weight-bold); color: var(--color-text-primary); }
+.prose dd { margin: 0 0 var(--space-6); padding-left: var(--space-8); }
+
+/* Blockquote — indigo hairline rule, no italics (calm/technical voice) */
+.prose blockquote {
+  margin: var(--space-12) 0;
+  padding: var(--space-4) 0 var(--space-4) var(--space-12);
+  border-left: 3px solid var(--color-border-focus);
+  color: var(--color-text-primary);
+}
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose blockquote cite {
+  display: block;
+  margin-top: var(--space-4);
+  font-size: var(--font-size-body-sm);
+  font-style: normal;
+  color: var(--color-text-tertiary);
+}
+
+/* Horizontal rule */
+.prose hr {
+  margin: var(--space-16) 0;
+  border: 0;
+  border-top: 1px solid var(--color-border-default);
+}
+
+/* Links inside prose stay underlined for scannability */
+.prose a { color: var(--color-text-link); text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: var(--color-text-link-hover); }
+.prose strong, .prose b { color: var(--color-text-primary); }
+
+/* Figures & images */
+.prose img, .prose video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border-default);
+}
+.prose figure { margin: var(--space-12) 0; }
+.prose figcaption {
+  margin-top: var(--space-4);
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-tertiary);
+  text-align: center;
+}
+
+/* Code blocks within prose pick up base `pre`/`code` styling; add rhythm */
+.prose pre { margin: var(--space-8) 0; }
+
+/* Tables in prose */
+.prose table {
+  width: 100%;
+  margin: var(--space-12) 0;
+  border-collapse: collapse;
+  font-size: var(--font-size-body-sm);
+}
+.prose thead th {
+  height: 40px;
+  padding: 0 var(--space-8);
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  background: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-border-default);
+}
+.prose tbody td {
+  padding: var(--space-6) var(--space-8);
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border-default);
+}
+.prose tbody tr:last-child td { border-bottom: 0; }

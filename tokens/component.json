@@ -1,0 +1,422 @@
+{
+  "component": {
+    "textfield": {
+      "height": {
+        "sm": { "$value": "32px", "$type": "dimension" },
+        "md": { "$value": "48px", "$type": "dimension", "$description": "기본 크기" },
+        "lg": { "$value": "56px", "$type": "dimension" }
+      },
+      "padding": {
+        "x-sm": { "$value": "10px", "$type": "dimension" },
+        "x-md": { "$value": "14px", "$type": "dimension", "$description": "기본 좌우 패딩" },
+        "x-lg": { "$value": "16px", "$type": "dimension" },
+        "y-sm": { "$value": "6px",  "$type": "dimension" },
+        "y-md": { "$value": "8px",  "$type": "dimension" },
+        "y-lg": { "$value": "10px", "$type": "dimension" }
+      },
+      "font": {
+        "label":         { "$value": "13px", "$type": "dimension" },
+        "label-weight":  { "$value": "700",  "$type": "fontWeight" },
+        "value":         { "$value": "14px", "$type": "dimension" },
+        "placeholder":   { "$value": "14px", "$type": "dimension" },
+        "helper":        { "$value": "12px", "$type": "dimension" },
+        "helper-weight": { "$value": "400",  "$type": "fontWeight" }
+      },
+      "border-radius":       { "$value": "8px",   "$type": "dimension" },
+      "border-width":        { "$value": "1.5px", "$type": "dimension" },
+      "focus-shadow":        { "$value": "0 0 0 3px rgba(45,51,120,0.12)", "$type": "shadow" },
+      "icon-padding-left":   { "$value": "38px",  "$type": "dimension" },
+      "textarea-min-height": { "$value": "88px",  "$type": "dimension" },
+      "color": {
+        "bg-default":     { "$value": "#FFFFFF", "$type": "color" },
+        "bg-disabled":    { "$value": "#E0E0E0", "$type": "color" },
+        "bg-filled":      { "$value": "#F5F5F8", "$type": "color" },
+        "border-default": { "$value": "#E0E0E0", "$type": "color" },
+        "text-value":     { "$value": "#1D1D1D", "$type": "color" },
+        "text-label":     { "$value": "#333333", "$type": "color" },
+        "text-helper":    { "$value": "#4F4F4F", "$type": "color" },
+        "text-error":     { "$value": "#EB5757", "$type": "color" },
+        "text-success":   { "$value": "#27AE60", "$type": "color" }
+      }
+    },
+
+    "button": {
+      "height": {
+        "sm": { "$value": "45px", "$type": "dimension" },
+        "md": { "$value": "56px", "$type": "dimension", "$description": "기본 크기" },
+        "lg": { "$value": "63px", "$type": "dimension" },
+        "xl": { "$value": "70px", "$type": "dimension" }
+      },
+      "min-width": {
+        "sm": { "$value": "70px",  "$type": "dimension", "$description": "font-size 14px × 5" },
+        "md": { "$value": "80px",  "$type": "dimension", "$description": "font-size 16px × 5" },
+        "lg": { "$value": "90px",  "$type": "dimension", "$description": "font-size 18px × 5" },
+        "xl": { "$value": "100px", "$type": "dimension", "$description": "font-size 20px × 5" }
+      },
+      "font-size": {
+        "sm": { "$value": "14px", "$type": "dimension" },
+        "md": { "$value": "16px", "$type": "dimension", "$description": "기본" },
+        "lg": { "$value": "18px", "$type": "dimension" },
+        "xl": { "$value": "20px", "$type": "dimension" }
+      },
+      "icon-gap": { "$value": "8px", "$type": "dimension" },
+      "border-radius": {
+        "square": { "$value": "8px",  "$type": "dimension", "$description": "기본 사각형" },
+        "round":  { "$value": "99px", "$type": "dimension", "$description": "알약형" }
+      },
+      "transition": { "$value": "all 100ms cubic-bezier(0,0,0.2,1)", "$type": "transition" },
+      "color": {
+        "primary-bg":          { "$value": "#2D3378", "$type": "color" },
+        "primary-bg-hover":    { "$value": "#232860", "$type": "color" },
+        "primary-bg-active":   { "$value": "#1A1F4D", "$type": "color" },
+        "primary-bg-disabled": { "$value": "#BDBDBD", "$type": "color" },
+        "primary-text":        { "$value": "#FFFFFF", "$type": "color" },
+        "secondary-bg":        { "$value": "#FFFFFF", "$type": "color" },
+        "secondary-bg-hover":  { "$value": "#E8EAF6", "$type": "color" },
+        "secondary-bg-active": { "$value": "#D0D5EA", "$type": "color" },
+        "secondary-border":    { "$value": "#2D3378", "$type": "color" },
+        "secondary-text":      { "$value": "#2D3378", "$type": "color" },
+        "tertiary-bg":         { "$value": "transparent", "$type": "color" },
+        "tertiary-bg-hover":   { "$value": "#E8EAF6", "$type": "color" },
+        "tertiary-bg-active":  { "$value": "#D0D5EA", "$type": "color" },
+        "tertiary-text":       { "$value": "#2D3378", "$type": "color" }
+      }
+    },
+
+    "badge": {
+      "padding-x":     { "$value": "12px", "$type": "dimension" },
+      "padding-y":     { "$value": "4px",  "$type": "dimension" },
+      "font-size":     { "$value": "12px", "$type": "dimension" },
+      "font-weight":   { "$value": "700",  "$type": "fontWeight" },
+      "border-radius": { "$value": "99px", "$type": "dimension" },
+      "color": {
+        "brand-bg":     { "$value": "#2D3378", "$type": "color" },
+        "brand-text":   { "$value": "#FFFFFF", "$type": "color" },
+        "info-bg":      { "$value": "#2F80ED", "$type": "color" },
+        "info-text":    { "$value": "#FFFFFF", "$type": "color" },
+        "success-bg":   { "$value": "#27AE60", "$type": "color" },
+        "success-text": { "$value": "#FFFFFF", "$type": "color" },
+        "warning-bg":   { "$value": "#E2B93B", "$type": "color" },
+        "warning-text": { "$value": "#000000", "$type": "color" },
+        "error-bg":     { "$value": "#EB5757", "$type": "color" },
+        "error-text":   { "$value": "#FFFFFF", "$type": "color" },
+        "neutral-bg":   { "$value": "#E0E0E0", "$type": "color" },
+        "neutral-text": { "$value": "#333333", "$type": "color" }
+      }
+    },
+
+    "tooltip": {
+      "sm": {
+        "padding-x":  { "$value": "8px", "$type": "dimension" },
+        "padding-y":  { "$value": "5px", "$type": "dimension" },
+        "arrow-size": { "$value": "6px", "$type": "dimension" }
+      },
+      "lg": {
+        "padding-x": { "$value": "14px",  "$type": "dimension" },
+        "padding-y": { "$value": "10px",  "$type": "dimension" },
+        "min-width": { "$value": "160px", "$type": "dimension" }
+      },
+      "font-size":     { "$value": "12px",    "$type": "dimension" },
+      "border-radius": { "$value": "4px",     "$type": "dimension" },
+      "bg":            { "$value": "#1D1D1D", "$type": "color" },
+      "text":          { "$value": "#FFFFFF", "$type": "color" },
+      "elevation":     { "$value": "0px 2px 8px rgba(45,51,120,0.12)", "$type": "shadow" }
+    },
+
+    "avatar": {
+      "size": {
+        "sm": { "$value": "40px", "$type": "dimension" },
+        "md": { "$value": "64px", "$type": "dimension", "$description": "기본 크기" },
+        "lg": { "$value": "80px", "$type": "dimension" }
+      },
+      "border-radius": { "$value": "50%",    "$type": "dimension" },
+      "border-width":  { "$value": "2px",    "$type": "dimension" },
+      "border-color":  { "$value": "#FFFFFF", "$type": "color", "$description": "겹침 표시 시 흰 테두리" }
+    },
+
+    "card": {
+      "padding": {
+        "md": { "$value": "20px", "$type": "dimension" },
+        "lg": { "$value": "24px", "$type": "dimension" }
+      },
+      "border-radius":   { "$value": "8px",    "$type": "dimension" },
+      "border-width":    { "$value": "1px",    "$type": "dimension" },
+      "bg":              { "$value": "#FFFFFF", "$type": "color" },
+      "border-color":    { "$value": "#E0E0E0", "$type": "color" },
+      "elevation":       { "$value": "0px 1px 3px rgba(45,51,120,0.08)", "$type": "shadow" },
+      "elevation-hover": { "$value": "0px 2px 8px rgba(45,51,120,0.12)", "$type": "shadow" }
+    },
+
+    "modal": {
+      "max-width": {
+        "sm": { "$value": "480px", "$type": "dimension" },
+        "md": { "$value": "720px", "$type": "dimension", "$description": "기본" },
+        "lg": { "$value": "960px", "$type": "dimension" }
+      },
+      "border-radius": { "$value": "12px",   "$type": "dimension" },
+      "padding-x":     { "$value": "24px",   "$type": "dimension" },
+      "padding-y":     { "$value": "24px",   "$type": "dimension" },
+      "header-height": { "$value": "64px",   "$type": "dimension" },
+      "footer-height": { "$value": "72px",   "$type": "dimension" },
+      "bg":            { "$value": "#FFFFFF", "$type": "color" },
+      "elevation":     { "$value": "0px 4px 16px rgba(45,51,120,0.16)", "$type": "shadow" }
+    },
+
+    "checkbox": {
+      "size":            { "$value": "18px",  "$type": "dimension" },
+      "border-radius":   { "$value": "4px",   "$type": "dimension" },
+      "border-width":    { "$value": "1.5px", "$type": "dimension" },
+      "check-icon-size": { "$value": "12px",  "$type": "dimension" },
+      "label-gap":       { "$value": "8px",   "$type": "dimension" },
+      "color": {
+        "border-default":  { "$value": "#BDBDBD", "$type": "color" },
+        "border-hover":    { "$value": "#5B63A8", "$type": "color" },
+        "checked-bg":      { "$value": "#2D3378", "$type": "color" },
+        "checked-border":  { "$value": "#2D3378", "$type": "color" },
+        "checked-icon":    { "$value": "#FFFFFF", "$type": "color" },
+        "disabled-bg":     { "$value": "#E0E0E0", "$type": "color" },
+        "disabled-border": { "$value": "#BDBDBD", "$type": "color" },
+        "error-border":    { "$value": "#EB5757", "$type": "color" }
+      }
+    },
+
+    "radio": {
+      "size":         { "$value": "18px",  "$type": "dimension" },
+      "dot-size":     { "$value": "8px",   "$type": "dimension" },
+      "border-width": { "$value": "1.5px", "$type": "dimension" },
+      "label-gap":    { "$value": "8px",   "$type": "dimension" },
+      "color": {
+        "border-default":  { "$value": "#BDBDBD", "$type": "color" },
+        "border-hover":    { "$value": "#5B63A8", "$type": "color" },
+        "checked-border":  { "$value": "#2D3378", "$type": "color" },
+        "checked-dot":     { "$value": "#2D3378", "$type": "color" },
+        "disabled-bg":     { "$value": "#E0E0E0", "$type": "color" },
+        "disabled-border": { "$value": "#BDBDBD", "$type": "color" },
+        "error-border":    { "$value": "#EB5757", "$type": "color" }
+      }
+    },
+
+    "toggle": {
+      "track-width":   { "$value": "44px",   "$type": "dimension" },
+      "track-height":  { "$value": "24px",   "$type": "dimension" },
+      "thumb-size":    { "$value": "20px",   "$type": "dimension" },
+      "thumb-offset":  { "$value": "2px",    "$type": "dimension" },
+      "border-radius": { "$value": "9999px", "$type": "dimension" },
+      "transition":    { "$value": "background-color 100ms cubic-bezier(0,0,0.2,1), transform 100ms cubic-bezier(0,0,0.2,1)", "$type": "transition" },
+      "color": {
+        "off-track": { "$value": "#BDBDBD", "$type": "color" },
+        "on-track":  { "$value": "#2D3378", "$type": "color" },
+        "thumb":     { "$value": "#FFFFFF", "$type": "color" },
+        "disabled":  { "$value": "#E0E0E0", "$type": "color" }
+      }
+    },
+
+    "tabs": {
+      "height":             { "$value": "44px", "$type": "dimension" },
+      "padding-x":          { "$value": "16px", "$type": "dimension" },
+      "gap":                { "$value": "8px",  "$type": "dimension" },
+      "font-size":          { "$value": "16px", "$type": "dimension" },
+      "font-weight-active": { "$value": "700",  "$type": "fontWeight" },
+      "indicator-height":   { "$value": "2px",  "$type": "dimension" },
+      "color": {
+        "text-default": { "$value": "#828282", "$type": "color" },
+        "text-hover":   { "$value": "#4F4F4F", "$type": "color" },
+        "text-active":  { "$value": "#2D3378", "$type": "color" },
+        "indicator":    { "$value": "#2D3378", "$type": "color" },
+        "bg-hover":     { "$value": "#E8EAF6", "$type": "color" }
+      }
+    },
+
+    "dropdown": {
+      "item-height":   { "$value": "40px",  "$type": "dimension" },
+      "padding-x":     { "$value": "14px",  "$type": "dimension" },
+      "padding-y":     { "$value": "10px",  "$type": "dimension" },
+      "border-radius": { "$value": "8px",   "$type": "dimension" },
+      "max-height":    { "$value": "280px", "$type": "dimension" },
+      "font-size":     { "$value": "14px",  "$type": "dimension" },
+      "elevation":     { "$value": "0px 2px 8px rgba(45,51,120,0.12)", "$type": "shadow" },
+      "color": {
+        "bg":                 { "$value": "#FFFFFF", "$type": "color" },
+        "border":             { "$value": "#E0E0E0", "$type": "color" },
+        "item-hover-bg":      { "$value": "#E8EAF6", "$type": "color" },
+        "item-active-bg":     { "$value": "#D0D5EA", "$type": "color" },
+        "item-selected-bg":   { "$value": "#E8EAF6", "$type": "color" },
+        "item-selected-text": { "$value": "#2D3378", "$type": "color" }
+      }
+    },
+
+    "pagination": {
+      "item-size":     { "$value": "32px", "$type": "dimension" },
+      "border-radius": { "$value": "4px",  "$type": "dimension" },
+      "font-size":     { "$value": "14px", "$type": "dimension" },
+      "gap":           { "$value": "4px",  "$type": "dimension" },
+      "color": {
+        "text-default":  { "$value": "#4F4F4F", "$type": "color" },
+        "text-hover":    { "$value": "#2D3378", "$type": "color" },
+        "active-bg":     { "$value": "#2D3378", "$type": "color" },
+        "active-text":   { "$value": "#FFFFFF", "$type": "color" },
+        "hover-bg":      { "$value": "#E8EAF6", "$type": "color" },
+        "disabled-text": { "$value": "#BDBDBD", "$type": "color" }
+      }
+    },
+
+    "table": {
+      "header-height":      { "$value": "40px", "$type": "dimension" },
+      "row-height":         { "$value": "48px", "$type": "dimension" },
+      "cell-padding-x":     { "$value": "16px", "$type": "dimension" },
+      "cell-padding-y":     { "$value": "12px", "$type": "dimension" },
+      "header-font-size":   { "$value": "13px", "$type": "dimension" },
+      "header-font-weight": { "$value": "700",  "$type": "fontWeight" },
+      "body-font-size":     { "$value": "14px", "$type": "dimension" },
+      "border-width":       { "$value": "1px",  "$type": "dimension" },
+      "color": {
+        "border":          { "$value": "#E0E0E0", "$type": "color" },
+        "header-bg":       { "$value": "#F8F8FB", "$type": "color" },
+        "header-text":     { "$value": "#333333", "$type": "color" },
+        "row-bg":          { "$value": "#FFFFFF", "$type": "color" },
+        "row-hover-bg":    { "$value": "#F0F0F5", "$type": "color" },
+        "row-selected-bg": { "$value": "#E8EAF6", "$type": "color" },
+        "row-striped-bg":  { "$value": "#F8F8FB", "$type": "color" }
+      }
+    },
+
+    "progress": {
+      "height": {
+        "sm": { "$value": "4px",  "$type": "dimension" },
+        "md": { "$value": "8px",  "$type": "dimension", "$description": "기본 크기" },
+        "lg": { "$value": "12px", "$type": "dimension" }
+      },
+      "border-radius": { "$value": "9999px", "$type": "dimension" },
+      "transition":    { "$value": "width 300ms cubic-bezier(0.4,0,0.2,1)", "$type": "transition" },
+      "color": {
+        "track":   { "$value": "#E0E0E0", "$type": "color", "$description": "미채워진 배경 트랙" },
+        "primary": { "$value": "#2D3378", "$type": "color" },
+        "success": { "$value": "#27AE60", "$type": "color" },
+        "warning": { "$value": "#E2B93B", "$type": "color" },
+        "error":   { "$value": "#EB5757", "$type": "color" }
+      }
+    },
+
+    "spinner": {
+      "size": {
+        "sm": { "$value": "16px", "$type": "dimension" },
+        "md": { "$value": "24px", "$type": "dimension", "$description": "기본 크기" },
+        "lg": { "$value": "40px", "$type": "dimension" }
+      },
+      "stroke-width": { "$value": "2px", "$type": "dimension" },
+      "duration":     { "$value": "700ms", "$type": "duration" },
+      "color": {
+        "track":   { "$value": "#E0E0E0", "$type": "color", "$description": "회전 트랙 배경" },
+        "fill":    { "$value": "#2D3378", "$type": "color", "$description": "회전 채워지는 호" }
+      }
+    },
+
+    "toast": {
+      "min-width":     { "$value": "320px", "$type": "dimension" },
+      "max-width":     { "$value": "480px", "$type": "dimension" },
+      "padding-x":     { "$value": "16px",  "$type": "dimension" },
+      "padding-y":     { "$value": "14px",  "$type": "dimension" },
+      "border-radius": { "$value": "8px",   "$type": "dimension" },
+      "icon-size":     { "$value": "20px",  "$type": "dimension" },
+      "gap":           { "$value": "10px",  "$type": "dimension", "$description": "아이콘–텍스트 간격" },
+      "font-size":     { "$value": "14px",  "$type": "dimension" },
+      "font-weight":   { "$value": "400",   "$type": "fontWeight" },
+      "elevation":     { "$value": "0px 4px 16px rgba(45,51,120,0.16)", "$type": "shadow" },
+      "color": {
+        "default-bg":   { "$value": "#1D1D1D", "$type": "color" },
+        "default-text": { "$value": "#FFFFFF", "$type": "color" },
+        "success-bg":   { "$value": "#EDFAF4", "$type": "color" },
+        "success-text": { "$value": "#27AE60", "$type": "color" },
+        "warning-bg":   { "$value": "#FDF8E6", "$type": "color" },
+        "warning-text": { "$value": "#B08000", "$type": "color" },
+        "error-bg":     { "$value": "#FDEEEE", "$type": "color" },
+        "error-text":   { "$value": "#EB5757", "$type": "color" },
+        "info-bg":      { "$value": "#EEF2FD", "$type": "color" },
+        "info-text":    { "$value": "#2F80ED", "$type": "color" }
+      }
+    },
+
+    "empty-state": {
+      "icon-size":  { "$value": "48px", "$type": "dimension" },
+      "gap":        { "$value": "12px", "$type": "dimension", "$description": "아이콘/제목/설명 사이 수직 간격" },
+      "max-width":  { "$value": "360px", "$type": "dimension" },
+      "font-size": {
+        "title":       { "$value": "16px", "$type": "dimension" },
+        "description": { "$value": "14px", "$type": "dimension" }
+      },
+      "font-weight": {
+        "title":       { "$value": "700", "$type": "fontWeight" },
+        "description": { "$value": "400", "$type": "fontWeight" }
+      },
+      "color": {
+        "icon":        { "$value": "#BDBDBD", "$type": "color" },
+        "title":       { "$value": "#333333", "$type": "color" },
+        "description": { "$value": "#828282", "$type": "color" }
+      }
+    },
+
+    "nav-header": {
+      "height":       { "$value": "64px",   "$type": "dimension", "$description": "글로벌 헤더 고정 높이" },
+      "padding-x":    { "$value": "32px",   "$type": "dimension" },
+      "logo-height":  { "$value": "28px",   "$type": "dimension" },
+      "item-gap":     { "$value": "8px",    "$type": "dimension" },
+      "font-size":    { "$value": "14px",   "$type": "dimension" },
+      "font-weight":  { "$value": "500",    "$type": "fontWeight" },
+      "border-width": { "$value": "1px",    "$type": "dimension" },
+      "color": {
+        "bg":           { "$value": "#FFFFFF", "$type": "color" },
+        "border":       { "$value": "#E0E0E0", "$type": "color" },
+        "text":         { "$value": "#333333", "$type": "color" },
+        "text-active":  { "$value": "#2D3378", "$type": "color" },
+        "icon":         { "$value": "#4F4F4F", "$type": "color" }
+      }
+    },
+
+    "nav-sidebar": {
+      "width":           { "$value": "240px", "$type": "dimension", "$description": "펼쳐진 사이드바 너비" },
+      "collapsed-width": { "$value": "64px",  "$type": "dimension", "$description": "접힌 아이콘 전용 너비" },
+      "item-height":     { "$value": "44px",  "$type": "dimension" },
+      "item-padding-x":  { "$value": "16px",  "$type": "dimension" },
+      "item-gap":        { "$value": "4px",   "$type": "dimension" },
+      "section-gap":     { "$value": "20px",  "$type": "dimension", "$description": "섹션 구분 간격" },
+      "icon-size":       { "$value": "20px",  "$type": "dimension" },
+      "font-size":       { "$value": "14px",  "$type": "dimension" },
+      "font-weight-active": { "$value": "700", "$type": "fontWeight" },
+      "border-radius":   { "$value": "6px",   "$type": "dimension" },
+      "transition":      { "$value": "width 200ms cubic-bezier(0,0,0.2,1)", "$type": "transition" },
+      "color": {
+        "bg":              { "$value": "#FFFFFF", "$type": "color" },
+        "border":          { "$value": "#E0E0E0", "$type": "color" },
+        "item-text":       { "$value": "#4F4F4F", "$type": "color" },
+        "item-text-hover": { "$value": "#2D3378", "$type": "color" },
+        "item-text-active":{ "$value": "#2D3378", "$type": "color" },
+        "item-bg-hover":   { "$value": "#E8EAF6", "$type": "color" },
+        "item-bg-active":  { "$value": "#E8EAF6", "$type": "color" },
+        "section-label":   { "$value": "#828282", "$type": "color" }
+      }
+    },
+
+    "footer": {
+      "max-width":         { "$value": "1280px", "$type": "dimension", "$description": "콘텐츠 최대 너비 (container-max-lg)" },
+      "padding-y":         { "$value": "64px",   "$type": "dimension", "$description": "상하 패딩" },
+      "padding-x":         { "$value": "32px",   "$type": "dimension", "$description": "좌우 패딩 (데스크탑 마진)" },
+      "column-gap":        { "$value": "48px",   "$type": "dimension", "$description": "링크 컬럼 사이 가로 간격" },
+      "row-gap":           { "$value": "32px",   "$type": "dimension", "$description": "줄바꿈 시 세로 간격" },
+      "link-gap":          { "$value": "12px",   "$type": "dimension", "$description": "컬럼 내 링크 사이 세로 간격" },
+      "bottom-bar-gap":    { "$value": "24px",   "$type": "dimension", "$description": "하단 바 카피라이트–링크 간격" },
+      "border-width":      { "$value": "1px",    "$type": "dimension" },
+      "heading-font-size": { "$value": "13px",   "$type": "dimension" },
+      "heading-weight":    { "$value": "700",    "$type": "fontWeight" },
+      "link-font-size":    { "$value": "14px",   "$type": "dimension" },
+      "meta-font-size":    { "$value": "13px",   "$type": "dimension", "$description": "카피라이트/법적 고지" },
+      "color": {
+        "bg":          { "$value": "#F8F8FB", "$type": "color" },
+        "border":      { "$value": "#E0E0E0", "$type": "color" },
+        "heading":     { "$value": "#1D1D1D", "$type": "color", "$description": "컬럼 제목" },
+        "link":        { "$value": "#4F4F4F", "$type": "color" },
+        "link-hover":  { "$value": "#2D3378", "$type": "color" },
+        "meta":        { "$value": "#828282", "$type": "color", "$description": "카피라이트/하단 메타" }
+      }
+    }
+  }
+}

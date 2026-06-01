@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Badges</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    height:56px; min-width:80px; padding:0 20px;
+    font-family:var(--font-family-base); font-weight:700; font-size:16px;
+    border-radius:8px; border:0; cursor:pointer;
+    transition: all 100ms cubic-bezier(0,0,0.2,1);
+    line-height:1; gap:8px;
+  }
+  .btn-primary { background:#2D3378; color:#FFFFFF; }
+  .btn-primary:hover { background:#232860; }
+  .btn-secondary { background:#FFFFFF; color:#2D3378; border:1.5px solid #2D3378; }
+  .btn-secondary:hover { background:#E8EAF6; }
+  .btn-tertiary { background:transparent; color:#2D3378; }
+  .btn-tertiary:hover { background:#E8EAF6; }
+  .btn-danger { background:#EB5757; color:#FFFFFF; }
+  .btn-disabled { background:#BDBDBD; color:#FFFFFF; cursor:not-allowed; }
+  .btn-sm { height:45px; min-width:70px; font-size:14px; padding:0 14px; }
+  .btn-md { height:56px; min-width:80px; font-size:16px; padding:0 20px; }
+  .btn-lg { height:63px; min-width:90px; font-size:18px; padding:0 24px; }
+  .btn-xl { height:70px; min-width:100px; font-size:20px; padding:0 28px; }
+  .btn-pill { border-radius:99px; }
+  
+</style>
+</head><body>
+<div class="stack-md">
+  <div class="label-eyebrow">PILL · padding 12×4 · 12px · weight 700 · radius 99</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+    <span style="display:inline-flex;align-items:center;padding:4px 12px;background:#2D3378;color:#FFFFFF;font-size:12px;font-weight:700;border-radius:99px;">Brand</span><span style="display:inline-flex;align-items:center;padding:4px 12px;background:#2F80ED;color:#FFFFFF;font-size:12px;font-weight:700;border-radius:99px;">Info</span><span style="display:inline-flex;align-items:center;padding:4px 12px;background:#27AE60;color:#FFFFFF;font-size:12px;font-weight:700;border-radius:99px;">Success</span><span style="display:inline-flex;align-items:center;padding:4px 12px;background:#E2B93B;color:#000000;font-size:12px;font-weight:700;border-radius:99px;">Warning</span><span style="display:inline-flex;align-items:center;padding:4px 12px;background:#EB5757;color:#FFFFFF;font-size:12px;font-weight:700;border-radius:99px;">Error</span><span style="display:inline-flex;align-items:center;padding:4px 12px;background:#E0E0E0;color:#333333;font-size:12px;font-weight:700;border-radius:99px;">Neutral</span>
+  </div>
+  <div class="label-eyebrow" style="margin-top:8px;">DOT BADGE</div>
+  <div style="display:flex;gap:18px;align-items:center;">
+    <span style="position:relative;display:inline-block;width:32px;height:32px;background:#E8EAF6;border-radius:50%;">
+      <span style="position:absolute;top:0;right:0;width:10px;height:10px;background:#EB5757;border-radius:50%;border:2px solid #FFF;"></span>
+    </span>
+    <span style="position:relative;display:inline-block;">
+      <span style="display:inline-block;padding:8px 14px;background:#F8F8FB;border:1px solid #E0E0E0;border-radius:8px;font-size:14px;">알림</span>
+      <span style="position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 5px;background:#EB5757;color:#FFF;font-size:11px;font-weight:700;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;">3</span>
+    </span>
+  </div>
+</div>
+</body></html>

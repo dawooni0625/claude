@@ -1,0 +1,17 @@
+{
+  "spacing": {
+    "1":  { "$value": "2px",  "$type": "dimension", "$description": "아이콘-텍스트 극소 간격" },
+    "2":  { "$value": "4px",  "$type": "dimension", "$description": "뱃지 패딩, 체크박스-레이블 간격" },
+    "4":  { "$value": "8px",  "$type": "dimension", "$description": "버튼 그룹, 메타데이터 아이템 간격" },
+    "6":  { "$value": "12px", "$type": "dimension", "$description": "버튼·인풋·탭 좌우 패딩 전용" },
+    "8":  { "$value": "16px", "$type": "dimension", "$description": "카드 내부 패딩, 그룹 간격" },
+    "12": { "$value": "24px", "$type": "dimension", "$description": "하위 섹션 구분, 카드 그리드 간격" },
+    "16": { "$value": "32px", "$type": "dimension", "$description": "주요 섹션 구분, 페이지 블록 구분" },
+    "20": { "$value": "40px",  "$type": "dimension", "$description": "넓은 블록 간격 (key×2px)" },
+    "24": { "$value": "48px",  "$type": "dimension", "$description": "섹션 내 블록 간격" },
+    "32": { "$value": "64px",  "$type": "dimension", "$description": "섹션 상하 여백 (소) — 퍼블릭 웹 페이지용" },
+    "40": { "$value": "80px",  "$type": "dimension", "$description": "섹션 상하 여백 (중)" },
+    "48": { "$value": "96px",  "$type": "dimension", "$description": "섹션 상하 여백 (대)" },
+    "60": { "$value": "120px", "$type": "dimension", "$description": "히어로/주요 랜딩 섹션 여백" }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "semantic": {
+    "color": {
+      "text": {
+        "primary":     { "$value": "{color.black.1}",          "$type": "color", "$description": "본문 핵심 텍스트" },
+        "secondary":   { "$value": "{color.gray.1}",           "$type": "color", "$description": "보조 설명 텍스트" },
+        "tertiary":    { "$value": "{color.gray.2}",           "$type": "color", "$description": "메타·캡션" },
+        "disabled":    { "$value": "{color.gray.3}",           "$type": "color", "$description": "비활성 텍스트" },
+        "placeholder": { "$value": "{color.gray.3}",           "$type": "color", "$description": "입력 필드 플레이스홀더" },
+        "inverse":     { "$value": "{color.white}",            "$type": "color", "$description": "다크 배경 위 텍스트" },
+        "link":        { "$value": "{color.brand.secondary}",  "$type": "color", "$description": "링크 색상" },
+        "link-hover":  { "$value": "{color.brand.primary}",    "$type": "color", "$description": "링크 hover" },
+        "brand":       { "$value": "{color.brand.primary}",    "$type": "color", "$description": "강조·브랜드" },
+        "error":       { "$value": "{color.state.error}",      "$type": "color", "$description": "에러 메시지" },
+        "success":     { "$value": "{color.state.success}",    "$type": "color", "$description": "성공 메시지" },
+        "warning":     { "$value": "{color.state.warning}",    "$type": "color", "$description": "경고 메시지" },
+        "info":        { "$value": "{color.state.info}",       "$type": "color", "$description": "안내 메시지" }
+      },
+      "bg": {
+        "page":         { "$value": "{color.white}",             "$type": "color", "$description": "페이지 배경" },
+        "surface":      { "$value": "#F8F8FB",                   "$type": "color", "$description": "카드·패널 배경 (원시 토큰 없음)" },
+        "elevated":     { "$value": "{color.white}",             "$type": "color", "$description": "elevation 위 컴포넌트 배경" },
+        "muted":        { "$value": "{color.gray.5}",            "$type": "color", "$description": "비활성·구분 배경" },
+        "overlay":      { "$value": "rgba(0,0,0,0.5)",           "$type": "color", "$description": "모달 딤 레이어" },
+        "brand":        { "$value": "{color.brand.primary}",     "$type": "color", "$description": "브랜드 강조 배경" },
+        "brand-subtle": { "$value": "{color.brand.quaternary}",  "$type": "color", "$description": "연한 브랜드 배경" },
+        "error":        { "$value": "#FDEEEE",                   "$type": "color", "$description": "에러 배경 (원시 토큰 없음)" },
+        "success":      { "$value": "#EDFAF4",                   "$type": "color", "$description": "성공 배경 (원시 토큰 없음)" },
+        "warning":      { "$value": "#FDF8E6",                   "$type": "color", "$description": "경고 배경 (원시 토큰 없음)" },
+        "info":         { "$value": "#EEF2FD",                   "$type": "color", "$description": "안내 배경 (원시 토큰 없음)" }
+      },
+      "border": {
+        "default":  { "$value": "{color.gray.5}",        "$type": "color", "$description": "일반 경계선" },
+        "focus":    { "$value": "{color.state.info}",    "$type": "color", "$description": "포커스 인디케이터" },
+        "error":    { "$value": "{color.state.error}",   "$type": "color", "$description": "에러 상태 경계" },
+        "success":  { "$value": "{color.state.success}", "$type": "color", "$description": "성공 상태 경계" },
+        "disabled": { "$value": "{color.gray.4}",        "$type": "color", "$description": "비활성 경계" }
+      },
+      "interactive": {
+        "primary":          { "$value": "{color.brand.primary}",   "$type": "color", "$description": "기본 액션" },
+        "primary-hover":    { "$value": "#232968",                 "$type": "color", "$description": "primary 10% 어둡게 (파생값)" },
+        "primary-active":   { "$value": "#1A1F52",                 "$type": "color", "$description": "primary 20% 어둡게 (파생값)" },
+        "primary-disabled": { "$value": "{color.gray.4}",          "$type": "color", "$description": "비활성" },
+        "secondary":        { "$value": "{color.brand.secondary}", "$type": "color", "$description": "보조 액션" },
+        "danger":           { "$value": "{color.state.error}",     "$type": "color", "$description": "파괴적 액션" },
+        "danger-hover":     { "$value": "#C94040",                 "$type": "color", "$description": "danger 10% 어둡게 (파생값)" }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Motion · duration & easing</title>
+<link rel="stylesheet" href="_card.css"></head>
+<body>
+<div class="stack-md">
+  <div>
+    <div class="label-eyebrow" style="margin-bottom:8px;">DURATION</div>
+    <div style="display:flex;gap:6px;align-items:center;">
+      
+        <div style="flex:1;padding:8px 10px;background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:6px;text-align:center;">
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">instant</div>
+          <div style="font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-tertiary);">0ms</div>
+        </div>
+      
+        <div style="flex:1;padding:8px 10px;background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:6px;text-align:center;">
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">fast</div>
+          <div style="font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-tertiary);">100ms</div>
+        </div>
+      
+        <div style="flex:1;padding:8px 10px;background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:6px;text-align:center;">
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">normal</div>
+          <div style="font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-tertiary);">200ms</div>
+        </div>
+      
+        <div style="flex:1;padding:8px 10px;background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:6px;text-align:center;">
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">slow</div>
+          <div style="font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-tertiary);">300ms</div>
+        </div>
+      
+        <div style="flex:1;padding:8px 10px;background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:6px;text-align:center;">
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">slower</div>
+          <div style="font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-tertiary);">500ms</div>
+        </div>
+      
+    </div>
+  </div>
+  <div>
+    <div class="label-eyebrow" style="margin-bottom:8px;">EASING · cubic-bezier</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+      
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <svg viewBox="0 0 100 60" style="width:100%;height:48px;background:var(--color-bg-surface);border-radius:4px;">
+            <path d="M 0 60 L 100 0" fill="none" stroke="#2D3378" stroke-width="2"/>
+          </svg>
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">linear</div>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <svg viewBox="0 0 100 60" style="width:100%;height:48px;background:var(--color-bg-surface);border-radius:4px;">
+            <path d="M 0 60 C 40 60, 100 30, 100 0" fill="none" stroke="#2D3378" stroke-width="2"/>
+          </svg>
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">in</div>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <svg viewBox="0 0 100 60" style="width:100%;height:48px;background:var(--color-bg-surface);border-radius:4px;">
+            <path d="M 0 60 C 0 30, 60 0, 100 0" fill="none" stroke="#2D3378" stroke-width="2"/>
+          </svg>
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">out</div>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <svg viewBox="0 0 100 60" style="width:100%;height:48px;background:var(--color-bg-surface);border-radius:4px;">
+            <path d="M 0 60 C 40 60, 60 0, 100 0" fill="none" stroke="#2D3378" stroke-width="2"/>
+          </svg>
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">in-out</div>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <svg viewBox="0 0 100 60" style="width:100%;height:48px;background:var(--color-bg-surface);border-radius:4px;">
+            <path d="M 0 60 C 34 -34, 64 0, 100 0" fill="none" stroke="#2D3378" stroke-width="2"/>
+          </svg>
+          <div style="font-family:var(--font-family-mono);font-size:11px;font-weight:700;">spring</div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+</body></html>
