@@ -241,12 +241,175 @@ than brand colours, so they tint cleanly too).
 
 ---
 
+## Getting started with the project
+
+### Viewing the design system preview
+
+All preview cards are self-contained HTML files that require **no build step**.
+
+1. **Open preview files directly in your browser:**
+   ```bash
+   # From the project root, open any preview/*.html file in your browser
+   # No local server needed — files reference tokens.css via relative paths
+   open preview/brand-foundations.html
+   open preview/comp-button-variants.html
+   open preview/colors-brand.html
+   # etc.
+   ```
+   
+2. **Or start a simple local server** (recommended if you encounter CORS/module issues):
+   ```bash
+   # Python 3.x
+   python3 -m http.server 8000
+   
+   # Python 2.x
+   python -m SimpleHTTPServer 8000
+   
+   # Node.js (npx — no install needed if Node ≥14 is available)
+   npx http-server -p 8000
+   ```
+   Then visit `http://localhost:8000/preview/` and browse the cards.
+
+### Running the admin UI kit
+
+The `ui_kits/admin/` is a **working React/JSX application** that loads React from a CDN. No build step required.
+
+1. **Open the UI kit directly:**
+   ```bash
+   open ui_kits/admin/index.html
+   # or via local server:
+   # http://localhost:8000/ui_kits/admin/
+   ```
+
+2. **Verify it loads correctly:**
+   - You should see a login screen with "KIRBS" branding.
+   - Browser console (F12 → Console) should have no errors.
+   - If it shows blank or errors, see "Dependencies & compatibility" below.
+
+3. **Test the click path:**
+   - **Login:** Enter any email containing `@` + ≥4-char password → click 로그인 (sign in).
+   - **Dashboard:** KPI cards + activity feed appear.
+   - **Members:** Click 멤버 관리 in sidebar → table renders.
+   - **Modal:** Click 초대하기 → invite modal opens.
+   - **Theme toggle:** Bottom-right ☀️/🌙 button flips dark mode — every screen rethemes via semantic tokens.
+   - **Logout:** Avatar menu → 로그아웃 returns to login.
+
+---
+
+## Build & development
+
+### Understanding the token pipeline
+
+The design system tokens flow as follows:
+
+```
+tokens/{color,spacing,typography,...}.json (W3C DTCG sources)
+           ↓
+tokens/component.json (33 component-layer tokens)
+           ↓
+tokens/tokens.json (aggregated, upstream)
+           ↓
+[Build step: compiled via a tool not in this repo]
+           ↓
+tokens/tokens.scss (generated SCSS variables)
+           ↓
+[Local compile: tokens.scss → tokens.css]
+           ↓
+tokens.css ← RUNTIME SOURCE OF TRUTH
+           ↓
+colors_and_type.css (imports tokens.css, adds semantic layer)
+```
+
+**Currently:** `tokens.css` and `colors_and_type.css` are **pre-compiled and committed to the repo**. You do not need to rebuild them for normal usage.
+
+**If you modify token JSON files:**
+- Changes to `tokens/*.json` require re-generating `tokens/tokens.scss` via the upstream build (see `tokens/UPSTREAM_README.md` for the official build process).
+- Then re-compile `tokens.scss` → `tokens.css` (e.g. via `sass tokens/tokens.scss tokens.css` or your build tool).
+- The CSS files are not auto-rebuilt on file watch — rebuild manually when tokens change.
+
+### Local development setup (optional)
+
+If you plan to **edit token JSON files** or **customize tokens.scss**:
+
+1. **Install Sass** (if not already installed):
+   ```bash
+   # macOS (Homebrew)
+   brew install sass/sass/sass
+   
+   # Node.js (npm/yarn)
+   npm install -g sass
+   ```
+
+2. **Watch and compile tokens.scss:**
+   ```bash
+   sass --watch tokens:. --no-source-map
+   # This watches tokens/ folder and outputs tokens.css in the project root
+   # Remove --no-source-map if you want sourcemaps (adds ~50KB)
+   ```
+
+3. **Serve locally for real-time changes:**
+   ```bash
+   python3 -m http.server 8000
+   # Then edit tokens.scss, Sass recompiles, refresh the browser
+   ```
+
+---
+
+## Dependencies & compatibility
+
+### External fonts & CDNs
+
+- **Pretendard (Recommended — self-hosted):** `fonts/PretendardVariable.woff2` is loaded via `@font-face` in `colors_and_type.css`. No external CDN, no CSP issues. ✅
+- **JetBrains Mono (Code font):** Currently loaded from **Google Fonts** (`https://fonts.googleapis.com/…`) in `colors_and_type.css`. 
+  - **CSP concern:** If your production environment blocks third-party Google Fonts CDN, either:
+    - Download JetBrains Mono locally from [google.com/fonts](https://fonts.google.com/specimen/JetBrains+Mono) and self-host (recommended).
+    - Or use a system monospace fallback stack in `colors_and_type.css` (but loses the branded typography).
+
+### Browser compatibility
+
+- **Modern browsers (2022+):** CSS custom properties, flexbox, grid, SVG mask all supported. ✅
+- **IE 11:** Not supported. CSS custom properties are required.
+- **Mobile:** Tested on iOS Safari 15+ and Chrome Android. Responsive breakpoints: 768px / 1024px.
+
+### React & CDN versions (admin UI kit)
+
+The admin UI kit (`ui_kits/admin/index.html`) loads React from **unpkg** with pinned versions and integrity hashes:
+
+```html
+<script crossorigin integrity="sha384-..." src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script crossorigin integrity="sha384-..." src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.22.5/babel.min.js"></script>
+```
+
+- **React 18.2.0** (production build, pre-minified from unpkg)
+- **Babel 7.22.5** (for JSX transformation in the browser)
+- **SRI hashes pinned** — fails loudly if the CDN serves unexpected content.
+- **No npm / node_modules required** — everything loads at runtime.
+
+If unpkg is blocked by CSP or network, either:
+- Self-host these libraries.
+- Or move the UI kit to a local build tool (Vite, Webpack, etc.) and install dependencies via npm.
+
+---
+
 ## Caveats & substitutions
 
 1. **Icons** — ✅ Resolved. The icon set is sourced from **Lucide Icons** (MIT, 2px stroke, 24×24 grid — the library specified in the Figma guide), self-hosted as the 113-icon set in `icon/<category>/` so there is no CDN dependency. The admin kit + preview card use it directly via `currentColor`.
+
 2. **Logos** — ✅ Resolved. Official artwork lives in `brand/`: `kirbs-logo.svg` (full lockup — ring wordmark + 한글 회사명 + EN tagline, 362×56) and `kirbs-wordmark.svg` (compact ring + KIRBS, 130×42), plus `*-mono.svg` `currentColor` variants for dark/inverse surfaces. See `preview/brand-logo.html`. (KIRBS = **K**orean **I**ntegrated **R**eport & **B**usiness **S**ystem, per the Figma brand guide.)
+
 3. **Product surfaces** — The upstream repo is a pure-token system with no example product UI. The `ui_kits/admin/` here is the most plausible interpretation given the `component.json` shape (heavy emphasis on `table`, `nav-sidebar`, `dropdown`, `modal`) — i.e. a B2B admin/console. *Action: confirm or redirect.*
-4. **Font** — Pretendard is self-hosted from `fonts/PretendardVariable.woff2` via `@font-face` in `colors_and_type.css` (one variable file, weight axis 100–900). JetBrains Mono is still loaded from Google Fonts; swap to a local woff2 if your CSP blocks third-party CDNs.
+
+4. **Fonts** — **Status: Partial.** 
+   - ✅ **Pretendard** is self-hosted: `fonts/PretendardVariable.woff2` (variable weight axis 100–900, ~150KB). Loaded via `@font-face` in `colors_and_type.css`. No external dependency, no CSP concerns.
+   - ⚠️ **JetBrains Mono** is currently loaded from **Google Fonts** (`https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap`). If your environment blocks third-party CDNs or enforces strict CSP, you must either:
+     - Download JetBrains Mono locally from [fonts.google.com](https://fonts.google.com/specimen/JetBrains+Mono), add the woff2 file to `fonts/`, and update the `@font-face` declaration in `colors_and_type.css`.
+     - Or substitute with a system monospace stack (`monospace`, `Courier`, etc.) and update the CSS variable `--font-family-mono`.
+
+5. **Token build pipeline** — The upstream token JSON sources are maintained in `tokens/` but are **not automatically compiled in this repo**. The `tokens.scss` and `tokens.css` are pre-generated and committed. If you modify `tokens/*.json` files:
+   - You must regenerate `tokens.scss` via the upstream build process (see `tokens/UPSTREAM_README.md`).
+   - Then compile `tokens.scss` → `tokens.css` locally using Sass (see "Build & development" above).
+   - Without recompilation, CSS changes won't reflect at runtime.
 
 ---
 
