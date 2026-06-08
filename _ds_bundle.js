@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"KIRBSDesignSystem_dc1229","components":[],"sourceHashes":{"ui_kits/admin/App.jsx":"409c1f87e983","ui_kits/admin/Atoms.jsx":"2f32da579ac8","ui_kits/admin/DashboardScreen.jsx":"97b7a52a755d","ui_kits/admin/Forms.jsx":"85965cb4fbf9","ui_kits/admin/Icons.jsx":"8d05eae554ad","ui_kits/admin/LoginScreen.jsx":"0b5670116ec4","ui_kits/admin/MembersScreen.jsx":"1ef9287d7070","ui_kits/admin/Responsive.jsx":"816c2978eefc","ui_kits/admin/SettingsScreen.jsx":"ad3b55006ac7","ui_kits/admin/Sidebar.jsx":"b368cde750c2","ui_kits/admin/Surfaces.jsx":"3dbd3d07f769","ui_kits/admin/TopBar.jsx":"698a0155fc63"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"KIRBSDesignSystem_dc1229","components":[],"sourceHashes":{"ui_kits/admin/App.jsx":"409c1f87e983","ui_kits/admin/Atoms.jsx":"2f32da579ac8","ui_kits/admin/DashboardScreen.jsx":"97b7a52a755d","ui_kits/admin/Forms.jsx":"85965cb4fbf9","ui_kits/admin/Icons.jsx":"8d05eae554ad","ui_kits/admin/LoginScreen.jsx":"0b5670116ec4","ui_kits/admin/MembersScreen.jsx":"99a2a6129d03","ui_kits/admin/Responsive.jsx":"816c2978eefc","ui_kits/admin/SettingsScreen.jsx":"ad3b55006ac7","ui_kits/admin/Sidebar.jsx":"b368cde750c2","ui_kits/admin/Surfaces.jsx":"50f517c1693a","ui_kits/admin/TopBar.jsx":"698a0155fc63"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -1863,7 +1863,7 @@ function MembersScreen({
         background: active ? 'var(--color-interactive-primary)' : 'transparent',
         color: active ? '#FFFFFF' : disabled ? 'var(--color-text-disabled)' : 'var(--color-text-secondary)',
         border: 0,
-        borderRadius: 'var(--border-radius-sm)',
+        borderRadius: 'var(--component-pagination-border-radius)',
         fontSize: 14,
         fontWeight: active ? 700 : 400,
         cursor: disabled ? 'default' : 'pointer'
@@ -2733,7 +2733,7 @@ function Modal({
       display: 'flex',
       flexDirection: 'column',
       background: 'var(--color-bg-elevated)',
-      borderRadius: 'var(--border-radius-lg)',
+      borderRadius: 'var(--component-modal-border-radius)',
       boxShadow: 'var(--elevation-3)',
       overflow: 'hidden',
       animation: 'kirbs-pop 200ms cubic-bezier(.34,1.56,.64,1)'

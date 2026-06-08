@@ -47,7 +47,7 @@ function Modal({ open, onClose, title, children, footer, size = 'md' }) {
           maxHeight: 'calc(100vh - 48px)',
           display: 'flex', flexDirection: 'column',
           background: 'var(--color-bg-elevated)',
-          borderRadius: 'var(--border-radius-lg)',
+          borderRadius: 'var(--component-modal-border-radius)',
           boxShadow: 'var(--elevation-3)',
           overflow: 'hidden',
           animation: 'kirbs-pop 200ms cubic-bezier(.34,1.56,.64,1)',

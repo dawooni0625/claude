@@ -197,7 +197,7 @@ function MembersScreen({ onInvite }) {
                     display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
                     background: active ? 'var(--color-interactive-primary)' : 'transparent',
                     color: active ? '#FFFFFF' : disabled ? 'var(--color-text-disabled)' : 'var(--color-text-secondary)',
-                    border: 0, borderRadius: 'var(--border-radius-sm)',
+                    border: 0, borderRadius: 'var(--component-pagination-border-radius)',
                     fontSize: 14, fontWeight: active ? 700 : 400,
                     cursor: disabled ? 'default' : 'pointer',
                   }}
