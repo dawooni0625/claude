@@ -17,7 +17,7 @@ into a real product surface. See `tokens/UPSTREAM_README.md` and
 
 | File / Folder | Purpose |
 |---|---|
-| `tokens.css` | All CSS custom properties — primitives, semantic, **and the full `--component-*` layer** (290 vars, light + dark). **The source of truth at runtime.** Imported by everything. |
+| `tokens.css` | All CSS custom properties — primitives, semantic, **and the full `--component-*` layer** (435 vars across 33 components; component colours are light-mode literals). **The source of truth at runtime.** Imported by everything. |
 | `colors_and_type.css` | Semantic layer — webfont imports, `<h1>`/`<p>`/`<code>` defaults, `.text-*` colour helpers, the `.prose` long-form scope (lists, blockquote, hr, figure, tables), focus ring, selection. |
 | `tokens/` | Upstream JSON sources (W3C DTCG, 18 categories) + the generated `tokens.scss`. The build-time origin of `tokens.css`. |
 | `preview/` | One-concept-per-card design system specimens (Colors, Type, Spacing, Components, Brand). Component cards now cover every Figma guide page — table, breadcrumbs, large selector, date picker, accordion, banner, carousel, file upload, tag input, bottom app nav, circle progress / stepper, modal, tooltip, image guidelines. |
