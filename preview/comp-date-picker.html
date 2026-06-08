@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Date picker" subtitle="280px · 32px cells · single & range" viewport="700x420" -->
+<html lang="ko"><head><meta charset="utf-8"><title>Date picker</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .cal { width:280px; border:1px solid #E0E0E0; border-radius:12px; background:#FFF; padding:16px; font-size:14px; color:#1D1D1D; }
+  .cal__head { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; font-weight:700; }
+  .cal__head svg { color:#828282; }
+  .dow { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:4px; }
+  .dow span { text-align:center; font-size:12px; color:#828282; height:24px; line-height:24px; }
+  .days { display:grid; grid-template-columns:repeat(7,1fr); }
+  .day { width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:8px; margin:0 auto; }
+  .day.mut { color:#BDBDBD; }
+  .day.today { color:#2D3378; font-weight:700; }
+  .day.sel { background:#2D3378; color:#FFF; }
+  .day.rng { background:#E8EAF6; border-radius:0; }
+  .day.rs { background:#2D3378; color:#FFF; border-radius:8px 0 0 8px; }
+  .day.re { background:#2D3378; color:#FFF; border-radius:0 8px 8px 0; }
+  .cal__foot { display:flex; gap:8px; margin-top:12px; }
+  .cal__foot span { flex:1; text-align:center; padding:8px 0; border-radius:8px; font-size:13px; }
+  .row { display:flex; gap:24px; align-items:flex-start; }
+  .lbl { font-size:11px; font-weight:700; color:#828282; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+</style>
+</head><body>
+<div class="row">
+  <div>
+    <div class="lbl">Single date</div>
+    <div class="cal">
+      <div class="cal__head">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        2026년 3월
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </div>
+      <div class="dow"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+      <div class="days">
+        <div class="day mut">23</div><div class="day mut">24</div><div class="day mut">25</div><div class="day mut">26</div><div class="day mut">27</div><div class="day mut">28</div><div class="day">1</div>
+        <div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day">8</div>
+        <div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day today">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div>
+        <div class="day">16</div><div class="day">17</div><div class="day sel">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div>
+        <div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div>
+      </div>
+      <div class="cal__foot"><span style="border:1px solid #E0E0E0;color:#4F4F4F;">취소</span><span style="background:#2D3378;color:#FFF;">적용</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="lbl">Range select</div>
+    <div class="cal">
+      <div class="cal__head">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        2026년 3월
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </div>
+      <div class="dow"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+      <div class="days">
+        <div class="day mut">23</div><div class="day mut">24</div><div class="day mut">25</div><div class="day mut">26</div><div class="day mut">27</div><div class="day mut">28</div><div class="day">1</div>
+        <div class="day">2</div><div class="day">3</div><div class="day rs">4</div><div class="day rng">5</div><div class="day rng">6</div><div class="day rng">7</div><div class="day rng">8</div>
+        <div class="day rng">9</div><div class="day re">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div>
+        <div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div>
+        <div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div>
+      </div>
+      <div class="cal__foot"><span style="border:1px solid #E0E0E0;color:#4F4F4F;">취소</span><span style="background:#2D3378;color:#FFF;">적용</span></div>
+    </div>
+  </div>
+</div>
+</body></html>

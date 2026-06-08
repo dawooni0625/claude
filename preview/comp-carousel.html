@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Carousel" subtitle="320px · radius 16 · pill indicators" viewport="700x400" -->
+<html lang="ko"><head><meta charset="utf-8"><title>Carousel</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .car { position:relative; height:320px; border-radius:16px; overflow:hidden;
+         background:linear-gradient(120deg,#2D3378,#5B63A8); color:#FFF; display:flex; align-items:center; padding:0 48px; }
+  .car__eyebrow { font-size:13px; opacity:.8; letter-spacing:.04em; margin-bottom:12px; }
+  .car__title { font-size:34px; font-weight:700; line-height:1.25; margin-bottom:16px; }
+  .car__body { font-size:15px; opacity:.85; max-width:340px; margin-bottom:24px; line-height:1.6; }
+  .car__cta { display:inline-block; background:#FFF; color:#2D3378; font-weight:700; font-size:14px; padding:11px 20px; border-radius:8px; }
+  .nav { position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; border-radius:50%;
+         background:#FFF; color:#1D1D1D; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(45,51,120,.2); }
+  .nav.l { left:16px; } .nav.r { right:16px; }
+  .ind { position:absolute; bottom:20px; left:48px; display:flex; gap:8px; align-items:center; }
+  .ind i { width:8px; height:8px; border-radius:9999px; background:rgba(255,255,255,.5); }
+  .ind i.on { width:24px; background:#FFF; }
+</style>
+</head><body>
+<div class="car">
+  <div>
+    <div class="car__eyebrow">신규 서비스</div>
+    <div class="car__title">더 스마트한<br>보고서 관리</div>
+    <div class="car__body">KIRBS 2.0으로 행정 업무의 효율을 극대화하세요.</div>
+    <span class="car__cta">🚀 시작하기</span>
+  </div>
+  <div class="nav l"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></div>
+  <div class="nav r"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <div class="ind"><i class="on"></i><i></i><i></i></div>
+</div>
+</body></html>

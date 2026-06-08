@@ -1,0 +1,51 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Image guidelines" subtitle="aspect ratios · shapes · overlays" viewport="700x420" -->
+<html lang="ko"><head><meta charset="utf-8"><title>Image guidelines</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .lbl { font-size:11px; font-weight:700; color:#828282; text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; }
+  .grp + .grp { margin-top:24px; }
+  .ph { background:linear-gradient(135deg,#E8EAF6,#C9CDE8); display:flex; align-items:center; justify-content:center; color:#5B63A8; font-size:12px; font-weight:700; }
+  .ratios { display:flex; gap:12px; align-items:flex-end; }
+  .ratios figure { margin:0; }
+  .ratios figcaption { font-size:11px; color:#828282; margin-top:6px; text-align:center; }
+  .shapes { display:flex; gap:16px; align-items:center; }
+  .shapes .ph { width:64px; height:64px; }
+  .scap { font-size:11px; color:#828282; text-align:center; margin-top:6px; }
+  .ovs { display:flex; gap:12px; }
+  .ov { position:relative; width:130px; height:80px; border-radius:12px; overflow:hidden; }
+  .ov .base { position:absolute; inset:0; background:linear-gradient(135deg,#7A82C0,#3A4080); }
+  .ov .layer { position:absolute; inset:0; }
+  .ov span { position:absolute; left:10px; bottom:8px; color:#FFF; font-size:11px; font-weight:700; }
+</style>
+</head><body>
+<div class="grp">
+  <div class="lbl">Aspect ratio</div>
+  <div class="ratios">
+    <figure><div class="ph" style="width:147px;height:63px;border-radius:8px;">21:9</div><figcaption>시네마틱 배너</figcaption></figure>
+    <figure><div class="ph" style="width:112px;height:63px;border-radius:8px;">16:9</div><figcaption>히어로</figcaption></figure>
+    <figure><div class="ph" style="width:84px;height:63px;border-radius:8px;">4:3</div><figcaption>콘텐츠</figcaption></figure>
+    <figure><div class="ph" style="width:63px;height:63px;border-radius:8px;">1:1</div><figcaption>썸네일</figcaption></figure>
+    <figure><div class="ph" style="width:36px;height:63px;border-radius:8px;">9:16</div><figcaption>스토리</figcaption></figure>
+  </div>
+</div>
+<div class="grp">
+  <div class="lbl">Shapes — radius scale</div>
+  <div class="shapes">
+    <div><div class="ph" style="border-radius:0;">0</div><div class="scap">None</div></div>
+    <div><div class="ph" style="border-radius:4px;">4</div><div class="scap">XS</div></div>
+    <div><div class="ph" style="border-radius:8px;">8</div><div class="scap">SM</div></div>
+    <div><div class="ph" style="border-radius:12px;">12</div><div class="scap">MD</div></div>
+    <div><div class="ph" style="border-radius:20px;">20</div><div class="scap">LG</div></div>
+    <div><div class="ph" style="border-radius:50%;">●</div><div class="scap">Circle</div></div>
+  </div>
+</div>
+<div class="grp">
+  <div class="lbl">Overlays — for text legibility (WCAG AA)</div>
+  <div class="ovs">
+    <div class="ov"><div class="base"></div><div class="layer" style="background:linear-gradient(to top,rgba(20,24,60,.7),transparent);"></div><span>Gradient bottom</span></div>
+    <div class="ov"><div class="base"></div><div class="layer" style="background:rgba(45,51,120,.5);"></div><span>Brand · .5</span></div>
+    <div class="ov"><div class="base"></div><div class="layer" style="background:rgba(20,24,60,.55);"></div><span>Dark · .55</span></div>
+  </div>
+</div>
+</body></html>

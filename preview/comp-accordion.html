@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Accordion" subtitle="radius 12 · open bg #FAFBFF" viewport="700x320" -->
+<html lang="ko"><head><meta charset="utf-8"><title>Accordion</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .acc { border:1px solid #E0E0E0; border-radius:12px; overflow:hidden; }
+  .acc__item + .acc__item { border-top:1px solid #E0E0E0; }
+  .acc__head { height:56px; padding:0 20px; display:flex; align-items:center; justify-content:space-between; font-size:15px; font-weight:700; color:#1D1D1D; background:#FFF; }
+  .acc__head svg { color:#828282; transition:transform .2s; }
+  .acc__item.open .acc__head svg { transform:rotate(180deg); }
+  .acc__body { padding:20px; font-size:14px; color:#4F4F4F; line-height:1.7; background:#FAFBFF; border-top:1px solid #E0E0E0; }
+</style>
+</head><body>
+<div class="acc">
+  <div class="acc__item open">
+    <div class="acc__head">서비스 이용 안내
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </div>
+    <div class="acc__body">KIRBS 보고서 관리 시스템은 행정자료의 효율적인 접수·관리를 위한 플랫폼입니다. 회원가입 후 로그인하면 보고서 제출 및 현황 조회가 가능합니다.</div>
+  </div>
+  <div class="acc__item">
+    <div class="acc__head">개인정보 처리방침
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </div>
+  </div>
+  <div class="acc__item">
+    <div class="acc__head">자주 묻는 질문 (FAQ)
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </div>
+  </div>
+</div>
+</body></html>

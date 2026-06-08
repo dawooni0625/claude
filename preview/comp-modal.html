@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Modal" subtitle="320px · radius 16 · confirm / success / info" viewport="700x380" -->
+<html lang="ko"><head><meta charset="utf-8"><title>Modal</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row { display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; }
+  .modal { width:300px; background:#FFF; border-radius:16px; box-shadow:0 12px 40px rgba(45,51,120,.2); overflow:hidden; }
+  .modal__body { padding:24px; text-align:center; }
+  .modal__icon { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 14px; font-size:22px; }
+  .modal__title { font-size:17px; font-weight:700; color:#1D1D1D; margin-bottom:8px; }
+  .modal__text { font-size:13px; color:#828282; line-height:1.6; }
+  .modal__foot { display:flex; gap:8px; padding:0 24px 24px; }
+  .btn { flex:1; text-align:center; padding:11px 0; border-radius:8px; font-size:14px; font-weight:700; }
+</style>
+</head><body>
+<div class="row">
+  <div class="modal">
+    <div class="modal__body">
+      <div class="modal__icon" style="background:#FDEEEE;">🗂️</div>
+      <div class="modal__title">파일을 삭제할까요?</div>
+      <div class="modal__text">선택한 파일을 영구적으로 삭제합니다. 이 작업은 되돌릴 수 없습니다.</div>
+    </div>
+    <div class="modal__foot">
+      <span class="btn" style="border:1px solid #E0E0E0;color:#4F4F4F;">취소</span>
+      <span class="btn" style="background:#EB5757;color:#FFF;">삭제</span>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="modal__body">
+      <div class="modal__icon" style="background:#EDFAF4;">✅</div>
+      <div class="modal__title">신청이 완료됐습니다!</div>
+      <div class="modal__text">접수 번호는 2024-0412-001입니다. 결과는 영업일 기준 3일 이내에 안내드립니다.</div>
+    </div>
+    <div class="modal__foot">
+      <span class="btn" style="background:#2D3378;color:#FFF;">확인</span>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -5,7 +5,7 @@
       "sm": { "$value": "20px", "$type": "dimension", "$description": "기본값 — 버튼, 입력, 탭" },
       "md": { "$value": "24px", "$type": "dimension", "$description": "GNB, Sidebar, 독립 액션" },
       "lg": { "$value": "32px", "$type": "dimension", "$description": "Empty State, 카드 상단 강조" },
-      "xl": { "$value": "40px", "$type": "dimension", "$description": "온보딩, 일러스트형 강조" }
+      "xl": { "$value": "48px", "$type": "dimension", "$description": "온보딩, 일러스트형 강조" }
     }
   }
 }

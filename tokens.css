@@ -12,6 +12,18 @@
  *   transition.fade            → --transition-fade
  */
 
+/* Pretendard — self-hosted variable font (Korean + Latin).
+   Declared here so the token closure rooted at tokens.css resolves
+   --font-family-base. Source file: fonts/PretendardVariable.woff2. */
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 45 920;            /* variable weight axis */
+  font-style:  normal;
+  font-display: swap;
+  src: url('./fonts/PretendardVariable.woff2') format('woff2-variations'),
+       url('./fonts/PretendardVariable.woff2') format('woff2');
+}
+
 :root {
 
   /* ================================================================
@@ -128,17 +140,17 @@
    * Motion
    * ================================================================ */
 
-  --motion-duration-instant: 0ms;
-  --motion-duration-fast:    100ms;
-  --motion-duration-normal:  200ms;
-  --motion-duration-slow:    300ms;
-  --motion-duration-slower:  500ms;
+  --motion-duration-instant: 0ms; /* @kind other */
+  --motion-duration-fast:    100ms; /* @kind other */
+  --motion-duration-normal:  200ms; /* @kind other */
+  --motion-duration-slow:    300ms; /* @kind other */
+  --motion-duration-slower:  500ms; /* @kind other */
 
-  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
-  --motion-easing-in:     cubic-bezier(0.4, 0, 1, 1);
-  --motion-easing-out:    cubic-bezier(0, 0, 0.2, 1);
-  --motion-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1); /* @kind other */
+  --motion-easing-in:     cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+  --motion-easing-out:    cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --motion-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --motion-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
 
   /* ================================================================
    * Grid
@@ -149,10 +161,10 @@
   --breakpoint-desktop:    1024px;
   --breakpoint-desktop-hd: 1440px;
 
-  --grid-columns-mobile:     2;
-  --grid-columns-tablet:     6;
-  --grid-columns-desktop:    12;
-  --grid-columns-desktop-hd: 12;
+  --grid-columns-mobile:     2; /* @kind other */
+  --grid-columns-tablet:     6; /* @kind other */
+  --grid-columns-desktop:    12; /* @kind other */
+  --grid-columns-desktop-hd: 12; /* @kind other */
   --grid-gutter:             30px;
 
   --grid-margin-mobile:     16px;
@@ -164,26 +176,26 @@
    * zIndex  (zIndex → z)
    * ================================================================ */
 
-  --z-base:     0;
-  --z-raised:   10;
-  --z-dropdown: 100;
-  --z-sticky:   200;
-  --z-overlay:  300;
-  --z-modal:    400;
-  --z-toast:    500;
-  --z-tooltip:  600;
+  --z-base:     0; /* @kind other */
+  --z-raised:   10; /* @kind other */
+  --z-dropdown: 100; /* @kind other */
+  --z-sticky:   200; /* @kind other */
+  --z-overlay:  300; /* @kind other */
+  --z-modal:    400; /* @kind other */
+  --z-toast:    500; /* @kind other */
+  --z-tooltip:  600; /* @kind other */
 
   /* ================================================================
    * Transition
    * ================================================================ */
 
-  --transition-fade:   opacity 200ms cubic-bezier(0,0,0.2,1);
-  --transition-slide:  transform 300ms cubic-bezier(0,0,0.2,1);
-  --transition-expand: height 300ms cubic-bezier(0.4,0,0.2,1);
-  --transition-scale:  transform 100ms cubic-bezier(0.34,1.56,0.64,1);
-  --transition-color:  color 100ms cubic-bezier(0,0,0.2,1), background-color 100ms cubic-bezier(0,0,0.2,1);
-  --transition-shadow: box-shadow 200ms cubic-bezier(0,0,0.2,1);
-  --transition-all:    all 200ms cubic-bezier(0,0,0.2,1);
+  --transition-fade:   opacity 200ms cubic-bezier(0,0,0.2,1); /* @kind other */
+  --transition-slide:  transform 300ms cubic-bezier(0,0,0.2,1); /* @kind other */
+  --transition-expand: height 300ms cubic-bezier(0.4,0,0.2,1); /* @kind other */
+  --transition-scale:  transform 100ms cubic-bezier(0.34,1.56,0.64,1); /* @kind other */
+  --transition-color:  color 100ms cubic-bezier(0,0,0.2,1), background-color 100ms cubic-bezier(0,0,0.2,1); /* @kind other */
+  --transition-shadow: box-shadow 200ms cubic-bezier(0,0,0.2,1); /* @kind other */
+  --transition-all:    all 200ms cubic-bezier(0,0,0.2,1); /* @kind other */
 
   /* ================================================================
    * Semantic — Text  ("semantic." 접두어 제거)
@@ -272,14 +284,14 @@
   --skeleton-shimmer:   rgba(255,255,255,0.6);
   --skeleton-radius:    4px;
   --skeleton-radius-lg: 8px;
-  --skeleton-duration:  1.5s;
+  --skeleton-duration:  1.5s; /* @kind other */
 
   /* ================================================================
    * Opacity
    * ================================================================ */
 
-  --opacity-disabled: 0.38;
-  --opacity-overlay:  0.5;
+  --opacity-disabled: 0.38; /* @kind other */
+  --opacity-overlay:  0.5; /* @kind other */
 
   /* ================================================================
    * Icon
@@ -289,7 +301,7 @@
   --icon-size-sm: 20px;
   --icon-size-md: 24px;
   --icon-size-lg: 32px;
-  --icon-size-xl: 40px;
+  --icon-size-xl: 48px;
 
   /* ================================================================
    * Focus
@@ -366,7 +378,7 @@
   --component-button-icon-gap:                  8px;
   --component-button-border-radius-square:      8px;
   --component-button-border-radius-round:       99px;
-  --component-button-transition:                all 100ms cubic-bezier(0,0,0.2,1);
+  --component-button-transition:                all 100ms cubic-bezier(0,0,0.2,1); /* @kind other */
   --component-button-color-primary-bg:          #2D3378;
   --component-button-color-primary-bg-hover:    #232860;
   --component-button-color-primary-bg-active:   #1A1F4D;
@@ -436,7 +448,7 @@
   --component-modal-max-width-sm:  480px;
   --component-modal-max-width-md:  720px;
   --component-modal-max-width-lg:  960px;
-  --component-modal-border-radius: 12px;
+  --component-modal-border-radius: 16px;
   --component-modal-padding-x:     24px;
   --component-modal-padding-y:     24px;
   --component-modal-header-height: 64px;
@@ -478,7 +490,7 @@
   --component-toggle-thumb-size:      20px;
   --component-toggle-thumb-offset:    2px;
   --component-toggle-border-radius:   9999px;
-  --component-toggle-transition:      background-color 100ms cubic-bezier(0,0,0.2,1), transform 100ms cubic-bezier(0,0,0.2,1);
+  --component-toggle-transition:      background-color 100ms cubic-bezier(0,0,0.2,1), transform 100ms cubic-bezier(0,0,0.2,1); /* @kind other */
   --component-toggle-color-off-track: #BDBDBD;
   --component-toggle-color-on-track:  #2D3378;
   --component-toggle-color-thumb:     #FFFFFF;
@@ -487,6 +499,7 @@
   /* --- tabs --- */
   --component-tabs-height:             44px;
   --component-tabs-padding-x:          16px;
+  --component-tabs-padding-y:          10px;
   --component-tabs-gap:                8px;
   --component-tabs-font-size:          16px;
   --component-tabs-font-weight-active: 700;
@@ -514,7 +527,7 @@
 
   /* --- pagination --- */
   --component-pagination-item-size:           32px;
-  --component-pagination-border-radius:       4px;
+  --component-pagination-border-radius:       8px;
   --component-pagination-font-size:           14px;
   --component-pagination-gap:                 4px;
   --component-pagination-color-text-default:  #4F4F4F;
@@ -546,7 +559,7 @@
   --component-progress-height-md:     8px;
   --component-progress-height-lg:     12px;
   --component-progress-border-radius: 9999px;
-  --component-progress-transition:    width 300ms cubic-bezier(0.4,0,0.2,1);
+  --component-progress-transition:    width 300ms cubic-bezier(0.4,0,0.2,1); /* @kind other */
   --component-progress-color-track:   #E0E0E0;
   --component-progress-color-primary: #2D3378;
   --component-progress-color-success: #27AE60;
@@ -558,7 +571,7 @@
   --component-spinner-size-md:      24px;
   --component-spinner-size-lg:      40px;
   --component-spinner-stroke-width: 2px;
-  --component-spinner-duration:     700ms;
+  --component-spinner-duration:     700ms; /* @kind other */
   --component-spinner-color-track:  #E0E0E0;
   --component-spinner-color-fill:   #2D3378;
 
@@ -621,7 +634,7 @@
   --component-nav-sidebar-font-size:              14px;
   --component-nav-sidebar-font-weight-active:     700;
   --component-nav-sidebar-border-radius:          6px;
-  --component-nav-sidebar-transition:             width 200ms cubic-bezier(0,0,0.2,1);
+  --component-nav-sidebar-transition:             width 200ms cubic-bezier(0,0,0.2,1); /* @kind other */
   --component-nav-sidebar-color-bg:               #FFFFFF;
   --component-nav-sidebar-color-border:           #E0E0E0;
   --component-nav-sidebar-color-item-text:        #4F4F4F;
@@ -650,6 +663,174 @@
   --component-footer-color-link:        #4F4F4F;
   --component-footer-color-link-hover:  #2D3378;
   --component-footer-color-meta:        #828282;
+
+  /* --- breadcrumbs --- */
+  --component-breadcrumbs-font-size:        14px;
+  --component-breadcrumbs-gap:              8px;
+  --component-breadcrumbs-separator-size:   14px;
+  --component-breadcrumbs-color-link:       #828282;
+  --component-breadcrumbs-color-link-hover: #2D3378;
+  --component-breadcrumbs-color-current:    #1D1D1D;
+  --component-breadcrumbs-color-separator:  #BDBDBD;
+
+  /* --- large-selector --- */
+  --component-large-selector-height:                 56px;
+  --component-large-selector-border-radius:          10px;
+  --component-large-selector-padding-x:              16px;
+  --component-large-selector-gap:                    12px;
+  --component-large-selector-border-width:           1px;
+  --component-large-selector-color-bg:               #FFFFFF;
+  --component-large-selector-color-border:           #E0E0E0;
+  --component-large-selector-color-text:             #333333;
+  --component-large-selector-color-icon:             #4F4F4F;
+  --component-large-selector-color-selected-bg:      #E8EAF6;
+  --component-large-selector-color-selected-border:  #2D3378;
+  --component-large-selector-color-selected-text:    #2D3378;
+
+  /* --- date-picker --- */
+  --component-date-picker-width:               280px;
+  --component-date-picker-cell-size:           32px;
+  --component-date-picker-cell-radius:         8px;
+  --component-date-picker-border-radius:       12px;
+  --component-date-picker-font-size:           14px;
+  --component-date-picker-weekday-font-size:   12px;
+  --component-date-picker-color-bg:            #FFFFFF;
+  --component-date-picker-color-border:        #E0E0E0;
+  --component-date-picker-color-text:          #1D1D1D;
+  --component-date-picker-color-muted:         #BDBDBD;
+  --component-date-picker-color-weekday:       #828282;
+  --component-date-picker-color-today:         #2D3378;
+  --component-date-picker-color-selected-bg:   #2D3378;
+  --component-date-picker-color-selected-text: #FFFFFF;
+  --component-date-picker-color-range-bg:      #E8EAF6;
+
+  /* --- accordion --- */
+  --component-accordion-border-radius:       12px;
+  --component-accordion-border-width:        1px;
+  --component-accordion-header-height:       56px;
+  --component-accordion-header-padding-x:    20px;
+  --component-accordion-body-padding:        20px;
+  --component-accordion-header-font-size:    15px;
+  --component-accordion-header-font-weight:  700;
+  --component-accordion-body-font-size:      14px;
+  --component-accordion-color-bg:            #FFFFFF;
+  --component-accordion-color-border:        #E0E0E0;
+  --component-accordion-color-header-text:   #1D1D1D;
+  --component-accordion-color-body-text:     #4F4F4F;
+  --component-accordion-color-open-bg:       #FAFBFF;
+  --component-accordion-color-icon:          #828282;
+
+  /* --- banner --- */
+  --component-banner-padding-y:           32px;
+  --component-banner-padding-x:           40px;
+  --component-banner-border-radius:       16px;
+  --component-banner-gap:                 16px;
+  --component-banner-title-font-size:     18px;
+  --component-banner-title-font-weight:   700;
+  --component-banner-body-font-size:      14px;
+  --component-banner-color-info-bg:       #EEF2FD;
+  --component-banner-color-info-text:     #2D3378;
+  --component-banner-color-success-bg:    #EDFAF4;
+  --component-banner-color-success-text:  #1E8E54;
+  --component-banner-color-warning-bg:    #FDF8E6;
+  --component-banner-color-warning-text:  #B08000;
+  --component-banner-color-neutral-bg:    #F8F8FB;
+  --component-banner-color-neutral-text:  #333333;
+
+  /* --- carousel --- */
+  --component-carousel-height:                   320px;
+  --component-carousel-border-radius:            16px;
+  --component-carousel-nav-size:                 40px;
+  --component-carousel-indicator-active-width:   24px;
+  --component-carousel-indicator-size:           8px;
+  --component-carousel-indicator-gap:            8px;
+  --component-carousel-color-indicator-active:   #2D3378;
+  --component-carousel-color-indicator-inactive: #E0E0E0;
+  --component-carousel-color-nav-bg:             #FFFFFF;
+  --component-carousel-color-nav-icon:           #1D1D1D;
+
+  /* --- file-upload --- */
+  --component-file-upload-small-height:        55px;
+  --component-file-upload-big-height:          200px;
+  --component-file-upload-border-radius:       8px;
+  --component-file-upload-border-width:        1.5px;
+  --component-file-upload-padding:             16px;
+  --component-file-upload-color-border:        #D3D5E6;
+  --component-file-upload-color-border-hover:  #2D3378;
+  --component-file-upload-color-bg:            #FFFFFF;
+  --component-file-upload-color-bg-hover:      #FAFBFF;
+  --component-file-upload-color-text:          #4F4F4F;
+  --component-file-upload-color-hint:          #828282;
+  --component-file-upload-color-success:       #27AE60;
+
+  /* --- tag-input --- */
+  --component-tag-input-min-height:          48px;
+  --component-tag-input-border-radius:       8px;
+  --component-tag-input-border-width:        1.5px;
+  --component-tag-input-padding:             8px;
+  --component-tag-input-gap:                 6px;
+  --component-tag-input-tag-height:          28px;
+  --component-tag-input-tag-radius:          6px;
+  --component-tag-input-tag-padding-x:       10px;
+  --component-tag-input-font-size:           14px;
+  --component-tag-input-color-border:        #D3D5E6;
+  --component-tag-input-color-border-focus:  #2D3378;
+  --component-tag-input-color-bg:            #FFFFFF;
+  --component-tag-input-color-tag-bg:        #E8EAF6;
+  --component-tag-input-color-tag-text:      #2D3378;
+  --component-tag-input-color-tag-remove:    #828282;
+  --component-tag-input-color-placeholder:   #BDBDBD;
+
+  /* --- nav-app (bottom tab bar) --- */
+  --component-nav-app-height:                 72px;
+  --component-nav-app-icon-size:              24px;
+  --component-nav-app-label-font-size:        10px;
+  --component-nav-app-label-font-weight:      700;
+  --component-nav-app-label-gap:              4px;
+  --component-nav-app-fab-size:               52px;
+  --component-nav-app-badge-size:             16px;
+  --component-nav-app-badge-dot-size:         8px;
+  --component-nav-app-color-bg:               #FFFFFF;
+  --component-nav-app-color-bg-dark:          #1D1D1D;
+  --component-nav-app-color-icon-default:     #BDBDBD;
+  --component-nav-app-color-icon-active:      #2D3378;
+  --component-nav-app-color-icon-active-dark: #FFFFFF;
+  --component-nav-app-color-label-active:     #2D3378;
+  --component-nav-app-color-badge-bg:         #EB5757;
+  --component-nav-app-color-fab-bg:           #2D3378;
+
+  /* --- progress-circle --- */
+  --component-progress-circle-size:         80px;
+  --component-progress-circle-stroke-width: 8px;
+  --component-progress-circle-font-size:    18px;
+  --component-progress-circle-color-track:  #E0E0E0;
+  --component-progress-circle-color-fill:   #2D3378;
+  --component-progress-circle-color-text:   #1D1D1D;
+
+  /* --- stepper (checkpoint) --- */
+  --component-stepper-dot-size:                  32px;
+  --component-stepper-connector-height:          2px;
+  --component-stepper-font-size:                 13px;
+  --component-stepper-color-done-bg:             #2D3378;
+  --component-stepper-color-done-text:           #FFFFFF;
+  --component-stepper-color-active-bg:           #2D3378;
+  --component-stepper-color-active-ring:         #E8EAF6;
+  --component-stepper-color-pending-bg:          #E0E0E0;
+  --component-stepper-color-pending-text:        #BDBDBD;
+  --component-stepper-color-connector-done:      #2D3378;
+  --component-stepper-color-connector-pending:   #E0E0E0;
+  --component-stepper-color-label:               #4F4F4F;
+
+  /* --- image (guidelines) --- */
+  --component-image-radius-none:    0px;
+  --component-image-radius-xs:      4px;
+  --component-image-radius-sm:      8px;
+  --component-image-radius-md:      12px;
+  --component-image-radius-lg:      20px;
+  --component-image-radius-circle:  9999px;
+  --component-image-overlay-dark:   rgba(20,24,60,0.55);
+  --component-image-overlay-brand:  rgba(45,51,120,0.50);
+  --component-image-overlay-light:  rgba(255,255,255,0.55);
 
 }
 
