@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"KIRBSDesignSystem_dc1229","components":[],"sourceHashes":{"ui_kits/admin/App.jsx":"409c1f87e983","ui_kits/admin/Atoms.jsx":"1b95bf9c5149","ui_kits/admin/DashboardScreen.jsx":"97b7a52a755d","ui_kits/admin/Forms.jsx":"85965cb4fbf9","ui_kits/admin/Icons.jsx":"8d05eae554ad","ui_kits/admin/LoginScreen.jsx":"0b5670116ec4","ui_kits/admin/MembersScreen.jsx":"99a2a6129d03","ui_kits/admin/Responsive.jsx":"816c2978eefc","ui_kits/admin/SettingsScreen.jsx":"ad3b55006ac7","ui_kits/admin/Sidebar.jsx":"b368cde750c2","ui_kits/admin/Surfaces.jsx":"50f517c1693a","ui_kits/admin/TopBar.jsx":"698a0155fc63"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"KIRBSDesignSystem_dc1229","components":[],"sourceHashes":{"ui_kits/admin/App.jsx":"409c1f87e983","ui_kits/admin/Atoms.jsx":"ec5f0f030eb9","ui_kits/admin/DashboardScreen.jsx":"97b7a52a755d","ui_kits/admin/Forms.jsx":"85965cb4fbf9","ui_kits/admin/Icons.jsx":"8d05eae554ad","ui_kits/admin/LoginScreen.jsx":"0b5670116ec4","ui_kits/admin/MembersScreen.jsx":"99a2a6129d03","ui_kits/admin/Responsive.jsx":"816c2978eefc","ui_kits/admin/SettingsScreen.jsx":"1033df361b6f","ui_kits/admin/Sidebar.jsx":"b368cde750c2","ui_kits/admin/Surfaces.jsx":"50f517c1693a","ui_kits/admin/TopBar.jsx":"eee3895ef981"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -366,7 +366,7 @@ const BADGE_TONE = {
     fg: '#FFFFFF'
   },
   info: {
-    bg: '#2F80ED',
+    bg: '#297AFF',
     fg: '#FFFFFF'
   },
   success: {
@@ -375,7 +375,7 @@ const BADGE_TONE = {
   },
   warning: {
     bg: 'var(--color-state-warning)',
-    fg: '#000000'
+    fg: '#FFFFFF'
   },
   error: {
     bg: 'var(--color-state-error)',
@@ -439,7 +439,7 @@ const AVATAR_FS = {
   lg: 26,
   xs: 12
 };
-const AVATAR_COLORS = ['#2D3378', '#5B63A8', '#8E96D3', '#E2B93B', '#27AE60', '#EB5757'];
+const AVATAR_COLORS = ['#2D3378', '#5B63A8', '#8E96D3', '#FEB51A', '#42A148', '#F54336'];
 function avatarColor(seed = '') {
   let h = 0;
   for (let i = 0; i < seed.length; i++) h = h * 31 + seed.charCodeAt(i) | 0;
@@ -2366,7 +2366,7 @@ function AppearanceTab() {
     label: '라이트',
     bg: '#FFFFFF',
     fg: '#000000',
-    border: '#E0E0E0'
+    border: '#E4E4E4'
   }, {
     id: 'dark',
     label: '다크',
@@ -2378,7 +2378,7 @@ function AppearanceTab() {
     label: '시스템 따라가기',
     bg: 'linear-gradient(90deg,#FFFFFF 50%,#0F0F12 50%)',
     fg: '#5B63A8',
-    border: '#E0E0E0'
+    border: '#E4E4E4'
   }].map(opt => /*#__PURE__*/React.createElement("div", {
     key: opt.id,
     onClick: () => setTheme(opt.id),
@@ -3160,7 +3160,7 @@ function TopBar({
       cursor: 'pointer'
     }
   }, /*#__PURE__*/React.createElement(Avatar, {
-    name: "\uB2E4\uC6B0\uB2C8",
+    name: "\uAD00\uB9AC\uC790",
     size: "xs"
   }), !isMobile && /*#__PURE__*/React.createElement("span", {
     style: {
@@ -3168,7 +3168,7 @@ function TopBar({
       fontWeight: 500,
       color: 'var(--color-text-primary)'
     }
-  }, "\uB2E4\uC6B0\uB2C8"), !isMobile && /*#__PURE__*/React.createElement(IconChevron, {
+  }, "\uAD00\uB9AC\uC790"), !isMobile && /*#__PURE__*/React.createElement(IconChevron, {
     size: 16,
     color: "var(--color-text-tertiary)"
   })), menuOpen && /*#__PURE__*/React.createElement("div", {
@@ -3194,12 +3194,12 @@ function TopBar({
       fontSize: 14,
       fontWeight: 700
     }
-  }, "\uB2E4\uC6B0\uB2C8"), /*#__PURE__*/React.createElement("div", {
+  }, "\uAD00\uB9AC\uC790"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 12,
       color: 'var(--color-text-tertiary)'
     }
-  }, "dawooni@kirbs.io")), [['프로필', IconUserCircle], ['설정', IconSettings], ['로그아웃', IconLogout]].map(([label, Icon]) => /*#__PURE__*/React.createElement("div", {
+  }, "admin@kirbs.kr")), [['프로필', IconUserCircle], ['설정', IconSettings], ['로그아웃', IconLogout]].map(([label, Icon]) => /*#__PURE__*/React.createElement("div", {
     key: label,
     onClick: () => {
       setMenuOpen(false);

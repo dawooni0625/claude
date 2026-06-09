@@ -182,8 +182,8 @@ function TopBar({ active, onLogout, onMenuClick }) {
             padding: '4px 8px 4px 4px', cursor: 'pointer',
           }}
         >
-          <Avatar name="다우니" size="xs" />
-          {!isMobile && <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)' }}>다우니</span>}
+          <Avatar name="관리자" size="xs" />
+          {!isMobile && <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)' }}>관리자</span>}
           {!isMobile && <IconChevron size={16} color="var(--color-text-tertiary)" />}
         </button>
         {menuOpen && (
@@ -195,8 +195,8 @@ function TopBar({ active, onLogout, onMenuClick }) {
             boxShadow: 'var(--elevation-2)', overflow: 'hidden',
           }}>
             <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--color-border-default)' }}>
-              <div style={{ fontSize: 14, fontWeight: 700 }}>다우니</div>
-              <div style={{ fontSize: 12, color: 'var(--color-text-tertiary)' }}>dawooni@kirbs.io</div>
+              <div style={{ fontSize: 14, fontWeight: 700 }}>관리자</div>
+              <div style={{ fontSize: 12, color: 'var(--color-text-tertiary)' }}>admin@kirbs.kr</div>
             </div>
             {[['프로필', IconUserCircle], ['설정', IconSettings], ['로그아웃', IconLogout]].map(([label, Icon]) => (
               <div key={label}

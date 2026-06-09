@@ -3,7 +3,7 @@
 <html lang="ko"><head><meta charset="utf-8"><title>Circle progress & stepper</title>
 <link rel="stylesheet" href="_card.css">
 <style>
-  .lbl { font-size:11px; font-weight:700; color:#828282; text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px; }
+  .lbl { font-size:11px; font-weight:700; color:#8E8E8E; text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px; }
   .grp + .grp { margin-top:28px; }
   .rings { display:flex; gap:36px; align-items:center; }
   .ring { position:relative; width:80px; height:80px; }
@@ -12,9 +12,9 @@
   .dot { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex:none; }
   .dot.done { background:#2D3378; color:#FFF; }
   .dot.active { background:#2D3378; color:#FFF; box-shadow:0 0 0 4px #E8EAF6; }
-  .dot.pending { background:#E0E0E0; color:#BDBDBD; }
+  .dot.pending { background:#E4E4E4; color:#C6C6C6; }
   .conn { height:2px; flex:1; margin:0 8px; }
-  .steplbls { display:flex; margin-top:8px; font-size:13px; color:#4F4F4F; }
+  .steplbls { display:flex; margin-top:8px; font-size:13px; color:#555555; }
   .steplbls > div { flex:1; text-align:center; }
   .steplbls > div:first-child { text-align:left; } .steplbls > div:last-child { text-align:right; }
 </style>
@@ -23,15 +23,15 @@
   <div class="lbl">Circle progress — 80×80, stroke 8px</div>
   <div class="rings">
     <div class="ring">
-      <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="#E0E0E0" stroke-width="8"></circle><circle cx="40" cy="40" r="36" fill="none" stroke="#2D3378" stroke-width="8" stroke-linecap="round" stroke-dasharray="226" stroke-dashoffset="56.5" transform="rotate(-90 40 40)"></circle></svg>
+      <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="#E4E4E4" stroke-width="8"></circle><circle cx="40" cy="40" r="36" fill="none" stroke="#2D3378" stroke-width="8" stroke-linecap="round" stroke-dasharray="226" stroke-dashoffset="56.5" transform="rotate(-90 40 40)"></circle></svg>
       <span>75%</span>
     </div>
     <div class="ring">
-      <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="#E0E0E0" stroke-width="8"></circle><circle cx="40" cy="40" r="36" fill="none" stroke="#27AE60" stroke-width="8" stroke-linecap="round" stroke-dasharray="226" stroke-dashoffset="0" transform="rotate(-90 40 40)"></circle></svg>
-      <span style="color:#27AE60;">100%</span>
+      <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="#E4E4E4" stroke-width="8"></circle><circle cx="40" cy="40" r="36" fill="none" stroke="#42A148" stroke-width="8" stroke-linecap="round" stroke-dasharray="226" stroke-dashoffset="0" transform="rotate(-90 40 40)"></circle></svg>
+      <span style="color:#42A148;">100%</span>
     </div>
     <div class="ring">
-      <svg width="80" height="80" viewBox="0 0 80 80"><path d="M8 40a32 32 0 0 1 64 0" fill="none" stroke="#E0E0E0" stroke-width="8" stroke-linecap="round"></path><path d="M8 40a32 32 0 0 1 48 -27.7" fill="none" stroke="#2D3378" stroke-width="8" stroke-linecap="round"></path></svg>
+      <svg width="80" height="80" viewBox="0 0 80 80"><path d="M8 40a32 32 0 0 1 64 0" fill="none" stroke="#E4E4E4" stroke-width="8" stroke-linecap="round"></path><path d="M8 40a32 32 0 0 1 48 -27.7" fill="none" stroke="#2D3378" stroke-width="8" stroke-linecap="round"></path></svg>
       <span style="top:8px;align-items:flex-end;">반원 75%</span>
     </div>
   </div>
@@ -41,8 +41,8 @@
   <div class="step">
     <div class="dot done">✓</div><div class="conn" style="background:#2D3378;"></div>
     <div class="dot done">✓</div><div class="conn" style="background:#2D3378;"></div>
-    <div class="dot active">3</div><div class="conn" style="background:#E0E0E0;"></div>
-    <div class="dot pending">4</div><div class="conn" style="background:#E0E0E0;"></div>
+    <div class="dot active">3</div><div class="conn" style="background:#E4E4E4;"></div>
+    <div class="dot pending">4</div><div class="conn" style="background:#E4E4E4;"></div>
     <div class="dot pending">5</div>
   </div>
   <div class="steplbls"><div>신청 완료</div><div>서류 검토</div><div>심사 중</div><div>결과 통보</div><div>완료</div></div>

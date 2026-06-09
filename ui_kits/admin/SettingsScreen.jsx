@@ -197,9 +197,9 @@ function AppearanceTab() {
       <Section title="테마" description="앱 전체에 적용되는 색상 모드입니다.">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
           {[
-            { id: 'light',  label: '라이트',    bg: '#FFFFFF', fg: '#000000', border: '#E0E0E0' },
+            { id: 'light',  label: '라이트',    bg: '#FFFFFF', fg: '#000000', border: '#E4E4E4' },
             { id: 'dark',   label: '다크',      bg: '#0F0F12', fg: '#F0F0F0', border: '#2E2E34' },
-            { id: 'system', label: '시스템 따라가기', bg: 'linear-gradient(90deg,#FFFFFF 50%,#0F0F12 50%)', fg: '#5B63A8', border: '#E0E0E0' },
+            { id: 'system', label: '시스템 따라가기', bg: 'linear-gradient(90deg,#FFFFFF 50%,#0F0F12 50%)', fg: '#5B63A8', border: '#E4E4E4' },
           ].map(opt => (
             <div
               key={opt.id}

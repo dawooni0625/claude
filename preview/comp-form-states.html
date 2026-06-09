@@ -6,31 +6,31 @@
   .field { }
   .field > label {
     display:flex; align-items:center; gap:6px;
-    font-size:13px; font-weight:700; color:#333333; margin-bottom:6px;
+    font-size:13px; font-weight:700; color:#2D2D2D; margin-bottom:6px;
   }
   .field input {
     width:100%; height:48px; padding:8px 14px;
-    border:1.5px solid #E0E0E0; border-radius:8px;
+    border:1.5px solid #E4E4E4; border-radius:8px;
     font-size:14px; font-family:inherit; color:#1D1D1D;
     background:#FFFFFF; outline:none;
     transition: border-color 100ms cubic-bezier(0,0,0.2,1), box-shadow 100ms cubic-bezier(0,0,0.2,1);
   }
-  .field .helper { font-size:12px; color:#4F4F4F; margin-top:5px; }
+  .field .helper { font-size:12px; color:#555555; margin-top:5px; }
   .state-tag {
     font-family:var(--font-family-mono); font-size:10px; font-weight:400;
-    color:#828282; background:#F8F8FB; border:1px solid #E0E0E0;
+    color:#8E8E8E; background:#F8F8FB; border:1px solid #E4E4E4;
     border-radius:4px; padding:1px 6px; margin-left:auto;
   }
   /* state variants */
   .is-focus input  { border-color:#2D3378; box-shadow:0 0 0 3px rgba(45,51,120,0.12); }
-  .is-error input  { border-color:#EB5757; }
-  .is-error .helper { color:#EB5757; }
-  .is-success input { border-color:#27AE60; }
-  .is-success .helper { color:#27AE60; }
+  .is-error input  { border-color:#F54336; }
+  .is-error .helper { color:#F54336; }
+  .is-success input { border-color:#42A148; }
+  .is-success .helper { color:#42A148; }
   .is-disabled input {
-    background:#F8F8FB; border-color:#E0E0E0; color:#BDBDBD; cursor:not-allowed;
+    background:#F8F8FB; border-color:#E4E4E4; color:#C6C6C6; cursor:not-allowed;
   }
-  .is-disabled > label { color:#BDBDBD; }
+  .is-disabled > label { color:#C6C6C6; }
 </style>
 </head><body>
 <div class="stack-md">

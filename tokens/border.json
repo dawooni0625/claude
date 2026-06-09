@@ -6,12 +6,12 @@
       "thick":  { "$value": "3px", "$type": "dimension", "$description": "활성 사이드바 항목, 진행 강조 선" }
     },
     "color": {
-      "default":   { "$value": "#E0E0E0", "$type": "color", "$description": "모든 기본 상태" },
+      "default":   { "$value": "#E4E4E4", "$type": "color", "$description": "모든 기본 상태" },
       "primary":   { "$value": "#2D3378", "$type": "color", "$description": "포커스, 선택, 활성 상태" },
       "secondary": { "$value": "#5B63A8", "$type": "color", "$description": "보조 강조, 호버 상태" },
-      "error":     { "$value": "#EB5757", "$type": "color", "$description": "에러 상태" },
-      "success":   { "$value": "#27AE60", "$type": "color", "$description": "성공 상태" },
-      "disabled":  { "$value": "#BDBDBD", "$type": "color", "$description": "비활성 컴포넌트" }
+      "error":     { "$value": "#F54336", "$type": "color", "$description": "에러 상태 (Danger/60)" },
+      "success":   { "$value": "#42A148", "$type": "color", "$description": "성공 상태 (Positive/60)" },
+      "disabled":  { "$value": "#C6C6C6", "$type": "color", "$description": "비활성 컴포넌트" }
     },
     "radius": {
       "none": { "$value": "0px",    "$type": "dimension", "$description": "테이블 셀, 직각 레이아웃" },

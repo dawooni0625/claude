@@ -24,10 +24,10 @@
         "overlay":      { "$value": "rgba(0,0,0,0.5)",           "$type": "color", "$description": "모달 딤 레이어" },
         "brand":        { "$value": "{color.brand.primary}",     "$type": "color", "$description": "브랜드 강조 배경" },
         "brand-subtle": { "$value": "{color.brand.quaternary}",  "$type": "color", "$description": "연한 브랜드 배경" },
-        "error":        { "$value": "#FDEEEE",                   "$type": "color", "$description": "에러 배경 (원시 토큰 없음)" },
-        "success":      { "$value": "#EDFAF4",                   "$type": "color", "$description": "성공 배경 (원시 토큰 없음)" },
-        "warning":      { "$value": "#FDF8E6",                   "$type": "color", "$description": "경고 배경 (원시 토큰 없음)" },
-        "info":         { "$value": "#EEF2FD",                   "$type": "color", "$description": "안내 배경 (원시 토큰 없음)" }
+        "error":        { "$value": "#FDEDE8",                   "$type": "color", "$description": "에러 배경 (Danger/5)" },
+        "success":      { "$value": "#EDF5EE",                   "$type": "color", "$description": "성공 배경 (Positive/5)" },
+        "warning":      { "$value": "#FEF8EE",                   "$type": "color", "$description": "경고 배경 (Warning/5)" },
+        "info":         { "$value": "#EBF2FF",                   "$type": "color", "$description": "안내 배경 (Action/5)" }
       },
       "border": {
         "default":  { "$value": "{color.gray.5}",        "$type": "color", "$description": "일반 경계선" },

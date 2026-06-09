@@ -77,9 +77,9 @@ function IconButton({ icon, size = 36, onClick, active, ariaLabel, style }) {
 // ── Badge (pill) ──────────────────────────────────────────────────
 const BADGE_TONE = {
   brand:   { bg: 'var(--color-bg-brand)',     fg: '#FFFFFF' },
-  info:    { bg: '#2F80ED',                   fg: '#FFFFFF' },
+  info:    { bg: '#297AFF',                   fg: '#FFFFFF' },
   success: { bg: 'var(--color-state-success)',fg: '#FFFFFF' },
-  warning: { bg: 'var(--color-state-warning)',fg: '#000000' },
+  warning: { bg: 'var(--color-state-warning)',fg: '#FFFFFF' },
   error:   { bg: 'var(--color-state-error)',  fg: '#FFFFFF' },
   neutral: { bg: 'var(--color-gray-5)',       fg: 'var(--color-text-secondary)' },
   // subtle (soft fill, coloured text)
@@ -106,7 +106,7 @@ function Badge({ tone = 'brand', children, style }) {
 // ── Avatar ────────────────────────────────────────────────────────
 const AVATAR_SIZE = { sm: 40, md: 64, lg: 80, xs: 32 };
 const AVATAR_FS   = { sm: 14, md: 20, lg: 26, xs: 12 };
-const AVATAR_COLORS = ['#2D3378', '#5B63A8', '#8E96D3', '#E2B93B', '#27AE60', '#EB5757'];
+const AVATAR_COLORS = ['#2D3378', '#5B63A8', '#8E96D3', '#FEB51A', '#42A148', '#F54336'];
 function avatarColor(seed = '') {
   let h = 0;
   for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) | 0;

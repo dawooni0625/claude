@@ -3,31 +3,31 @@
 <html lang="ko"><head><meta charset="utf-8"><title>Table states</title>
 <link rel="stylesheet" href="_card.css">
 <style>
-  .tbl-wrap { border:1px solid #E0E0E0; border-radius:8px; overflow:hidden; font-size:14px; color:#1D1D1D; }
+  .tbl-wrap { border:1px solid #E4E4E4; border-radius:8px; overflow:hidden; font-size:14px; color:#1D1D1D; }
   table { width:100%; border-collapse:collapse; }
-  thead tr { height:40px; background:#F8F8FB; color:#333333; font-size:13px; font-weight:700; text-align:left; }
+  thead tr { height:40px; background:#F8F8FB; color:#2D2D2D; font-size:13px; font-weight:700; text-align:left; }
   th { padding:0 16px; font-weight:700; }
-  tbody tr { height:48px; border-top:1px solid #E0E0E0; }
+  tbody tr { height:48px; border-top:1px solid #E4E4E4; }
   td { padding:0 16px; }
-  .muted { color:#828282; }
-  .sub { color:#4F4F4F; }
+  .muted { color:#8E8E8E; }
+  .sub { color:#555555; }
   /* sortable header */
   .th-sort { cursor:pointer; user-select:none; }
-  .th-sort .arrow { color:#BDBDBD; font-size:11px; margin-left:4px; }
+  .th-sort .arrow { color:#C6C6C6; font-size:11px; margin-left:4px; }
   .th-sort.active { color:#2D3378; }
   .th-sort.active .arrow { color:#2D3378; }
   /* selected row */
   tr.selected { background:#E8EAF6; }
-  .checkbox { width:18px; height:18px; border-radius:4px; border:1.5px solid #BDBDBD; display:inline-flex; align-items:center; justify-content:center; }
+  .checkbox { width:18px; height:18px; border-radius:4px; border:1.5px solid #C6C6C6; display:inline-flex; align-items:center; justify-content:center; }
   .checkbox.on { background:#2D3378; border-color:#2D3378; color:#FFF; font-size:12px; font-weight:700; }
   /* status badge */
   .badge { border-radius:99px; padding:3px 10px; font-size:12px; font-weight:700; white-space:nowrap; }
-  .b-done { background:#EDFAF4; color:#27AE60; }
-  .b-prog { background:#E8F1FD; color:#2F80ED; }
-  .b-wait { background:#FDF8E6; color:#B08000; }
-  .b-err  { background:#FDEEEE; color:#EB5757; }
+  .b-done { background:#EDF5EE; color:#42A148; }
+  .b-prog { background:#E8F1FD; color:#297AFF; }
+  .b-wait { background:#FEF8EE; color:#B08000; }
+  .b-err  { background:#FDEDE8; color:#F54336; }
   /* skeleton */
-  .sk { position:relative; overflow:hidden; background:#E0E0E0; border-radius:4px; height:12px; }
+  .sk { position:relative; overflow:hidden; background:#E4E4E4; border-radius:4px; height:12px; }
   .sk::after { content:""; position:absolute; inset:0; transform:translateX(-100%);
     background:linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
     animation: sk 1.5s ease-in-out infinite; }
@@ -60,9 +60,9 @@
         <thead><tr><th style="width:60px;">No</th><th>응시자</th><th>검사 유형</th><th style="width:110px;">상태</th></tr></thead>
       </table>
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:36px 16px;text-align:center;">
-        <div style="width:40px;height:40px;border-radius:50%;background:#F0F0F5;display:flex;align-items:center;justify-content:center;color:#BDBDBD;font-size:20px;">∅</div>
-        <div style="font-size:14px;font-weight:700;color:#333333;">아직 응시 기록이 없어요</div>
-        <div style="font-size:12px;color:#828282;">검사를 배정하면 여기에 표시됩니다.</div>
+        <div style="width:40px;height:40px;border-radius:50%;background:#F0F0F5;display:flex;align-items:center;justify-content:center;color:#C6C6C6;font-size:20px;">∅</div>
+        <div style="font-size:14px;font-weight:700;color:#2D2D2D;">아직 응시 기록이 없어요</div>
+        <div style="font-size:12px;color:#8E8E8E;">검사를 배정하면 여기에 표시됩니다.</div>
       </div>
     </div>
   </div>

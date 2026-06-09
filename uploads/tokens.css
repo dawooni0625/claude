@@ -36,11 +36,11 @@
   --color-brand-tertiary:   #8E96D3;
   --color-brand-quaternary: #E8EAF6;
 
-  /* State — Figma 60단계를 기준점으로 참조 (단일 진실 공급원) */
-  --color-state-info:    var(--color-action-60);    /* #297AFF */
-  --color-state-success: var(--color-positive-60);  /* #42A148 */
-  --color-state-warning: var(--color-warning-60);   /* #FEB51A */
-  --color-state-error:   var(--color-danger-60);    /* #F54336 */
+  /* State */
+  --color-state-info:    #2F80ED;
+  --color-state-success: #27AE60;
+  --color-state-warning: #E2B93B;
+  --color-state-error:   #EB5757;
 
   /* Black */
   --color-black-1: #000000;
@@ -50,87 +50,12 @@
   /* White */
   --color-white: #FFFFFF;
 
-  /* Gray — Figma Grayscale 계열에 정렬 (레거시 1~5 키 유지) */
-  --color-gray-1: #2D2D2D;
-  --color-gray-2: #555555;
-  --color-gray-3: #8E8E8E;
-  --color-gray-4: #C6C6C6;
-  --color-gray-5: #E4E4E4;
-
-  /* ================================================================
-   * Figma 풀 톤 스케일 (Colors · 2025-03-21)
-   * Primary(인디고)는 brand 토큰 유지. 아래는 중립/시맨틱 계열.
-   * ================================================================ */
-
-  /* Grayscale — 13단계 (0 흰색 → 100 검정) */
-  --color-grayscale-0:   #FFFFFF;
-  --color-grayscale-5:   #F8F8F8;
-  --color-grayscale-10:  #F0F0F0;
-  --color-grayscale-20:  #E4E4E4;
-  --color-grayscale-30:  #D8D8D8;
-  --color-grayscale-40:  #C6C6C6;
-  --color-grayscale-50:  #8E8E8E;
-  --color-grayscale-60:  #717171;
-  --color-grayscale-70:  #555555;
-  --color-grayscale-80:  #2D2D2D;
-  --color-grayscale-90:  #1D1D1D;
-  --color-grayscale-100: #000000;
-
-  /* Action — 파랑(인터랙티브·링크) */
-  --color-action-2:    #F7FAFF;
-  --color-action-5:    #EBF2FF;
-  --color-action-10:   #D7E7FF;
-  --color-action-20:   #C4DAFE;
-  --color-action-30:   #9CC2FE;
-  --color-action-40:   #76AAFF;
-  --color-action-50:   #4E91FE;
-  --color-action-60:   #297AFF;
-  --color-action-70:   #2265D2;
-  --color-action-80:   #1A4EA3;
-  --color-action-90:   #133772;
-  --color-action-100:  #0C2246;
-
-  /* Positive — 초록(성공) */
-  --color-positive-2:   #F7FCF8;
-  --color-positive-5:   #EDF5EE;
-  --color-positive-10:  #DDEDDE;
-  --color-positive-20:  #CBE6CD;
-  --color-positive-30:  #A9D3AE;
-  --color-positive-40:  #87C28A;
-  --color-positive-50:  #65B167;
-  --color-positive-60:  #42A148;
-  --color-positive-70:  #37823E;
-  --color-positive-80:  #2B662E;
-  --color-positive-90:  #1E4922;
-  --color-positive-100: #132C14;
-
-  /* Warning — 노랑(주의) */
-  --color-warning-2:   #FEFCF9;
-  --color-warning-5:   #FEF8EE;
-  --color-warning-10:  #FFF1D6;
-  --color-warning-20:  #FDEAC1;
-  --color-warning-30:  #FEDC96;
-  --color-warning-40:  #FFCF70;
-  --color-warning-50:  #FFC147;
-  --color-warning-60:  #FEB51A;
-  --color-warning-70:  #D09519;
-  --color-warning-80:  #A37412;
-  --color-warning-90:  #75520E;
-  --color-warning-100: #463209;
-
-  /* Danger — 빨강(오류) */
-  --color-danger-2:    #FDF7F5;
-  --color-danger-5:    #FDEDE8;
-  --color-danger-10:   #FCDCD9;
-  --color-danger-20:   #FDCBC8;
-  --color-danger-30:   #FAA9A2;
-  --color-danger-40:   #F6887F;
-  --color-danger-50:   #F5655B;
-  --color-danger-60:   #F54336;
-  --color-danger-70:   #C8382D;
-  --color-danger-80:   #9B2B23;
-  --color-danger-90:   #701F1A;
-  --color-danger-100:  #44130C;
+  /* Gray */
+  --color-gray-1: #333333;
+  --color-gray-2: #4F4F4F;
+  --color-gray-3: #828282;
+  --color-gray-4: #BDBDBD;
+  --color-gray-5: #E0E0E0;
 
   /* ================================================================
    * Spacing  (key × 2px / CSS 변수: --space-{n})
@@ -189,12 +114,12 @@
   --border-width-medium: 2px;
   --border-width-thick:  3px;
 
-  --border-color-default:   #E4E4E4;
+  --border-color-default:   #E0E0E0;
   --border-color-primary:   #2D3378;
   --border-color-secondary: #5B63A8;
-  --border-color-error:     #F54336;
-  --border-color-success:   #42A148;
-  --border-color-disabled:  #C6C6C6;
+  --border-color-error:     #EB5757;
+  --border-color-success:   #27AE60;
+  --border-color-disabled:  #BDBDBD;
 
   --border-radius-none: 0px;
   --border-radius-xs:   2px;
@@ -285,18 +210,18 @@
    * ================================================================ */
 
   --color-text-primary:     #000000;
-  --color-text-secondary:   #2D2D2D;
-  --color-text-tertiary:    #555555;
-  --color-text-disabled:    #8E8E8E;
-  --color-text-placeholder: #8E8E8E;
+  --color-text-secondary:   #333333;
+  --color-text-tertiary:    #4F4F4F;
+  --color-text-disabled:    #828282;
+  --color-text-placeholder: #828282;
   --color-text-inverse:     #FFFFFF;
   --color-text-link:        #5B63A8;
   --color-text-link-hover:  #2D3378;
   --color-text-brand:       #2D3378;
-  --color-text-error:       #F54336;
-  --color-text-success:     #42A148;
-  --color-text-warning:     #FEB51A;
-  --color-text-info:        #297AFF;
+  --color-text-error:       #EB5757;
+  --color-text-success:     #27AE60;
+  --color-text-warning:     #E2B93B;
+  --color-text-info:        #2F80ED;
 
   /* ================================================================
    * Semantic — Background
@@ -305,24 +230,24 @@
   --color-bg-page:         #FFFFFF;
   --color-bg-surface:      #F8F8FB;
   --color-bg-elevated:     #FFFFFF;
-  --color-bg-muted:        #E4E4E4;
+  --color-bg-muted:        #E0E0E0;
   --color-bg-overlay:      rgba(0,0,0,0.5);
   --color-bg-brand:        #2D3378;
   --color-bg-brand-subtle: #E8EAF6;
-  --color-bg-error:        #FDEDE8;
-  --color-bg-success:      #EDF5EE;
-  --color-bg-warning:      #FEF8EE;
-  --color-bg-info:         #EBF2FF;
+  --color-bg-error:        #FDEEEE;
+  --color-bg-success:      #EDFAF4;
+  --color-bg-warning:      #FDF8E6;
+  --color-bg-info:         #EEF2FD;
 
   /* ================================================================
    * Semantic — Border
    * ================================================================ */
 
-  --color-border-default:  #E4E4E4;
-  --color-border-focus:    #297AFF;
-  --color-border-error:    #F54336;
-  --color-border-success:  #42A148;
-  --color-border-disabled: #C6C6C6;
+  --color-border-default:  #E0E0E0;
+  --color-border-focus:    #2F80ED;
+  --color-border-error:    #EB5757;
+  --color-border-success:  #27AE60;
+  --color-border-disabled: #BDBDBD;
 
   /* ================================================================
    * Semantic — Interactive
@@ -331,10 +256,10 @@
   --color-interactive-primary:          #2D3378;
   --color-interactive-primary-hover:    #232968;
   --color-interactive-primary-active:   #1A1F52;
-  --color-interactive-primary-disabled: #C6C6C6;
+  --color-interactive-primary-disabled: #BDBDBD;
   --color-interactive-secondary:        #5B63A8;
-  --color-interactive-danger:           #F54336;
-  --color-interactive-danger-hover:     #C8382D;
+  --color-interactive-danger:           #EB5757;
+  --color-interactive-danger-hover:     #C94040;
 
   /* ================================================================
    * Layout
@@ -363,7 +288,7 @@
    * Skeleton
    * ================================================================ */
 
-  --skeleton-bg:        #E4E4E4;
+  --skeleton-bg:        #E0E0E0;
   --skeleton-shimmer:   rgba(255,255,255,0.6);
   --skeleton-radius:    4px;
   --skeleton-radius-lg: 8px;
@@ -392,7 +317,7 @@
 
   --focus-ring-width:  2px;
   --focus-ring-offset: 2px;
-  --focus-ring-color:  #297AFF;
+  --focus-ring-color:  #2F80ED;
 
   /* ================================================================
    * Overlay
@@ -448,14 +373,14 @@
   --component-textfield-icon-padding-left:    38px;
   --component-textfield-textarea-min-height:  88px;
   --component-textfield-color-bg-default:     #FFFFFF;
-  --component-textfield-color-bg-disabled:    #E4E4E4;
+  --component-textfield-color-bg-disabled:    #E0E0E0;
   --component-textfield-color-bg-filled:      #F5F5F8;
-  --component-textfield-color-border-default: #E4E4E4;
+  --component-textfield-color-border-default: #E0E0E0;
   --component-textfield-color-text-value:     #1D1D1D;
-  --component-textfield-color-text-label:     #2D2D2D;
-  --component-textfield-color-text-helper:    #555555;
-  --component-textfield-color-text-error:     #F54336;
-  --component-textfield-color-text-success:   #42A148;
+  --component-textfield-color-text-label:     #333333;
+  --component-textfield-color-text-helper:    #4F4F4F;
+  --component-textfield-color-text-error:     #EB5757;
+  --component-textfield-color-text-success:   #27AE60;
 
   /* --- button --- */
   --component-button-height-sm:                 36px;
@@ -477,7 +402,7 @@
   --component-button-color-primary-bg:          #2D3378;
   --component-button-color-primary-bg-hover:    #232860;
   --component-button-color-primary-bg-active:   #1A1F4D;
-  --component-button-color-primary-bg-disabled: #C6C6C6;
+  --component-button-color-primary-bg-disabled: #BDBDBD;
   --component-button-color-primary-text:        #FFFFFF;
   --component-button-color-secondary-bg:        #FFFFFF;
   --component-button-color-secondary-bg-hover:  #E8EAF6;
@@ -497,16 +422,16 @@
   --component-badge-border-radius:      99px;
   --component-badge-color-brand-bg:     #2D3378;
   --component-badge-color-brand-text:   #FFFFFF;
-  --component-badge-color-info-bg:      #297AFF;
+  --component-badge-color-info-bg:      #2F80ED;
   --component-badge-color-info-text:    #FFFFFF;
-  --component-badge-color-success-bg:   #42A148;
+  --component-badge-color-success-bg:   #27AE60;
   --component-badge-color-success-text: #FFFFFF;
-  --component-badge-color-warning-bg:   #FEB51A;
-  --component-badge-color-warning-text: #FFFFFF;
-  --component-badge-color-error-bg:     #F54336;
+  --component-badge-color-warning-bg:   #E2B93B;
+  --component-badge-color-warning-text: #000000;
+  --component-badge-color-error-bg:     #EB5757;
   --component-badge-color-error-text:   #FFFFFF;
-  --component-badge-color-neutral-bg:   #E4E4E4;
-  --component-badge-color-neutral-text: #2D2D2D;
+  --component-badge-color-neutral-bg:   #E0E0E0;
+  --component-badge-color-neutral-text: #333333;
 
   /* --- tooltip --- */
   --component-tooltip-sm-padding-x:  8px;
@@ -535,7 +460,7 @@
   --component-card-border-radius:   8px;
   --component-card-border-width:    1px;
   --component-card-bg:              #FFFFFF;
-  --component-card-border-color:    #E4E4E4;
+  --component-card-border-color:    #E0E0E0;
   --component-card-elevation:       0px 1px 3px rgba(45,51,120,0.08);
   --component-card-elevation-hover: 0px 2px 8px rgba(45,51,120,0.12);
 
@@ -557,27 +482,27 @@
   --component-checkbox-border-width:          1.5px;
   --component-checkbox-check-icon-size:       12px;
   --component-checkbox-label-gap:             8px;
-  --component-checkbox-color-border-default:  #C6C6C6;
+  --component-checkbox-color-border-default:  #BDBDBD;
   --component-checkbox-color-border-hover:    #5B63A8;
   --component-checkbox-color-checked-bg:      #2D3378;
   --component-checkbox-color-checked-border:  #2D3378;
   --component-checkbox-color-checked-icon:    #FFFFFF;
-  --component-checkbox-color-disabled-bg:     #E4E4E4;
-  --component-checkbox-color-disabled-border: #C6C6C6;
-  --component-checkbox-color-error-border:    #F54336;
+  --component-checkbox-color-disabled-bg:     #E0E0E0;
+  --component-checkbox-color-disabled-border: #BDBDBD;
+  --component-checkbox-color-error-border:    #EB5757;
 
   /* --- radio --- */
   --component-radio-size:                  18px;
   --component-radio-dot-size:              8px;
   --component-radio-border-width:          1.5px;
   --component-radio-label-gap:             8px;
-  --component-radio-color-border-default:  #C6C6C6;
+  --component-radio-color-border-default:  #BDBDBD;
   --component-radio-color-border-hover:    #5B63A8;
   --component-radio-color-checked-border:  #2D3378;
   --component-radio-color-checked-dot:     #2D3378;
-  --component-radio-color-disabled-bg:     #E4E4E4;
-  --component-radio-color-disabled-border: #C6C6C6;
-  --component-radio-color-error-border:    #F54336;
+  --component-radio-color-disabled-bg:     #E0E0E0;
+  --component-radio-color-disabled-border: #BDBDBD;
+  --component-radio-color-error-border:    #EB5757;
 
   /* --- toggle --- */
   --component-toggle-track-width:     44px;
@@ -586,10 +511,10 @@
   --component-toggle-thumb-offset:    2px;
   --component-toggle-border-radius:   9999px;
   --component-toggle-transition:      background-color 100ms cubic-bezier(0,0,0.2,1), transform 100ms cubic-bezier(0,0,0.2,1); /* @kind other */
-  --component-toggle-color-off-track: #C6C6C6;
+  --component-toggle-color-off-track: #BDBDBD;
   --component-toggle-color-on-track:  #2D3378;
   --component-toggle-color-thumb:     #FFFFFF;
-  --component-toggle-color-disabled:  #E4E4E4;
+  --component-toggle-color-disabled:  #E0E0E0;
 
   /* --- tabs --- */
   --component-tabs-height:             44px;
@@ -599,8 +524,8 @@
   --component-tabs-font-size:          16px;
   --component-tabs-font-weight-active: 700;
   --component-tabs-indicator-height:   2px;
-  --component-tabs-color-text-default: #8E8E8E;
-  --component-tabs-color-text-hover:   #555555;
+  --component-tabs-color-text-default: #828282;
+  --component-tabs-color-text-hover:   #4F4F4F;
   --component-tabs-color-text-active:  #2D3378;
   --component-tabs-color-indicator:    #2D3378;
   --component-tabs-color-bg-hover:     #E8EAF6;
@@ -614,7 +539,7 @@
   --component-dropdown-font-size:                14px;
   --component-dropdown-elevation:                0px 2px 8px rgba(45,51,120,0.12);
   --component-dropdown-color-bg:                 #FFFFFF;
-  --component-dropdown-color-border:             #E4E4E4;
+  --component-dropdown-color-border:             #E0E0E0;
   --component-dropdown-color-item-hover-bg:      #E8EAF6;
   --component-dropdown-color-item-active-bg:     #D0D5EA;
   --component-dropdown-color-item-selected-bg:   #E8EAF6;
@@ -625,12 +550,12 @@
   --component-pagination-border-radius:       8px;
   --component-pagination-font-size:           14px;
   --component-pagination-gap:                 4px;
-  --component-pagination-color-text-default:  #555555;
+  --component-pagination-color-text-default:  #4F4F4F;
   --component-pagination-color-text-hover:    #2D3378;
   --component-pagination-color-active-bg:     #2D3378;
   --component-pagination-color-active-text:   #FFFFFF;
   --component-pagination-color-hover-bg:      #E8EAF6;
-  --component-pagination-color-disabled-text: #C6C6C6;
+  --component-pagination-color-disabled-text: #BDBDBD;
 
   /* --- table --- */
   --component-table-header-height:         40px;
@@ -641,9 +566,9 @@
   --component-table-header-font-weight:    700;
   --component-table-body-font-size:        14px;
   --component-table-border-width:          1px;
-  --component-table-color-border:          #E4E4E4;
+  --component-table-color-border:          #E0E0E0;
   --component-table-color-header-bg:       #F8F8FB;
-  --component-table-color-header-text:     #2D2D2D;
+  --component-table-color-header-text:     #333333;
   --component-table-color-row-bg:          #FFFFFF;
   --component-table-color-row-hover-bg:    #F0F0F5;
   --component-table-color-row-selected-bg: #E8EAF6;
@@ -655,11 +580,11 @@
   --component-progress-height-lg:     12px;
   --component-progress-border-radius: 9999px;
   --component-progress-transition:    width 300ms cubic-bezier(0.4,0,0.2,1); /* @kind other */
-  --component-progress-color-track:   #E4E4E4;
+  --component-progress-color-track:   #E0E0E0;
   --component-progress-color-primary: #2D3378;
-  --component-progress-color-success: #42A148;
-  --component-progress-color-warning: #FEB51A;
-  --component-progress-color-error:   #F54336;
+  --component-progress-color-success: #27AE60;
+  --component-progress-color-warning: #E2B93B;
+  --component-progress-color-error:   #EB5757;
 
   /* --- spinner --- */
   --component-spinner-size-sm:      16px;
@@ -667,7 +592,7 @@
   --component-spinner-size-lg:      40px;
   --component-spinner-stroke-width: 2px;
   --component-spinner-duration:     700ms; /* @kind other */
-  --component-spinner-color-track:  #E4E4E4;
+  --component-spinner-color-track:  #E0E0E0;
   --component-spinner-color-fill:   #2D3378;
 
   /* --- toast --- */
@@ -683,14 +608,14 @@
   --component-toast-elevation:          0px 4px 16px rgba(45,51,120,0.16);
   --component-toast-color-default-bg:   #1D1D1D;
   --component-toast-color-default-text: #FFFFFF;
-  --component-toast-color-success-bg:   #EDF5EE;
-  --component-toast-color-success-text: #42A148;
-  --component-toast-color-warning-bg:   #FEF8EE;
+  --component-toast-color-success-bg:   #EDFAF4;
+  --component-toast-color-success-text: #27AE60;
+  --component-toast-color-warning-bg:   #FDF8E6;
   --component-toast-color-warning-text: #B08000;
-  --component-toast-color-error-bg:     #FDEDE8;
-  --component-toast-color-error-text:   #F54336;
-  --component-toast-color-info-bg:      #EBF2FF;
-  --component-toast-color-info-text:    #297AFF;
+  --component-toast-color-error-bg:     #FDEEEE;
+  --component-toast-color-error-text:   #EB5757;
+  --component-toast-color-info-bg:      #EEF2FD;
+  --component-toast-color-info-text:    #2F80ED;
 
   /* --- empty-state --- */
   --component-empty-state-icon-size:               48px;
@@ -700,9 +625,9 @@
   --component-empty-state-font-size-description:   14px;
   --component-empty-state-font-weight-title:       700;
   --component-empty-state-font-weight-description: 400;
-  --component-empty-state-color-icon:              #C6C6C6;
-  --component-empty-state-color-title:             #2D2D2D;
-  --component-empty-state-color-description:       #8E8E8E;
+  --component-empty-state-color-icon:              #BDBDBD;
+  --component-empty-state-color-title:             #333333;
+  --component-empty-state-color-description:       #828282;
 
   /* --- nav-header --- */
   --component-nav-header-height:            64px;
@@ -713,10 +638,10 @@
   --component-nav-header-font-weight:       500;
   --component-nav-header-border-width:      1px;
   --component-nav-header-color-bg:          #FFFFFF;
-  --component-nav-header-color-border:      #E4E4E4;
-  --component-nav-header-color-text:        #2D2D2D;
+  --component-nav-header-color-border:      #E0E0E0;
+  --component-nav-header-color-text:        #333333;
   --component-nav-header-color-text-active: #2D3378;
-  --component-nav-header-color-icon:        #555555;
+  --component-nav-header-color-icon:        #4F4F4F;
 
   /* --- nav-sidebar --- */
   --component-nav-sidebar-width:                  240px;
@@ -731,13 +656,13 @@
   --component-nav-sidebar-border-radius:          6px;
   --component-nav-sidebar-transition:             width 200ms cubic-bezier(0,0,0.2,1); /* @kind other */
   --component-nav-sidebar-color-bg:               #FFFFFF;
-  --component-nav-sidebar-color-border:           #E4E4E4;
-  --component-nav-sidebar-color-item-text:        #555555;
+  --component-nav-sidebar-color-border:           #E0E0E0;
+  --component-nav-sidebar-color-item-text:        #4F4F4F;
   --component-nav-sidebar-color-item-text-hover:  #2D3378;
   --component-nav-sidebar-color-item-text-active: #2D3378;
   --component-nav-sidebar-color-item-bg-hover:    #E8EAF6;
   --component-nav-sidebar-color-item-bg-active:   #E8EAF6;
-  --component-nav-sidebar-color-section-label:    #8E8E8E;
+  --component-nav-sidebar-color-section-label:    #828282;
 
   /* --- footer --- */
   --component-footer-max-width:         1280px;
@@ -753,20 +678,20 @@
   --component-footer-link-font-size:    14px;
   --component-footer-meta-font-size:    13px;
   --component-footer-color-bg:          #F8F8FB;
-  --component-footer-color-border:      #E4E4E4;
+  --component-footer-color-border:      #E0E0E0;
   --component-footer-color-heading:     #1D1D1D;
-  --component-footer-color-link:        #555555;
+  --component-footer-color-link:        #4F4F4F;
   --component-footer-color-link-hover:  #2D3378;
-  --component-footer-color-meta:        #8E8E8E;
+  --component-footer-color-meta:        #828282;
 
   /* --- breadcrumbs --- */
   --component-breadcrumbs-font-size:        14px;
   --component-breadcrumbs-gap:              8px;
   --component-breadcrumbs-separator-size:   14px;
-  --component-breadcrumbs-color-link:       #8E8E8E;
+  --component-breadcrumbs-color-link:       #828282;
   --component-breadcrumbs-color-link-hover: #2D3378;
   --component-breadcrumbs-color-current:    #1D1D1D;
-  --component-breadcrumbs-color-separator:  #C6C6C6;
+  --component-breadcrumbs-color-separator:  #BDBDBD;
 
   /* --- large-selector --- */
   --component-large-selector-height:                 56px;
@@ -775,9 +700,9 @@
   --component-large-selector-gap:                    12px;
   --component-large-selector-border-width:           1px;
   --component-large-selector-color-bg:               #FFFFFF;
-  --component-large-selector-color-border:           #E4E4E4;
-  --component-large-selector-color-text:             #2D2D2D;
-  --component-large-selector-color-icon:             #555555;
+  --component-large-selector-color-border:           #E0E0E0;
+  --component-large-selector-color-text:             #333333;
+  --component-large-selector-color-icon:             #4F4F4F;
   --component-large-selector-color-selected-bg:      #E8EAF6;
   --component-large-selector-color-selected-border:  #2D3378;
   --component-large-selector-color-selected-text:    #2D3378;
@@ -790,10 +715,10 @@
   --component-date-picker-font-size:           14px;
   --component-date-picker-weekday-font-size:   12px;
   --component-date-picker-color-bg:            #FFFFFF;
-  --component-date-picker-color-border:        #E4E4E4;
+  --component-date-picker-color-border:        #E0E0E0;
   --component-date-picker-color-text:          #1D1D1D;
-  --component-date-picker-color-muted:         #C6C6C6;
-  --component-date-picker-color-weekday:       #8E8E8E;
+  --component-date-picker-color-muted:         #BDBDBD;
+  --component-date-picker-color-weekday:       #828282;
   --component-date-picker-color-today:         #2D3378;
   --component-date-picker-color-selected-bg:   #2D3378;
   --component-date-picker-color-selected-text: #FFFFFF;
@@ -809,11 +734,11 @@
   --component-accordion-header-font-weight:  700;
   --component-accordion-body-font-size:      14px;
   --component-accordion-color-bg:            #FFFFFF;
-  --component-accordion-color-border:        #E4E4E4;
+  --component-accordion-color-border:        #E0E0E0;
   --component-accordion-color-header-text:   #1D1D1D;
-  --component-accordion-color-body-text:     #555555;
+  --component-accordion-color-body-text:     #4F4F4F;
   --component-accordion-color-open-bg:       #FAFBFF;
-  --component-accordion-color-icon:          #8E8E8E;
+  --component-accordion-color-icon:          #828282;
 
   /* --- banner --- */
   --component-banner-padding-y:           32px;
@@ -823,14 +748,14 @@
   --component-banner-title-font-size:     18px;
   --component-banner-title-font-weight:   700;
   --component-banner-body-font-size:      14px;
-  --component-banner-color-info-bg:       #EBF2FF;
+  --component-banner-color-info-bg:       #EEF2FD;
   --component-banner-color-info-text:     #2D3378;
-  --component-banner-color-success-bg:    #EDF5EE;
+  --component-banner-color-success-bg:    #EDFAF4;
   --component-banner-color-success-text:  #1E8E54;
-  --component-banner-color-warning-bg:    #FEF8EE;
+  --component-banner-color-warning-bg:    #FDF8E6;
   --component-banner-color-warning-text:  #B08000;
   --component-banner-color-neutral-bg:    #F8F8FB;
-  --component-banner-color-neutral-text:  #2D2D2D;
+  --component-banner-color-neutral-text:  #333333;
 
   /* --- carousel --- */
   --component-carousel-height:                   320px;
@@ -840,7 +765,7 @@
   --component-carousel-indicator-size:           8px;
   --component-carousel-indicator-gap:            8px;
   --component-carousel-color-indicator-active:   #2D3378;
-  --component-carousel-color-indicator-inactive: #E4E4E4;
+  --component-carousel-color-indicator-inactive: #E0E0E0;
   --component-carousel-color-nav-bg:             #FFFFFF;
   --component-carousel-color-nav-icon:           #1D1D1D;
 
@@ -854,9 +779,9 @@
   --component-file-upload-color-border-hover:  #2D3378;
   --component-file-upload-color-bg:            #FFFFFF;
   --component-file-upload-color-bg-hover:      #FAFBFF;
-  --component-file-upload-color-text:          #555555;
-  --component-file-upload-color-hint:          #8E8E8E;
-  --component-file-upload-color-success:       #42A148;
+  --component-file-upload-color-text:          #4F4F4F;
+  --component-file-upload-color-hint:          #828282;
+  --component-file-upload-color-success:       #27AE60;
 
   /* --- tag-input --- */
   --component-tag-input-min-height:          48px;
@@ -873,8 +798,8 @@
   --component-tag-input-color-bg:            #FFFFFF;
   --component-tag-input-color-tag-bg:        #E8EAF6;
   --component-tag-input-color-tag-text:      #2D3378;
-  --component-tag-input-color-tag-remove:    #8E8E8E;
-  --component-tag-input-color-placeholder:   #C6C6C6;
+  --component-tag-input-color-tag-remove:    #828282;
+  --component-tag-input-color-placeholder:   #BDBDBD;
 
   /* --- nav-app (bottom tab bar) --- */
   --component-nav-app-height:                 72px;
@@ -887,18 +812,18 @@
   --component-nav-app-badge-dot-size:         8px;
   --component-nav-app-color-bg:               #FFFFFF;
   --component-nav-app-color-bg-dark:          #1D1D1D;
-  --component-nav-app-color-icon-default:     #C6C6C6;
+  --component-nav-app-color-icon-default:     #BDBDBD;
   --component-nav-app-color-icon-active:      #2D3378;
   --component-nav-app-color-icon-active-dark: #FFFFFF;
   --component-nav-app-color-label-active:     #2D3378;
-  --component-nav-app-color-badge-bg:         #F54336;
+  --component-nav-app-color-badge-bg:         #EB5757;
   --component-nav-app-color-fab-bg:           #2D3378;
 
   /* --- progress-circle --- */
   --component-progress-circle-size:         80px;
   --component-progress-circle-stroke-width: 8px;
   --component-progress-circle-font-size:    18px;
-  --component-progress-circle-color-track:  #E4E4E4;
+  --component-progress-circle-color-track:  #E0E0E0;
   --component-progress-circle-color-fill:   #2D3378;
   --component-progress-circle-color-text:   #1D1D1D;
 
@@ -910,11 +835,11 @@
   --component-stepper-color-done-text:           #FFFFFF;
   --component-stepper-color-active-bg:           #2D3378;
   --component-stepper-color-active-ring:         #E8EAF6;
-  --component-stepper-color-pending-bg:          #E4E4E4;
-  --component-stepper-color-pending-text:        #C6C6C6;
+  --component-stepper-color-pending-bg:          #E0E0E0;
+  --component-stepper-color-pending-text:        #BDBDBD;
   --component-stepper-color-connector-done:      #2D3378;
-  --component-stepper-color-connector-pending:   #E4E4E4;
-  --component-stepper-color-label:               #555555;
+  --component-stepper-color-connector-pending:   #E0E0E0;
+  --component-stepper-color-label:               #4F4F4F;
 
   /* --- image (guidelines) --- */
   --component-image-radius-none:    0px;
@@ -939,7 +864,7 @@
   --color-text-primary:     #F0F0F0;
   --color-text-secondary:   #C5C5C5;
   --color-text-tertiary:    #9B9B9B;
-  --color-text-disabled:    #555555;
+  --color-text-disabled:    #4F4F4F;
   --color-text-placeholder: #6B6B6B;
   --color-text-inverse:     #000000;
   --color-text-link:        #6BA8E8;
@@ -958,10 +883,10 @@
   --color-bg-overlay:      rgba(0,0,0,0.72);
   --color-bg-brand:        #1E1A5E;
   --color-bg-brand-subtle: rgba(45,51,120,0.25);
-  --color-bg-error:        rgba(245,67,54,0.15);
-  --color-bg-success:      rgba(66,161,72,0.15);
-  --color-bg-warning:      rgba(254,181,26,0.15);
-  --color-bg-info:         rgba(41,122,255,0.15);
+  --color-bg-error:        rgba(235,87,87,0.15);
+  --color-bg-success:      rgba(39,174,96,0.15);
+  --color-bg-warning:      rgba(226,185,59,0.15);
+  --color-bg-info:         rgba(47,128,237,0.15);
 
   /* Border */
   --color-border-default:  #2E2E34;

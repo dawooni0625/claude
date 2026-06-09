@@ -29,14 +29,14 @@
       "textarea-min-height": { "$value": "88px",  "$type": "dimension" },
       "color": {
         "bg-default":     { "$value": "#FFFFFF", "$type": "color" },
-        "bg-disabled":    { "$value": "#E0E0E0", "$type": "color" },
+        "bg-disabled":    { "$value": "#E4E4E4", "$type": "color" },
         "bg-filled":      { "$value": "#F5F5F8", "$type": "color" },
-        "border-default": { "$value": "#E0E0E0", "$type": "color" },
+        "border-default": { "$value": "#E4E4E4", "$type": "color" },
         "text-value":     { "$value": "#1D1D1D", "$type": "color" },
-        "text-label":     { "$value": "#333333", "$type": "color" },
-        "text-helper":    { "$value": "#4F4F4F", "$type": "color" },
-        "text-error":     { "$value": "#EB5757", "$type": "color" },
-        "text-success":   { "$value": "#27AE60", "$type": "color" }
+        "text-label":     { "$value": "#2D2D2D", "$type": "color" },
+        "text-helper":    { "$value": "#555555", "$type": "color" },
+        "text-error":     { "$value": "#F54336", "$type": "color" },
+        "text-success":   { "$value": "#42A148", "$type": "color" }
       }
     },
 
@@ -69,7 +69,7 @@
         "primary-bg":          { "$value": "#2D3378", "$type": "color" },
         "primary-bg-hover":    { "$value": "#232860", "$type": "color" },
         "primary-bg-active":   { "$value": "#1A1F4D", "$type": "color" },
-        "primary-bg-disabled": { "$value": "#BDBDBD", "$type": "color" },
+        "primary-bg-disabled": { "$value": "#C6C6C6", "$type": "color" },
         "primary-text":        { "$value": "#FFFFFF", "$type": "color" },
         "secondary-bg":        { "$value": "#FFFFFF", "$type": "color" },
         "secondary-bg-hover":  { "$value": "#E8EAF6", "$type": "color" },
@@ -92,16 +92,16 @@
       "color": {
         "brand-bg":     { "$value": "#2D3378", "$type": "color" },
         "brand-text":   { "$value": "#FFFFFF", "$type": "color" },
-        "info-bg":      { "$value": "#2F80ED", "$type": "color" },
+        "info-bg":      { "$value": "#297AFF", "$type": "color" },
         "info-text":    { "$value": "#FFFFFF", "$type": "color" },
-        "success-bg":   { "$value": "#27AE60", "$type": "color" },
+        "success-bg":   { "$value": "#42A148", "$type": "color" },
         "success-text": { "$value": "#FFFFFF", "$type": "color" },
-        "warning-bg":   { "$value": "#E2B93B", "$type": "color" },
-        "warning-text": { "$value": "#000000", "$type": "color" },
-        "error-bg":     { "$value": "#EB5757", "$type": "color" },
+        "warning-bg":   { "$value": "#FEB51A", "$type": "color" },
+        "warning-text": { "$value": "#FFFFFF", "$type": "color" },
+        "error-bg":     { "$value": "#F54336", "$type": "color" },
         "error-text":   { "$value": "#FFFFFF", "$type": "color" },
-        "neutral-bg":   { "$value": "#E0E0E0", "$type": "color" },
-        "neutral-text": { "$value": "#333333", "$type": "color" }
+        "neutral-bg":   { "$value": "#E4E4E4", "$type": "color" },
+        "neutral-text": { "$value": "#2D2D2D", "$type": "color" }
       }
     },
 
@@ -142,7 +142,7 @@
       "border-radius":   { "$value": "8px",    "$type": "dimension" },
       "border-width":    { "$value": "1px",    "$type": "dimension" },
       "bg":              { "$value": "#FFFFFF", "$type": "color" },
-      "border-color":    { "$value": "#E0E0E0", "$type": "color" },
+      "border-color":    { "$value": "#E4E4E4", "$type": "color" },
       "elevation":       { "$value": "0px 1px 3px rgba(45,51,120,0.08)", "$type": "shadow" },
       "elevation-hover": { "$value": "0px 2px 8px rgba(45,51,120,0.12)", "$type": "shadow" }
     },
@@ -169,14 +169,14 @@
       "check-icon-size": { "$value": "12px",  "$type": "dimension" },
       "label-gap":       { "$value": "8px",   "$type": "dimension" },
       "color": {
-        "border-default":  { "$value": "#BDBDBD", "$type": "color" },
+        "border-default":  { "$value": "#C6C6C6", "$type": "color" },
         "border-hover":    { "$value": "#5B63A8", "$type": "color" },
         "checked-bg":      { "$value": "#2D3378", "$type": "color" },
         "checked-border":  { "$value": "#2D3378", "$type": "color" },
         "checked-icon":    { "$value": "#FFFFFF", "$type": "color" },
-        "disabled-bg":     { "$value": "#E0E0E0", "$type": "color" },
-        "disabled-border": { "$value": "#BDBDBD", "$type": "color" },
-        "error-border":    { "$value": "#EB5757", "$type": "color" }
+        "disabled-bg":     { "$value": "#E4E4E4", "$type": "color" },
+        "disabled-border": { "$value": "#C6C6C6", "$type": "color" },
+        "error-border":    { "$value": "#F54336", "$type": "color" }
       }
     },
 
@@ -186,13 +186,13 @@
       "border-width": { "$value": "1.5px", "$type": "dimension" },
       "label-gap":    { "$value": "8px",   "$type": "dimension" },
       "color": {
-        "border-default":  { "$value": "#BDBDBD", "$type": "color" },
+        "border-default":  { "$value": "#C6C6C6", "$type": "color" },
         "border-hover":    { "$value": "#5B63A8", "$type": "color" },
         "checked-border":  { "$value": "#2D3378", "$type": "color" },
         "checked-dot":     { "$value": "#2D3378", "$type": "color" },
-        "disabled-bg":     { "$value": "#E0E0E0", "$type": "color" },
-        "disabled-border": { "$value": "#BDBDBD", "$type": "color" },
-        "error-border":    { "$value": "#EB5757", "$type": "color" }
+        "disabled-bg":     { "$value": "#E4E4E4", "$type": "color" },
+        "disabled-border": { "$value": "#C6C6C6", "$type": "color" },
+        "error-border":    { "$value": "#F54336", "$type": "color" }
       }
     },
 
@@ -204,10 +204,10 @@
       "border-radius": { "$value": "9999px", "$type": "dimension" },
       "transition":    { "$value": "background-color 100ms cubic-bezier(0,0,0.2,1), transform 100ms cubic-bezier(0,0,0.2,1)", "$type": "transition" },
       "color": {
-        "off-track": { "$value": "#BDBDBD", "$type": "color" },
+        "off-track": { "$value": "#C6C6C6", "$type": "color" },
         "on-track":  { "$value": "#2D3378", "$type": "color" },
         "thumb":     { "$value": "#FFFFFF", "$type": "color" },
-        "disabled":  { "$value": "#E0E0E0", "$type": "color" }
+        "disabled":  { "$value": "#E4E4E4", "$type": "color" }
       }
     },
 
@@ -220,8 +220,8 @@
       "font-weight-active": { "$value": "700",  "$type": "fontWeight" },
       "indicator-height":   { "$value": "2px",  "$type": "dimension" },
       "color": {
-        "text-default": { "$value": "#828282", "$type": "color" },
-        "text-hover":   { "$value": "#4F4F4F", "$type": "color" },
+        "text-default": { "$value": "#8E8E8E", "$type": "color" },
+        "text-hover":   { "$value": "#555555", "$type": "color" },
         "text-active":  { "$value": "#2D3378", "$type": "color" },
         "indicator":    { "$value": "#2D3378", "$type": "color" },
         "bg-hover":     { "$value": "#E8EAF6", "$type": "color" }
@@ -238,7 +238,7 @@
       "elevation":     { "$value": "0px 2px 8px rgba(45,51,120,0.12)", "$type": "shadow" },
       "color": {
         "bg":                 { "$value": "#FFFFFF", "$type": "color" },
-        "border":             { "$value": "#E0E0E0", "$type": "color" },
+        "border":             { "$value": "#E4E4E4", "$type": "color" },
         "item-hover-bg":      { "$value": "#E8EAF6", "$type": "color" },
         "item-active-bg":     { "$value": "#D0D5EA", "$type": "color" },
         "item-selected-bg":   { "$value": "#E8EAF6", "$type": "color" },
@@ -252,12 +252,12 @@
       "font-size":     { "$value": "14px", "$type": "dimension" },
       "gap":           { "$value": "4px",  "$type": "dimension" },
       "color": {
-        "text-default":  { "$value": "#4F4F4F", "$type": "color" },
+        "text-default":  { "$value": "#555555", "$type": "color" },
         "text-hover":    { "$value": "#2D3378", "$type": "color" },
         "active-bg":     { "$value": "#2D3378", "$type": "color" },
         "active-text":   { "$value": "#FFFFFF", "$type": "color" },
         "hover-bg":      { "$value": "#E8EAF6", "$type": "color" },
-        "disabled-text": { "$value": "#BDBDBD", "$type": "color" }
+        "disabled-text": { "$value": "#C6C6C6", "$type": "color" }
       }
     },
 
@@ -271,9 +271,9 @@
       "body-font-size":     { "$value": "14px", "$type": "dimension" },
       "border-width":       { "$value": "1px",  "$type": "dimension" },
       "color": {
-        "border":          { "$value": "#E0E0E0", "$type": "color" },
+        "border":          { "$value": "#E4E4E4", "$type": "color" },
         "header-bg":       { "$value": "#F8F8FB", "$type": "color" },
-        "header-text":     { "$value": "#333333", "$type": "color" },
+        "header-text":     { "$value": "#2D2D2D", "$type": "color" },
         "row-bg":          { "$value": "#FFFFFF", "$type": "color" },
         "row-hover-bg":    { "$value": "#F0F0F5", "$type": "color" },
         "row-selected-bg": { "$value": "#E8EAF6", "$type": "color" },
@@ -290,11 +290,11 @@
       "border-radius": { "$value": "9999px", "$type": "dimension" },
       "transition":    { "$value": "width 300ms cubic-bezier(0.4,0,0.2,1)", "$type": "transition" },
       "color": {
-        "track":   { "$value": "#E0E0E0", "$type": "color", "$description": "미채워진 배경 트랙" },
+        "track":   { "$value": "#E4E4E4", "$type": "color", "$description": "미채워진 배경 트랙" },
         "primary": { "$value": "#2D3378", "$type": "color" },
-        "success": { "$value": "#27AE60", "$type": "color" },
-        "warning": { "$value": "#E2B93B", "$type": "color" },
-        "error":   { "$value": "#EB5757", "$type": "color" }
+        "success": { "$value": "#42A148", "$type": "color" },
+        "warning": { "$value": "#FEB51A", "$type": "color" },
+        "error":   { "$value": "#F54336", "$type": "color" }
       }
     },
 
@@ -307,7 +307,7 @@
       "stroke-width": { "$value": "2px", "$type": "dimension" },
       "duration":     { "$value": "700ms", "$type": "duration" },
       "color": {
-        "track":   { "$value": "#E0E0E0", "$type": "color", "$description": "회전 트랙 배경" },
+        "track":   { "$value": "#E4E4E4", "$type": "color", "$description": "회전 트랙 배경" },
         "fill":    { "$value": "#2D3378", "$type": "color", "$description": "회전 채워지는 호" }
       }
     },
@@ -326,14 +326,14 @@
       "color": {
         "default-bg":   { "$value": "#1D1D1D", "$type": "color" },
         "default-text": { "$value": "#FFFFFF", "$type": "color" },
-        "success-bg":   { "$value": "#EDFAF4", "$type": "color" },
-        "success-text": { "$value": "#27AE60", "$type": "color" },
-        "warning-bg":   { "$value": "#FDF8E6", "$type": "color" },
+        "success-bg":   { "$value": "#EDF5EE", "$type": "color" },
+        "success-text": { "$value": "#42A148", "$type": "color" },
+        "warning-bg":   { "$value": "#FEF8EE", "$type": "color" },
         "warning-text": { "$value": "#B08000", "$type": "color" },
-        "error-bg":     { "$value": "#FDEEEE", "$type": "color" },
-        "error-text":   { "$value": "#EB5757", "$type": "color" },
-        "info-bg":      { "$value": "#EEF2FD", "$type": "color" },
-        "info-text":    { "$value": "#2F80ED", "$type": "color" }
+        "error-bg":     { "$value": "#FDEDE8", "$type": "color" },
+        "error-text":   { "$value": "#F54336", "$type": "color" },
+        "info-bg":      { "$value": "#EBF2FF", "$type": "color" },
+        "info-text":    { "$value": "#297AFF", "$type": "color" }
       }
     },
 
@@ -350,9 +350,9 @@
         "description": { "$value": "400", "$type": "fontWeight" }
       },
       "color": {
-        "icon":        { "$value": "#BDBDBD", "$type": "color" },
-        "title":       { "$value": "#333333", "$type": "color" },
-        "description": { "$value": "#828282", "$type": "color" }
+        "icon":        { "$value": "#C6C6C6", "$type": "color" },
+        "title":       { "$value": "#2D2D2D", "$type": "color" },
+        "description": { "$value": "#8E8E8E", "$type": "color" }
       }
     },
 
@@ -366,10 +366,10 @@
       "border-width": { "$value": "1px",    "$type": "dimension" },
       "color": {
         "bg":           { "$value": "#FFFFFF", "$type": "color" },
-        "border":       { "$value": "#E0E0E0", "$type": "color" },
-        "text":         { "$value": "#333333", "$type": "color" },
+        "border":       { "$value": "#E4E4E4", "$type": "color" },
+        "text":         { "$value": "#2D2D2D", "$type": "color" },
         "text-active":  { "$value": "#2D3378", "$type": "color" },
-        "icon":         { "$value": "#4F4F4F", "$type": "color" }
+        "icon":         { "$value": "#555555", "$type": "color" }
       }
     },
 
@@ -387,13 +387,13 @@
       "transition":      { "$value": "width 200ms cubic-bezier(0,0,0.2,1)", "$type": "transition" },
       "color": {
         "bg":              { "$value": "#FFFFFF", "$type": "color" },
-        "border":          { "$value": "#E0E0E0", "$type": "color" },
-        "item-text":       { "$value": "#4F4F4F", "$type": "color" },
+        "border":          { "$value": "#E4E4E4", "$type": "color" },
+        "item-text":       { "$value": "#555555", "$type": "color" },
         "item-text-hover": { "$value": "#2D3378", "$type": "color" },
         "item-text-active":{ "$value": "#2D3378", "$type": "color" },
         "item-bg-hover":   { "$value": "#E8EAF6", "$type": "color" },
         "item-bg-active":  { "$value": "#E8EAF6", "$type": "color" },
-        "section-label":   { "$value": "#828282", "$type": "color" }
+        "section-label":   { "$value": "#8E8E8E", "$type": "color" }
       }
     },
 
@@ -412,11 +412,11 @@
       "meta-font-size":    { "$value": "13px",   "$type": "dimension", "$description": "카피라이트/법적 고지" },
       "color": {
         "bg":          { "$value": "#F8F8FB", "$type": "color" },
-        "border":      { "$value": "#E0E0E0", "$type": "color" },
+        "border":      { "$value": "#E4E4E4", "$type": "color" },
         "heading":     { "$value": "#1D1D1D", "$type": "color", "$description": "컬럼 제목" },
-        "link":        { "$value": "#4F4F4F", "$type": "color" },
+        "link":        { "$value": "#555555", "$type": "color" },
         "link-hover":  { "$value": "#2D3378", "$type": "color" },
-        "meta":        { "$value": "#828282", "$type": "color", "$description": "카피라이트/하단 메타" }
+        "meta":        { "$value": "#8E8E8E", "$type": "color", "$description": "카피라이트/하단 메타" }
       }
     },
 
@@ -425,10 +425,10 @@
       "gap":            { "$value": "8px",  "$type": "dimension", "$description": "항목–구분자 간격" },
       "separator-size": { "$value": "14px", "$type": "dimension", "$description": "Chevron Right 아이콘" },
       "color": {
-        "link":       { "$value": "#828282", "$type": "color", "$description": "이전 단계 (링크)" },
+        "link":       { "$value": "#8E8E8E", "$type": "color", "$description": "이전 단계 (링크)" },
         "link-hover": { "$value": "#2D3378", "$type": "color" },
         "current":    { "$value": "#1D1D1D", "$type": "color", "$description": "현재 페이지 (텍스트)" },
-        "separator":  { "$value": "#BDBDBD", "$type": "color" }
+        "separator":  { "$value": "#C6C6C6", "$type": "color" }
       }
     },
 
@@ -440,9 +440,9 @@
       "border-width":  { "$value": "1px",  "$type": "dimension" },
       "color": {
         "bg":              { "$value": "#FFFFFF", "$type": "color" },
-        "border":          { "$value": "#E0E0E0", "$type": "color" },
-        "text":            { "$value": "#333333", "$type": "color" },
-        "icon":            { "$value": "#4F4F4F", "$type": "color" },
+        "border":          { "$value": "#E4E4E4", "$type": "color" },
+        "text":            { "$value": "#2D2D2D", "$type": "color" },
+        "icon":            { "$value": "#555555", "$type": "color" },
         "selected-bg":     { "$value": "#E8EAF6", "$type": "color" },
         "selected-border": { "$value": "#2D3378", "$type": "color" },
         "selected-text":   { "$value": "#2D3378", "$type": "color" }
@@ -458,10 +458,10 @@
       "weekday-font-size": { "$value": "12px",  "$type": "dimension" },
       "color": {
         "bg":            { "$value": "#FFFFFF", "$type": "color" },
-        "border":        { "$value": "#E0E0E0", "$type": "color" },
+        "border":        { "$value": "#E4E4E4", "$type": "color" },
         "text":          { "$value": "#1D1D1D", "$type": "color" },
-        "muted":         { "$value": "#BDBDBD", "$type": "color", "$description": "이전/다음 달, 비활성 날짜" },
-        "weekday":       { "$value": "#828282", "$type": "color" },
+        "muted":         { "$value": "#C6C6C6", "$type": "color", "$description": "이전/다음 달, 비활성 날짜" },
+        "weekday":       { "$value": "#8E8E8E", "$type": "color" },
         "today":         { "$value": "#2D3378", "$type": "color", "$description": "오늘 표시 색상" },
         "selected-bg":   { "$value": "#2D3378", "$type": "color" },
         "selected-text": { "$value": "#FFFFFF", "$type": "color" },
@@ -480,11 +480,11 @@
       "body-font-size":     { "$value": "14px", "$type": "dimension" },
       "color": {
         "bg":          { "$value": "#FFFFFF", "$type": "color" },
-        "border":      { "$value": "#E0E0E0", "$type": "color" },
+        "border":      { "$value": "#E4E4E4", "$type": "color" },
         "header-text": { "$value": "#1D1D1D", "$type": "color" },
-        "body-text":   { "$value": "#4F4F4F", "$type": "color" },
+        "body-text":   { "$value": "#555555", "$type": "color" },
         "open-bg":     { "$value": "#FAFBFF", "$type": "color", "$description": "열린 항목 본문 배경" },
-        "icon":        { "$value": "#828282", "$type": "color" }
+        "icon":        { "$value": "#8E8E8E", "$type": "color" }
       }
     },
 
@@ -497,14 +497,14 @@
       "title-font-weight": { "$value": "700",  "$type": "fontWeight" },
       "body-font-size":    { "$value": "14px", "$type": "dimension" },
       "color": {
-        "info-bg":      { "$value": "#EEF2FD", "$type": "color" },
+        "info-bg":      { "$value": "#EBF2FF", "$type": "color" },
         "info-text":    { "$value": "#2D3378", "$type": "color" },
-        "success-bg":   { "$value": "#EDFAF4", "$type": "color" },
+        "success-bg":   { "$value": "#EDF5EE", "$type": "color" },
         "success-text": { "$value": "#1E8E54", "$type": "color" },
-        "warning-bg":   { "$value": "#FDF8E6", "$type": "color" },
+        "warning-bg":   { "$value": "#FEF8EE", "$type": "color" },
         "warning-text": { "$value": "#B08000", "$type": "color" },
         "neutral-bg":   { "$value": "#F8F8FB", "$type": "color" },
-        "neutral-text": { "$value": "#333333", "$type": "color" }
+        "neutral-text": { "$value": "#2D2D2D", "$type": "color" }
       }
     },
 
@@ -517,7 +517,7 @@
       "indicator-gap":          { "$value": "8px",   "$type": "dimension" },
       "color": {
         "indicator-active":   { "$value": "#2D3378", "$type": "color" },
-        "indicator-inactive": { "$value": "#E0E0E0", "$type": "color" },
+        "indicator-inactive": { "$value": "#E4E4E4", "$type": "color" },
         "nav-bg":             { "$value": "#FFFFFF", "$type": "color" },
         "nav-icon":           { "$value": "#1D1D1D", "$type": "color" }
       }
@@ -534,9 +534,9 @@
         "border-hover": { "$value": "#2D3378", "$type": "color", "$description": "드래그 오버 상태" },
         "bg":           { "$value": "#FFFFFF", "$type": "color" },
         "bg-hover":     { "$value": "#FAFBFF", "$type": "color" },
-        "text":         { "$value": "#4F4F4F", "$type": "color" },
-        "hint":         { "$value": "#828282", "$type": "color", "$description": "최대 용량/형식 안내" },
-        "success":      { "$value": "#27AE60", "$type": "color", "$description": "업로드 완료" }
+        "text":         { "$value": "#555555", "$type": "color" },
+        "hint":         { "$value": "#8E8E8E", "$type": "color", "$description": "최대 용량/형식 안내" },
+        "success":      { "$value": "#42A148", "$type": "color", "$description": "업로드 완료" }
       }
     },
 
@@ -556,8 +556,8 @@
         "bg":           { "$value": "#FFFFFF", "$type": "color" },
         "tag-bg":       { "$value": "#E8EAF6", "$type": "color" },
         "tag-text":     { "$value": "#2D3378", "$type": "color" },
-        "tag-remove":   { "$value": "#828282", "$type": "color", "$description": "× 제거 아이콘" },
-        "placeholder":  { "$value": "#BDBDBD", "$type": "color" }
+        "tag-remove":   { "$value": "#8E8E8E", "$type": "color", "$description": "× 제거 아이콘" },
+        "placeholder":  { "$value": "#C6C6C6", "$type": "color" }
       }
     },
 
@@ -573,11 +573,11 @@
       "color": {
         "bg":               { "$value": "#FFFFFF", "$type": "color" },
         "bg-dark":          { "$value": "#1D1D1D", "$type": "color" },
-        "icon-default":     { "$value": "#BDBDBD", "$type": "color", "$description": "비활성 탭" },
+        "icon-default":     { "$value": "#C6C6C6", "$type": "color", "$description": "비활성 탭" },
         "icon-active":      { "$value": "#2D3378", "$type": "color", "$description": "Light 활성" },
         "icon-active-dark": { "$value": "#FFFFFF", "$type": "color", "$description": "Dark 활성" },
         "label-active":     { "$value": "#2D3378", "$type": "color" },
-        "badge-bg":         { "$value": "#EB5757", "$type": "color" },
+        "badge-bg":         { "$value": "#F54336", "$type": "color" },
         "fab-bg":           { "$value": "#2D3378", "$type": "color" }
       }
     },
@@ -587,7 +587,7 @@
       "stroke-width": { "$value": "8px",  "$type": "dimension" },
       "font-size":    { "$value": "18px", "$type": "dimension", "$description": "중앙 퍼센트 텍스트" },
       "color": {
-        "track": { "$value": "#E0E0E0", "$type": "color" },
+        "track": { "$value": "#E4E4E4", "$type": "color" },
         "fill":  { "$value": "#2D3378", "$type": "color" },
         "text":  { "$value": "#1D1D1D", "$type": "color" }
       }
@@ -602,11 +602,11 @@
         "done-text":         { "$value": "#FFFFFF", "$type": "color" },
         "active-bg":         { "$value": "#2D3378", "$type": "color", "$description": "현재 단계" },
         "active-ring":       { "$value": "#E8EAF6", "$type": "color", "$description": "현재 단계 외곽 링" },
-        "pending-bg":        { "$value": "#E0E0E0", "$type": "color", "$description": "대기 단계" },
-        "pending-text":      { "$value": "#BDBDBD", "$type": "color" },
+        "pending-bg":        { "$value": "#E4E4E4", "$type": "color", "$description": "대기 단계" },
+        "pending-text":      { "$value": "#C6C6C6", "$type": "color" },
         "connector-done":    { "$value": "#2D3378", "$type": "color" },
-        "connector-pending": { "$value": "#E0E0E0", "$type": "color" },
-        "label":             { "$value": "#4F4F4F", "$type": "color" }
+        "connector-pending": { "$value": "#E4E4E4", "$type": "color" },
+        "label":             { "$value": "#555555", "$type": "color" }
       }
     },
 

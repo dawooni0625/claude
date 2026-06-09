@@ -1,17 +1,94 @@
 {
   "color": {
     "brand": {
-      "primary":    { "$value": "#2D3378", "$type": "color", "$description": "로고, 헤드라인, 브랜드 버튼" },
-      "secondary":  { "$value": "#5B63A8", "$type": "color", "$description": "서브 버튼, 아이콘, 호버" },
+      "primary":    { "$value": "#2D3378", "$type": "color", "$description": "로고, 헤드라인, 브랜드 버튼 (인디고 — 유지)" },
+      "secondary":  { "$value": "#5B63A8", "$type": "color", "$description": "서브 버튼, 아이콘, 호버 (인디고 틴트)" },
       "tertiary":   { "$value": "#8E96D3", "$type": "color", "$description": "일러스트 요소, 보조 그래픽" },
       "quaternary": { "$value": "#E8EAF6", "$type": "color", "$description": "배경톤, 연한 브랜드 배경" }
     },
-    "state": {
-      "info":    { "$value": "#2F80ED", "$type": "color", "$description": "안내, 중립 메시지" },
-      "success": { "$value": "#27AE60", "$type": "color", "$description": "완료, 성공 상태" },
-      "warning": { "$value": "#E2B93B", "$type": "color", "$description": "주의, 경고 상태" },
-      "error":   { "$value": "#EB5757", "$type": "color", "$description": "오류, 실패 상태" }
+
+    "grayscale": {
+      "0":   { "$value": "#FFFFFF", "$type": "color" },
+      "5":   { "$value": "#F8F8F8", "$type": "color" },
+      "10":  { "$value": "#F0F0F0", "$type": "color" },
+      "20":  { "$value": "#E4E4E4", "$type": "color" },
+      "30":  { "$value": "#D8D8D8", "$type": "color" },
+      "40":  { "$value": "#C6C6C6", "$type": "color" },
+      "50":  { "$value": "#8E8E8E", "$type": "color" },
+      "60":  { "$value": "#717171", "$type": "color" },
+      "70":  { "$value": "#555555", "$type": "color" },
+      "80":  { "$value": "#2D2D2D", "$type": "color" },
+      "90":  { "$value": "#1D1D1D", "$type": "color" },
+      "100": { "$value": "#000000", "$type": "color" }
     },
+
+    "action": {
+      "2":   { "$value": "#F7FAFF", "$type": "color" },
+      "5":   { "$value": "#EBF2FF", "$type": "color" },
+      "10":  { "$value": "#D7E7FF", "$type": "color" },
+      "20":  { "$value": "#C4DAFE", "$type": "color" },
+      "30":  { "$value": "#9CC2FE", "$type": "color" },
+      "40":  { "$value": "#76AAFF", "$type": "color" },
+      "50":  { "$value": "#4E91FE", "$type": "color" },
+      "60":  { "$value": "#297AFF", "$type": "color", "$description": "Action 대표값 (인터랙티브·링크)" },
+      "70":  { "$value": "#2265D2", "$type": "color" },
+      "80":  { "$value": "#1A4EA3", "$type": "color" },
+      "90":  { "$value": "#133772", "$type": "color" },
+      "100": { "$value": "#0C2246", "$type": "color" }
+    },
+
+    "positive": {
+      "2":   { "$value": "#F7FCF8", "$type": "color" },
+      "5":   { "$value": "#EDF5EE", "$type": "color" },
+      "10":  { "$value": "#DDEDDE", "$type": "color" },
+      "20":  { "$value": "#CBE6CD", "$type": "color" },
+      "30":  { "$value": "#A9D3AE", "$type": "color" },
+      "40":  { "$value": "#87C28A", "$type": "color" },
+      "50":  { "$value": "#65B167", "$type": "color" },
+      "60":  { "$value": "#42A148", "$type": "color", "$description": "Positive 대표값 (성공)" },
+      "70":  { "$value": "#37823E", "$type": "color" },
+      "80":  { "$value": "#2B662E", "$type": "color" },
+      "90":  { "$value": "#1E4922", "$type": "color" },
+      "100": { "$value": "#132C14", "$type": "color" }
+    },
+
+    "warning": {
+      "2":   { "$value": "#FEFCF9", "$type": "color" },
+      "5":   { "$value": "#FEF8EE", "$type": "color" },
+      "10":  { "$value": "#FFF1D6", "$type": "color" },
+      "20":  { "$value": "#FDEAC1", "$type": "color" },
+      "30":  { "$value": "#FEDC96", "$type": "color" },
+      "40":  { "$value": "#FFCF70", "$type": "color" },
+      "50":  { "$value": "#FFC147", "$type": "color" },
+      "60":  { "$value": "#FEB51A", "$type": "color", "$description": "Warning 대표값 (주의)" },
+      "70":  { "$value": "#D09519", "$type": "color" },
+      "80":  { "$value": "#A37412", "$type": "color" },
+      "90":  { "$value": "#75520E", "$type": "color" },
+      "100": { "$value": "#463209", "$type": "color" }
+    },
+
+    "danger": {
+      "2":   { "$value": "#FDF7F5", "$type": "color" },
+      "5":   { "$value": "#FDEDE8", "$type": "color" },
+      "10":  { "$value": "#FCDCD9", "$type": "color" },
+      "20":  { "$value": "#FDCBC8", "$type": "color" },
+      "30":  { "$value": "#FAA9A2", "$type": "color" },
+      "40":  { "$value": "#F6887F", "$type": "color" },
+      "50":  { "$value": "#F5655B", "$type": "color" },
+      "60":  { "$value": "#F54336", "$type": "color", "$description": "Danger 대표값 (오류)" },
+      "70":  { "$value": "#C8382D", "$type": "color" },
+      "80":  { "$value": "#9B2B23", "$type": "color" },
+      "90":  { "$value": "#701F1A", "$type": "color" },
+      "100": { "$value": "#44130C", "$type": "color" }
+    },
+
+    "state": {
+      "info":    { "$value": "{color.action.60}",    "$type": "color", "$description": "안내, 중립 메시지 (Action/60)" },
+      "success": { "$value": "{color.positive.60}",  "$type": "color", "$description": "완료, 성공 상태 (Positive/60)" },
+      "warning": { "$value": "{color.warning.60}",   "$type": "color", "$description": "주의, 경고 상태 (Warning/60)" },
+      "error":   { "$value": "{color.danger.60}",    "$type": "color", "$description": "오류, 실패 상태 (Danger/60)" }
+    },
+
     "black": {
       "1": { "$value": "#000000", "$type": "color", "$description": "가장 진한 텍스트·아이콘" },
       "2": { "$value": "#1D1D1D", "$type": "color", "$description": "텍스트·아이콘" },
@@ -19,11 +96,11 @@
     },
     "white": { "$value": "#FFFFFF", "$type": "color", "$description": "배경, 반전 텍스트" },
     "gray": {
-      "1": { "$value": "#333333", "$type": "color", "$description": "주요 본문 텍스트" },
-      "2": { "$value": "#4F4F4F", "$type": "color", "$description": "보조 텍스트" },
-      "3": { "$value": "#828282", "$type": "color", "$description": "플레이스홀더, 힌트" },
-      "4": { "$value": "#BDBDBD", "$type": "color", "$description": "비활성, 구분선" },
-      "5": { "$value": "#E0E0E0", "$type": "color", "$description": "배경 구분선, 테두리" }
+      "1": { "$value": "#2D2D2D", "$type": "color", "$description": "주요 본문 텍스트 (Grayscale/80)" },
+      "2": { "$value": "#555555", "$type": "color", "$description": "보조 텍스트 (Grayscale/70)" },
+      "3": { "$value": "#8E8E8E", "$type": "color", "$description": "플레이스홀더, 힌트 (Grayscale/50)" },
+      "4": { "$value": "#C6C6C6", "$type": "color", "$description": "비활성, 구분선 (Grayscale/40)" },
+      "5": { "$value": "#E4E4E4", "$type": "color", "$description": "배경 구분선, 테두리 (Grayscale/20)" }
     }
   }
 }

@@ -3,14 +3,14 @@
 <html lang="ko"><head><meta charset="utf-8"><title>File upload</title>
 <link rel="stylesheet" href="_card.css">
 <style>
-  .lbl { font-size:11px; font-weight:700; color:#828282; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+  .lbl { font-size:11px; font-weight:700; color:#8E8E8E; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
   .grp + .grp { margin-top:24px; }
-  .sm { display:flex; align-items:center; gap:12px; height:55px; border:1.5px dashed #D3D5E6; border-radius:8px; background:#FFF; padding:0 16px; font-size:14px; color:#4F4F4F; }
-  .sm .hint { color:#828282; font-size:12px; margin-left:auto; }
-  .big { border:1.5px dashed #D3D5E6; border-radius:8px; background:#FFF; height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:#4F4F4F; }
+  .sm { display:flex; align-items:center; gap:12px; height:55px; border:1.5px dashed #D3D5E6; border-radius:8px; background:#FFF; padding:0 16px; font-size:14px; color:#555555; }
+  .sm .hint { color:#8E8E8E; font-size:12px; margin-left:auto; }
+  .big { border:1.5px dashed #D3D5E6; border-radius:8px; background:#FFF; height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:#555555; }
   .big.hover { border-color:#2D3378; background:#FAFBFF; color:#2D3378; }
-  .big .hint { color:#828282; font-size:12px; }
-  .bar { height:6px; border-radius:9999px; background:#E0E0E0; overflow:hidden; flex:1; }
+  .big .hint { color:#8E8E8E; font-size:12px; }
+  .bar { height:6px; border-radius:9999px; background:#E4E4E4; overflow:hidden; flex:1; }
   .bar > div { height:100%; background:#2D3378; }
   .row { display:flex; gap:16px; }
   .row > div { flex:1; }
@@ -20,7 +20,7 @@
   <div class="lbl">Small form — default · progress · finish</div>
   <div style="display:flex; flex-direction:column; gap:10px;">
     <div class="sm">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
       파일을 선택하거나 드래그하세요 <span class="hint">최대 10MB · PDF, JPG, PNG</span>
     </div>
     <div class="sm">
@@ -28,10 +28,10 @@
       <div class="bar"><div style="width:60%;"></div></div>
       <span class="hint">업로드 중… 60%</span>
     </div>
-    <div class="sm" style="border-style:solid;border-color:#27AE60;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <div class="sm" style="border-style:solid;border-color:#42A148;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#42A148" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
       <span style="color:#1D1D1D;">report_2025.pdf</span>
-      <span class="hint" style="color:#27AE60;">업로드 완료</span>
+      <span class="hint" style="color:#42A148;">업로드 완료</span>
     </div>
   </div>
 </div>
@@ -39,7 +39,7 @@
   <div class="lbl">Big form — default · hover (drop)</div>
   <div class="row">
     <div class="big">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4F4F4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#555555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
       <div>파일을 드래그하거나 클릭하여 업로드</div>
       <div class="hint">최대 10MB · PDF, JPG, PNG 지원</div>
     </div>
