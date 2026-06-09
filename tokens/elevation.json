@@ -4,6 +4,9 @@
     "1": { "$value": "0px 1px 3px rgba(45,51,120,0.08)",  "$type": "shadow", "$description": "카드, 테이블 행, 목록 아이템" },
     "2": { "$value": "0px 2px 8px rgba(45,51,120,0.12)",  "$type": "shadow", "$description": "드롭다운, 툴팁, 플로팅 버튼" },
     "3": { "$value": "0px 4px 16px rgba(45,51,120,0.16)", "$type": "shadow", "$description": "모달, 다이얼로그, 사이드 패널" },
-    "4": { "$value": "0px 8px 32px rgba(45,51,120,0.20)", "$type": "shadow", "$description": "전체화면 오버레이, 최상위 팝업" }
+    "4": { "$value": "0px 8px 32px rgba(45,51,120,0.20)", "$type": "shadow", "$description": "전체화면 오버레이, 최상위 팝업" },
+    "up-1": { "$value": "0px -1px 3px rgba(45,51,120,0.08)",  "$type": "shadow", "$description": "위로 향하는 그림자 — 하단 고정바·플로팅 푸터 (다크: 블랙 틴트)" },
+    "up-2": { "$value": "0px -2px 8px rgba(45,51,120,0.12)",  "$type": "shadow", "$description": "위로 향하는 그림자 — 강조 하단바" },
+    "up-3": { "$value": "0px -4px 16px rgba(45,51,120,0.16)", "$type": "shadow", "$description": "위로 향하는 그림자 — 떠 있는 하단 패널" }
   }
 }

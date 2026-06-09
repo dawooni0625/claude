@@ -1,5 +1,14 @@
 {
   "overlay": {
-    "bg": { "$value": "rgba(0,0,0,0.5)", "$type": "color", "$description": "모달·드로어 딤 배경" }
+    "bg": { "$value": "rgba(0,0,0,0.5)", "$type": "color", "$description": "모달·드로어 딤 배경" },
+    "white-4":  { "$value": "rgba(255,255,255,0.04)", "$type": "color", "$description": "흰색 오버레이 — 미세 호버/구분 (테마 무관)" },
+    "white-10": { "$value": "rgba(255,255,255,0.10)", "$type": "color", "$description": "흰색 오버레이 — 호버 표면" },
+    "white-15": { "$value": "rgba(255,255,255,0.15)", "$type": "color", "$description": "흰색 오버레이 — 활성 표면" },
+    "white-20": { "$value": "rgba(255,255,255,0.20)", "$type": "color", "$description": "흰색 오버레이 — 테두리/구분선" },
+    "white-25": { "$value": "rgba(255,255,255,0.25)", "$type": "color", "$description": "흰색 오버레이 — 강조 테두리" },
+    "white-50": { "$value": "rgba(255,255,255,0.50)", "$type": "color", "$description": "흰색 오버레이 — 보조 텍스트/아이콘" },
+    "white-70": { "$value": "rgba(255,255,255,0.70)", "$type": "color", "$description": "흰색 오버레이 — 본문 텍스트" },
+    "white-85": { "$value": "rgba(255,255,255,0.85)", "$type": "color", "$description": "흰색 오버레이 — 강조 텍스트" },
+    "white-90": { "$value": "rgba(255,255,255,0.90)", "$type": "color", "$description": "흰색 오버레이 — 거의 불투명 텍스트" }
   }
 }

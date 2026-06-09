@@ -139,6 +139,11 @@
   --elevation-3: 0px 4px 16px rgba(45,51,120,0.16);
   --elevation-4: 0px 8px 32px rgba(45,51,120,0.20);
 
+  /* Elevation — upward  (sticky bottom bar / floating footer 전용) */
+  --elevation-up-1: 0px -1px  3px rgba(45,51,120,0.08);
+  --elevation-up-2: 0px -2px  8px rgba(45,51,120,0.12);
+  --elevation-up-3: 0px -4px 16px rgba(45,51,120,0.16);
+
   /* ================================================================
    * Motion
    * ================================================================ */
@@ -319,6 +324,18 @@
    * ================================================================ */
 
   --overlay-bg: rgba(0,0,0,0.5);
+
+  /* White overlay — 어두운(brand/dark) 배경 위 반투명 흰색 요소용
+     숫자는 불투명도(%) 기준. 밝은 배경에서는 --color-text-inverse 사용 */
+  --color-overlay-white-4:  rgba(255,255,255,0.04);
+  --color-overlay-white-10: rgba(255,255,255,0.10);
+  --color-overlay-white-15: rgba(255,255,255,0.15);
+  --color-overlay-white-20: rgba(255,255,255,0.20);
+  --color-overlay-white-25: rgba(255,255,255,0.25);
+  --color-overlay-white-50: rgba(255,255,255,0.50);
+  --color-overlay-white-70: rgba(255,255,255,0.70);
+  --color-overlay-white-85: rgba(255,255,255,0.85);
+  --color-overlay-white-90: rgba(255,255,255,0.90);
 
   /* ================================================================
    * Component tokens  (source: tokens/component.json)
@@ -893,5 +910,8 @@
   --elevation-2: 0px 4px 8px rgba(0,0,0,0.50);
   --elevation-3: 0px 8px 16px rgba(0,0,0,0.60);
   --elevation-4: 0px 16px 32px rgba(0,0,0,0.72);
+  --elevation-up-1: 0px -1px  3px rgba(0,0,0,0.40);
+  --elevation-up-2: 0px -2px  8px rgba(0,0,0,0.50);
+  --elevation-up-3: 0px -4px 16px rgba(0,0,0,0.60);
 
 }
