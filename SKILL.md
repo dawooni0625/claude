@@ -1,118 +1,118 @@
 ---
 name: kirbs-design
-description: Use this skill to generate well-branded interfaces and assets for KIRBS — a B2B admin/console design system with a deep indigo (#2D3378) primary, Pretendard Korean type, and a full W3C-DTCG token layer. Good for production code, throwaway prototypes, mocks, slide decks, and design explorations that need to feel like KIRBS.
+description: KIRBS를 위한 잘 브랜딩된 인터페이스와 에셋을 생성할 때 이 스킬을 사용하세요 — 깊은 인디고(#2D3378) 프라이머리, Pretendard 한글 서체, 완전한 W3C-DTCG 토큰 레이어를 갖춘 B2B 어드민/콘솔 디자인 시스템입니다. 프로덕션 코드, 일회성 프로토타입, 목업, 슬라이드 덱, 그리고 KIRBS다움이 필요한 디자인 탐색에 적합합니다.
 user-invocable: true
 ---
 
-# KIRBS Design Skill
+# KIRBS 디자인 스킬
 
-This folder is a design system. It contains the canonical CSS tokens, a Korean-first type stack, a clickable admin UI kit, and ~35 preview cards demonstrating colour, type, spacing, and component patterns.
+이 폴더는 디자인 시스템입니다. 정식 CSS 토큰, 한글 우선 타입 스택, 클릭 가능한 어드민 UI 킷, 그리고 색상·타입·간격·컴포넌트 패턴을 보여주는 50여 장의 프리뷰 카드를 담고 있습니다.
 
-## How to use this skill
+## 이 스킬을 사용하는 방법
 
-1. **Read `README.md`** at the root first — it has the visual foundations, content fundamentals, iconography rules, and an index of every other file.
-2. **Wire the styles into your output.** Any HTML you generate should start with:
+1. **먼저 루트의 `README.md`를 읽으세요** — 비주얼 파운데이션, 콘텐츠 기본 원칙, 아이코노그래피 규칙, 그리고 모든 다른 파일의 색인이 들어 있습니다.
+2. **스타일을 출력물에 연결하세요.** 생성하는 모든 HTML은 다음으로 시작해야 합니다:
    ```html
    <link rel="stylesheet" href="colors_and_type.css">
    ```
-   This pulls in `tokens.css` automatically and self-hosts Pretendard from `fonts/PretendardVariable.woff2`. Set `<html data-theme="dark">` to flip the whole system into dark mode — every semantic token swaps.
-3. **Always use semantic tokens in product code.** `var(--color-text-primary)` not `var(--color-gray-1)`; `var(--color-interactive-primary)` not `#2D3378`. Primitives exist only so the semantic layer has something to alias. **Dark-mode policy (hard rule):** semantic tokens + non-colour `--component-*` (sizing/spacing/radius) swap or stay safe under `[data-theme="dark"]`; `--component-*-color-*` tokens are **light-mode literals that never swap**, so any theme-adaptive colour MUST come from a semantic token. Full policy + component→semantic mapping table in `README.md` › "Dark mode & the component-token policy".
-4. **Reach for tokens before hardcoding numbers.** The 21-component layer (`tokens/component.json`) is compiled into `tokens.css` as `--component-{component}-{...path}` CSS variables — e.g. `var(--component-button-height-md)`, `var(--component-table-row-height)`, `var(--component-modal-max-width-md)`. Use them directly; no need to read the JSON at runtime. Sizing/spacing vars are theme-safe; the `*-color-*` component vars are light-mode literals, so for dark-mode-aware colour reach for the semantic `--color-*` tokens instead.
-5. **Copy components, don't reinvent.** `ui_kits/admin/` has working React/JSX implementations of every common pattern. Lift the styling, simplify the behaviour as needed.
+   이것이 `tokens.css`를 자동으로 가져오고 `fonts/PretendardVariable.woff2`에서 Pretendard를 자체 호스팅합니다. `<html data-theme="dark">`를 설정하면 전체 시스템이 다크 모드로 전환됩니다 — 모든 시맨틱 토큰이 교체됩니다.
+3. **제품 코드에서는 항상 시맨틱 토큰을 사용하세요.** `var(--color-gray-1)`이 아니라 `var(--color-text-primary)`; `#2D3378`이 아니라 `var(--color-interactive-primary)`. primitive는 시맨틱 레이어가 별칭으로 삼을 대상이 있게 하려고만 존재합니다. **다크 모드 정책(엄격한 규칙):** 시맨틱 토큰 + 색상이 아닌 `--component-*`(크기/간격/반경)는 `[data-theme="dark"]`에서 교체되거나 안전하게 유지됩니다; `--component-*-color-*` 토큰은 **절대 교체되지 않는 라이트모드 고정값**이므로, 테마에 적응하는 색상은 반드시 시맨틱 토큰에서 가져와야 합니다. 전체 정책 + 컴포넌트→시맨틱 매핑 표는 `README.md` › "다크 모드 & 컴포넌트 토큰 정책"에 있습니다.
+4. **숫자를 하드코딩하기 전에 토큰을 찾으세요.** 33개 컴포넌트 레이어(`tokens/component.json`)는 `tokens.css`에 `--component-{component}-{...path}` CSS 변수로 컴파일됩니다 — 예: `var(--component-button-height-md)`, `var(--component-table-row-height)`, `var(--component-modal-max-width-md)`. 런타임에 JSON을 읽을 필요 없이 직접 사용하세요. 크기/간격 변수는 테마 안전하고, `*-color-*` 컴포넌트 변수는 라이트모드 고정값이므로 다크 모드 대응 색상에는 시맨틱 `--color-*` 토큰을 사용하세요.
+5. **컴포넌트를 새로 만들지 말고 복사하세요.** `ui_kits/admin/`에 모든 일반 패턴의 동작하는 React/JSX 구현이 있습니다. 스타일링을 가져오고, 동작은 필요에 따라 단순화하세요.
 
-## Decision tree
+## 의사결정 트리
 
-- **Visual artifact (slide, mock, throwaway prototype, marketing page)** → write static HTML files that link `colors_and_type.css`. Copy the relevant preview card from `preview/` as a starting point. Open them with the user.
-- **Production code** → read the tokens, follow the semantic-first rule, lift JSX from `ui_kits/admin/` and adapt to the host framework. Tell the user what you copied and from where.
-- **User invokes this skill without other guidance** → ask what they want to build, ask 3–5 clarifying questions (audience, surface, dark mode needed?, Korean only or bilingual?, any specific components), then produce HTML artifacts.
+- **비주얼 산출물(슬라이드, 목업, 일회성 프로토타입, 마케팅 페이지)** → `colors_and_type.css`를 링크하는 정적 HTML 파일을 작성. `preview/`에서 관련 프리뷰 카드를 출발점으로 복사. 사용자와 함께 열어보기.
+- **프로덕션 코드** → 토큰을 읽고, 시맨틱 우선 규칙을 따르며, `ui_kits/admin/`에서 JSX를 가져와 호스트 프레임워크에 맞게 적응. 무엇을 어디서 복사했는지 사용자에게 알리기.
+- **다른 지침 없이 사용자가 이 스킬을 호출** → 무엇을 만들고 싶은지 묻고, 3–5개의 확인 질문(대상, 화면, 다크 모드 필요 여부, 한글 전용인지 이중 언어인지, 특정 컴포넌트)을 한 뒤 HTML 산출물을 생성.
 
-## Consistent design output
+## 일관된 디자인 출력
 
-When the user asks you to create a new page or screen **based on an existing file**, ensure consistent output by:
+사용자가 **기존 파일을 기반으로** 새 페이지나 화면을 만들어 달라고 할 때, 다음으로 일관된 출력을 보장하세요:
 
-### 1. Reference file explicitly
+### 1. 참조 파일을 명시적으로 지정
 ```
-"Read [existing-file.html] and use it as the exact template. Copy the layout structure, 
-CSS variable names, and component patterns. Only replace the data/content with [new content]."
-```
-
-### 2. Fix layout structure (DO NOT CHANGE)
-```
-"Keep the layout structure identical:
-- KPI cards: same count, same grid (auto-fit, minmax)
-- Main area: same 2-column split ratios
-- Sidebar: same width, same navigation items
-- Header: same height, same search bar width
-
-Do NOT reorganize the layout. Only swap content."
+"[existing-file.html]을 읽고 정확한 템플릿으로 사용하세요. 레이아웃 구조,
+CSS 변수명, 컴포넌트 패턴을 복사하세요. 데이터/콘텐츠만 [새 콘텐츠]로 교체하세요."
 ```
 
-### 3. Reuse CSS variables (DO NOT CREATE NEW)
+### 2. 레이아웃 구조 고정 (변경 금지)
 ```
-"Use the existing CSS variables from the reference file:
-- Colors: --cp, --tx1, --bg1, --bd (keep exact names)
-- Spacing: use the same numeric values (16px, 12px, etc.)
-- Effects: --el1, --el2, --el3 shadows (do not modify)
+"레이아웃 구조를 동일하게 유지:
+- KPI 카드: 같은 개수, 같은 그리드(auto-fit, minmax)
+- 메인 영역: 같은 2열 분할 비율
+- 사이드바: 같은 너비, 같은 내비게이션 항목
+- 헤더: 같은 높이, 같은 검색바 너비
 
-Do NOT create new CSS variables. Use only what exists in the reference."
-```
-
-### 4. Copy components exactly
-```
-"Reuse components from the reference file:
-- KPICard: same props, same styling, same icon/color mapping
-- DocRow: same cell structure, same hover effects
-- StatusBadge: same status map, same color logic
-
-Do NOT reinvent component structures. Copy-paste and adapt data only."
+레이아웃을 재구성하지 마세요. 콘텐츠만 교체하세요."
 ```
 
-### 5. Specify changes ONLY
+### 3. CSS 변수 재사용 (새로 만들지 말 것)
 ```
-"Make ONLY these changes:
-1. KPI card values: [new values]
-2. Table data: [new data rows]
-3. Section titles: [new titles]
-4. Navigation labels: [new labels]
+"참조 파일의 기존 CSS 변수를 사용:
+- 색상: --cp, --tx1, --bg1, --bd (정확한 이름 유지)
+- 간격: 같은 숫자값 사용 (16px, 12px 등)
+- 효과: --el1, --el2, --el3 그림자 (수정 금지)
 
-All other aspects (layout, style, spacing, fonts, animations) remain identical to the reference."
+새 CSS 변수를 만들지 마세요. 참조 파일에 있는 것만 사용하세요."
 ```
 
-### 6. Template-based instruction
+### 4. 컴포넌트를 그대로 복사
 ```
-"Treat [reference-file.html] as a template where:
-- Layout structure: LOCKED (no changes allowed)
-- CSS variable names: LOCKED (use exact names)
-- Component structure: LOCKED (copy exactly)
-- Data/text content: FLEXIBLE (replace with new content)
+"참조 파일의 컴포넌트를 재사용:
+- KPICard: 같은 props, 같은 스타일링, 같은 아이콘/색상 매핑
+- DocRow: 같은 셀 구조, 같은 hover 효과
+- StatusBadge: 같은 상태 맵, 같은 색상 로직
 
-Generate output that is visually 100% identical to the reference, with only content swapped."
+컴포넌트 구조를 새로 만들지 마세요. 복사-붙여넣기하고 데이터만 적응시키세요."
+```
+
+### 5. 변경 사항만 지정
+```
+"다음 변경만 하세요:
+1. KPI 카드 값: [새 값]
+2. 테이블 데이터: [새 데이터 행]
+3. 섹션 제목: [새 제목]
+4. 내비게이션 라벨: [새 라벨]
+
+그 외 모든 측면(레이아웃, 스타일, 간격, 폰트, 애니메이션)은 참조와 동일하게 유지."
+```
+
+### 6. 템플릿 기반 지시
+```
+"[reference-file.html]을 다음과 같은 템플릿으로 취급:
+- 레이아웃 구조: 잠금 (변경 불가)
+- CSS 변수명: 잠금 (정확한 이름 사용)
+- 컴포넌트 구조: 잠금 (그대로 복사)
+- 데이터/텍스트 콘텐츠: 유연 (새 콘텐츠로 교체)
+
+콘텐츠만 교체된, 참조와 시각적으로 100% 동일한 출력을 생성하세요."
 ```
 
 ---
 
-**When users don't provide a reference file**, default to copying from `ui_kits/admin/` components and `preview/` cards rather than inventing new patterns.
+**사용자가 참조 파일을 제공하지 않을 때**는 새 패턴을 만들기보다 `ui_kits/admin/` 컴포넌트와 `preview/` 카드에서 복사하는 것을 기본으로 하세요.
 
-## Visual rules (the short version)
+## 비주얼 규칙 (요약판)
 
-- **Primary** `#2D3378` (deep indigo). **Type** Pretendard (single typeface; numerals use tabular figures). **Radius** 8px default, 12px modals, 9999 pills. **Shadow** indigo-tinted, never neutral black. **Motion** 100/200/300ms · `cubic-bezier(0,0,.2,1)` default. **Focus** 2px solid `#2F80ED` outline at 2px offset. **Korean copy** formal-polite (요/습니다). **No emoji** in product UI. **No glassmorphism, no gradients on surfaces, no parallax.**
+- **프라이머리** `#2D3378`(깊은 인디고). **타입** Pretendard(단일 서체; 숫자는 tabular figures 사용). **반경** 기본 8px(카드/입력), 버튼 6px, 모달 16px, 알약 9999px. **그림자** 인디고 틴트, 절대 중성 블랙 아님. **모션** 100/200/300ms · 기본 `cubic-bezier(0,0,.2,1)`. **포커스** 2px offset에 2px solid `#2F80ED` 아웃라인. **한글 카피** 격식 있는 존댓말(요/습니다). 제품 UI에 **이모지 없음**. **글래스모피즘 없음, 표면 그라데이션 없음, 패럴랙스 없음.**
 
-## File map
+## 파일 맵
 
-| Path | Purpose |
+| 경로 | 용도 |
 |---|---|
-| `README.md` | Full system reference. Read first. |
-| `tokens.css` | Every CSS custom property — primitives, semantic, and the full `--component-*` layer (290 vars), incl. section-spacing tokens (light + dark). The runtime source of truth. |
-| `colors_and_type.css` | Webfont imports, base reset, semantic text classes, and the `.prose` long-form scope (lists, blockquote, hr, figure, tables). |
-| `tokens/*.json` | W3C-DTCG source (18 categories) + upstream Korean docs. |
-| `preview/` | 35 specimen cards — colours, type scale, spacing, components, brand (incl. logo, footer, prose). Copy-paste-friendly HTML. |
-| `icon/` | Full 113-icon set, 10 categories (social: filled + line). `currentColor`. |
-| `brand/` | Official logos — `kirbs-logo.svg` (full lockup) + `kirbs-wordmark.svg` (compact), each with a `*-mono.svg` `currentColor` variant for dark/inverse. |
-| `ui_kits/admin/` | Clickable React UI kit. Sidebar shell, login, dashboard, members table, settings form. Responsive (drawer nav < 1024). |
-| `fonts/PretendardVariable.woff2` | Self-hosted variable font, weight axis 100–900. |
+| `README.md` | 전체 시스템 레퍼런스. 가장 먼저 읽기. |
+| `tokens.css` | 모든 CSS 커스텀 프로퍼티 — primitive, 시맨틱, 그리고 전체 `--component-*` 레이어(435개 변수), 섹션 간격 토큰(라이트 + 다크) 포함. 런타임의 단일 진실 공급원. |
+| `colors_and_type.css` | 웹폰트 import, 기본 리셋, 시맨틱 텍스트 클래스, 롱폼 본문용 `.prose` 스코프(리스트, 인용, hr, figure, 표). |
+| `tokens/*.json` | W3C-DTCG 소스(18개 카테고리) + 업스트림 한글 문서. |
+| `preview/` | 50여 장의 스펙 카드 — 색상, 타입 스케일, 간격, 컴포넌트, 브랜드(로고, 푸터, prose 포함). 복사-붙여넣기 친화적 HTML. |
+| `icon/` | 10개 카테고리의 113개 아이콘 전체 세트(social: filled + line). `currentColor`. |
+| `brand/` | 공식 로고 — `kirbs-logo.svg`(전체 로크업) + `kirbs-wordmark.svg`(축약형), 각각 다크/반전용 `*-mono.svg` `currentColor` 변형. |
+| `ui_kits/admin/` | 클릭 가능한 React UI 킷. 사이드바 셸, 로그인, 대시보드, 멤버 테이블, 설정 폼. 반응형(1024 미만에서 드로어 내비). |
+| `fonts/PretendardVariable.woff2` | 자체 호스팅 가변 폰트, weight 축 100–900. |
 
-## Caveats baked in
+## 내장된 유의사항
 
-- Icons: full 113-icon set in `icon/<category>/` (10 categories; social has filled + `-line` variants). `currentColor`. Tint via CSS `color` (React) or mask `background` (static HTML).
-- Official logos in `brand/`: `kirbs-logo.svg` (full lockup) + `kirbs-wordmark.svg` (compact), with `*-mono.svg` `currentColor` variants for dark/inverse. Use the wordmark in app headers/sidebars, the full lockup for marketing/footers.
-- No hero photography or illustration set. The system is glyph- and surface-driven.
+- 아이콘: `icon/<category>/`의 113개 아이콘 전체 세트(10개 카테고리; social은 filled + `-line` 변형 보유). `currentColor`. CSS `color`(React) 또는 mask `background`(정적 HTML)로 틴트.
+- `brand/`의 공식 로고: `kirbs-logo.svg`(전체 로크업) + `kirbs-wordmark.svg`(축약형), 다크/반전용 `*-mono.svg` `currentColor` 변형. 앱 헤더/사이드바에는 워드마크를, 마케팅/푸터에는 전체 로크업을 사용.
+- 히어로 사진이나 일러스트 세트 없음. 시스템은 글리프·표면 중심입니다.
