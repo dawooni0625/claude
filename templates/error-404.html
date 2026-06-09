@@ -1,0 +1,79 @@
+<!-- @startingPoint section="Pages" subtitle="404 / 에러 — 앱 셸 유지 + 중앙 정렬 상태" viewport="1440x1024" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>페이지를 찾을 수 없음 — KIRBS</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .err-wrap { min-height: calc(100vh - 64px - 64px); display: flex; align-items: center; justify-content: center; padding: 32px; }
+  .err { text-align: center; max-width: 460px; }
+  .err__code { font-family: var(--font-family-mono); font-size: 120px; line-height: 1; font-weight: 700; letter-spacing: -0.04em; color: var(--color-interactive-primary); }
+  .err__badge { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 700; background: var(--color-bg-error); color: var(--color-text-error); }
+  .err h1 { font-size: 26px; font-weight: 700; margin: 18px 0 8px; letter-spacing: -0.01em; }
+  .err p { font-size: 15px; color: var(--color-text-tertiary); line-height: 1.6; margin: 0 0 28px; }
+  .err__actions { display: flex; gap: 10px; justify-content: center; }
+  .err__hint { margin-top: 28px; font-size: 13px; color: var(--color-text-tertiary); }
+  .err__hint a { color: var(--color-text-link); text-decoration: none; }
+  .err__hint a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" data-screen-label="Sidebar">
+    <div class="sidebar__brand"><span class="brand-mark">K</span><span class="brand-word">KIRBS</span></div>
+    <nav class="sidebar__nav">
+      <div class="nav-group">
+        <div class="nav-group__label">운영</div>
+        <a class="nav-item" href="dashboard.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="label">대시보드</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 7h5M16 12h5M16 17h5"/></svg></span><span class="label">응시자 관리</span><span class="count">14</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 10h7M8.5 14h5"/></svg></span><span class="label">검사 관리</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">리포트</div>
+        <a class="nav-item" href="report.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z" stroke-linejoin="round"/><path d="M13 3v5h5"/><path d="M9 17v-3M12 17v-5M15 17v-2"/></svg></span><span class="label">결과 리포트</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">시스템</div>
+        <a class="nav-item" href="settings.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span class="label">설정</span></a>
+      </div>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="#"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2 2-2 3"/><path d="M12 17h.01"/></svg></span><span class="label">도움말</span></a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar" data-screen-label="Topbar">
+      <div class="crumbs"><a href="dashboard.html">홈</a><span class="sep">/</span><span class="here">페이지를 찾을 수 없음</span></div>
+      <div class="topbar__spacer"></div>
+      <div class="topbar__search">검색…</div>
+      <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">관</div>
+    </header>
+
+    <main class="err-wrap" data-screen-label="404 error">
+      <div class="err">
+        <div class="err__code">404</div>
+        <div class="err__badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          NOT FOUND
+        </div>
+        <h1>페이지를 찾을 수 없어요</h1>
+        <p>요청하신 페이지가 삭제되었거나 주소가 변경되었을 수 있습니다. 주소를 다시 확인하거나 아래에서 이동해 주세요.</p>
+        <div class="err__actions">
+          <button class="btn btn-secondary" onclick="history.back()">이전 페이지로</button>
+          <a class="btn btn-primary" href="dashboard.html" style="text-decoration:none;">대시보드로 이동</a>
+        </div>
+        <div class="err__hint">문제가 계속되면 <a href="#">관리자에게 문의</a>하세요.</div>
+      </div>
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

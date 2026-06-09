@@ -229,5 +229,5 @@ npm run build:scss   # SCSS만 생성
 ## 브랜드 원칙
 
 - **Primary:** `#2D3378` (남색 계열)
-- **폰트:** Pretendard (UI) / JetBrains Mono (코드)
+- **폰트:** Pretendard (단일 서체 · 숫자/코드는 tabular figures)
 - **그리드:** Gutter 30px 고정, 여백 mobile 16px / tablet 24px / desktop 32px

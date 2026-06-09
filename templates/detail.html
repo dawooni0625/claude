@@ -1,0 +1,155 @@
+<!-- @startingPoint section="Pages" subtitle="단건 상세 — 프로필 헤더 + 탭 + 정보/타임라인" viewport="1440x1024" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>응시자 상세 — KIRBS</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .profile { padding: 24px; display: flex; align-items: center; gap: 20px; }
+  .profile .pic { width: 72px; height: 72px; border-radius: 50%; background: var(--color-brand-quaternary); color: var(--color-text-brand); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 28px; flex-shrink: 0; }
+  .profile .who h2 { margin: 0; font-size: 24px; font-weight: 700; }
+  .profile .who .sub { font-size: 14px; color: var(--color-text-tertiary); margin-top: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .profile .acts { margin-left: auto; display: flex; gap: 10px; }
+  /* tabs */
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--color-border-default); padding: 0 24px; }
+  .tab { padding: 10px 16px; font-size: 14px; font-weight: 700; color: var(--color-text-tertiary); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .tab.on { color: var(--color-text-brand); border-bottom-color: var(--color-interactive-primary); }
+  .detail-grid { display: grid; grid-template-columns: 1fr 320px; gap: 16px; margin-top: 16px; align-items: start; }
+  /* definition list */
+  .dl { display: grid; grid-template-columns: 140px 1fr; }
+  .dl dt { padding: 12px 0; font-size: 13px; color: var(--color-text-tertiary); border-bottom: 1px solid var(--color-border-default); }
+  .dl dd { padding: 12px 0; margin: 0; font-size: 14px; font-weight: 700; color: var(--color-text-primary); border-bottom: 1px solid var(--color-border-default); }
+  .dl dt:last-of-type, .dl dd:last-of-type { border-bottom: 0; }
+  .panel-head { padding: 16px 24px; border-bottom: 1px solid var(--color-border-default); font-size: 16px; font-weight: 700; }
+  .pad { padding: 8px 24px 16px; }
+  /* timeline */
+  .timeline { padding: 8px 24px 16px; }
+  .tl-item { display: flex; gap: 12px; padding: 10px 0; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-interactive-primary); margin-top: 5px; flex-shrink: 0; position: relative; }
+  .tl-item:not(:last-child) .tl-dot::after { content: ""; position: absolute; left: 50%; top: 14px; transform: translateX(-50%); width: 2px; height: 36px; background: var(--color-border-default); }
+  .tl-txt .t { font-size: 13px; font-weight: 700; color: var(--color-text-primary); }
+  .tl-txt .d { font-size: 12px; color: var(--color-text-tertiary); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" data-screen-label="Sidebar">
+    <div class="sidebar__brand"><span class="brand-mark">K</span><span class="brand-word">KIRBS</span></div>
+    <nav class="sidebar__nav">
+      <div class="nav-group">
+        <div class="nav-group__label">운영</div>
+        <a class="nav-item" href="dashboard.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="label">대시보드</span></a>
+        <a class="nav-item active" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 7h5M16 12h5M16 17h5"/></svg></span><span class="label">응시자 관리</span><span class="count">14</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 10h7M8.5 14h5"/></svg></span><span class="label">검사 관리</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">리포트</div>
+        <a class="nav-item" href="report.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z" stroke-linejoin="round"/><path d="M13 3v5h5"/><path d="M9 17v-3M12 17v-5M15 17v-2"/></svg></span><span class="label">결과 리포트</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">시스템</div>
+        <a class="nav-item" href="settings.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span class="label">설정</span></a>
+      </div>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="#"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2 2-2 3"/><path d="M12 17h.01"/></svg></span><span class="label">도움말</span></a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar" data-screen-label="Topbar">
+      <div class="crumbs"><a href="#">홈</a><span class="sep">/</span><a href="list.html">응시자 관리</a><span class="sep">/</span><span class="here">김민준</span></div>
+      <div class="topbar__spacer"></div>
+      <div class="topbar__search">검색…</div>
+      <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">관</div>
+    </header>
+
+    <main class="content" data-screen-label="Detail content">
+      <div class="content-wrap">
+        <div style="margin-bottom:16px;"><a class="link" href="list.html" style="font-size:13px;color:var(--color-text-link);text-decoration:none;">‹ 응시자 목록으로</a></div>
+
+        <!-- profile + tabs -->
+        <div class="card" style="padding:0;">
+          <div class="profile" data-screen-label="Profile header">
+            <span class="pic">김</span>
+            <div class="who">
+              <h2>김민준</h2>
+              <div class="sub">
+                <span class="mono">minjun.kim@example.com</span>
+                <span class="badge badge-done">완료</span>
+                <span class="badge badge-neutral">2026 상반기 공채</span>
+              </div>
+            </div>
+            <div class="acts">
+              <button class="btn btn-secondary btn-sm">검사 재배정</button>
+              <button class="btn btn-primary btn-sm">결과 리포트 보기</button>
+            </div>
+          </div>
+          <div class="tabs">
+            <div class="tab on">개요</div>
+            <div class="tab">응시 이력</div>
+            <div class="tab">첨부 파일</div>
+            <div class="tab">활동 로그</div>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <!-- left: info + history -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card" style="padding:0;">
+              <div class="panel-head">기본 정보</div>
+              <div class="pad">
+                <dl class="dl">
+                  <dt>응시번호</dt><dd class="mono">KIRBS-2026-0481</dd>
+                  <dt>이름</dt><dd>김민준</dd>
+                  <dt>연락처</dt><dd class="mono">010-2481-7720</dd>
+                  <dt>소속 그룹</dt><dd>2026 상반기 공채</dd>
+                  <dt>등록일</dt><dd>2026. 05. 28</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="card" style="padding:0;">
+              <div class="panel-head">응시 이력</div>
+              <table class="tbl">
+                <thead><tr><th>검사 유형</th><th>응시일</th><th>점수</th><th style="width:100px;">상태</th><th style="width:70px;"></th></tr></thead>
+                <tbody>
+                  <tr><td style="color:var(--color-text-primary);font-weight:700;">인적성검사</td><td>2026. 06. 02</td><td class="mono">92</td><td><span class="badge badge-done">완료</span></td><td><a class="link" href="report.html" style="color:var(--color-text-link);text-decoration:none;font-size:13px;">리포트</a></td></tr>
+                  <tr><td style="color:var(--color-text-primary);font-weight:700;">언어이해</td><td>2026. 05. 20</td><td class="mono">88</td><td><span class="badge badge-done">완료</span></td><td><a class="link" href="report.html" style="color:var(--color-text-link);text-decoration:none;font-size:13px;">리포트</a></td></tr>
+                  <tr><td style="color:var(--color-text-primary);font-weight:700;">상황판단</td><td>2026. 06. 08</td><td class="mono">—</td><td><span class="badge badge-prog">진행중</span></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- right: status + timeline -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card card-pad">
+              <div style="font-size:13px;color:var(--color-text-tertiary);margin-bottom:6px;">최근 종합 점수</div>
+              <div style="font-size:40px;font-weight:700;font-family:var(--font-family-mono);line-height:1;">92<span style="font-size:18px;color:var(--color-text-tertiary);"> / 100</span></div>
+              <div style="margin-top:10px;"><span class="badge badge-done">상위 8% · 적합</span></div>
+            </div>
+            <div class="card" style="padding:0;">
+              <div class="panel-head">활동 타임라인</div>
+              <div class="timeline">
+                <div class="tl-item"><span class="tl-dot"></span><div class="tl-txt"><div class="t">결과 리포트 생성</div><div class="d">2026. 06. 02 14:32</div></div></div>
+                <div class="tl-item"><span class="tl-dot"></span><div class="tl-txt"><div class="t">인적성검사 응시 완료</div><div class="d">2026. 06. 02 14:30</div></div></div>
+                <div class="tl-item"><span class="tl-dot"></span><div class="tl-txt"><div class="t">검사 시작</div><div class="d">2026. 06. 02 13:42</div></div></div>
+                <div class="tl-item"><span class="tl-dot"></span><div class="tl-txt"><div class="t">응시 그룹 배정</div><div class="d">2026. 05. 28 09:10</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

@@ -42,10 +42,10 @@
 
     "button": {
       "height": {
-        "sm": { "$value": "45px", "$type": "dimension" },
-        "md": { "$value": "56px", "$type": "dimension", "$description": "기본 크기" },
-        "lg": { "$value": "63px", "$type": "dimension" },
-        "xl": { "$value": "70px", "$type": "dimension" }
+        "sm": { "$value": "36px", "$type": "dimension" },
+        "md": { "$value": "44px", "$type": "dimension", "$description": "기본 크기" },
+        "lg": { "$value": "52px", "$type": "dimension" },
+        "xl": { "$value": "60px", "$type": "dimension" }
       },
       "min-width": {
         "sm": { "$value": "70px",  "$type": "dimension", "$description": "font-size 14px × 5" },
@@ -61,7 +61,7 @@
       },
       "icon-gap": { "$value": "8px", "$type": "dimension" },
       "border-radius": {
-        "square": { "$value": "8px",  "$type": "dimension", "$description": "기본 사각형" },
+        "square": { "$value": "6px",  "$type": "dimension", "$description": "기본 사각형" },
         "round":  { "$value": "99px", "$type": "dimension", "$description": "알약형" }
       },
       "transition": { "$value": "all 100ms cubic-bezier(0,0,0.2,1)", "$type": "transition" },

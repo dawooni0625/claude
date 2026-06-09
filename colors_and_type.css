@@ -12,9 +12,8 @@
 
 /* ── Web fonts ────────────────────────────────────────────────────── */
 /* @import rules MUST come before any other at-rule (per CSS spec) — keep
-   token + Google Fonts imports at the top, then declare local @font-face. */
+   the token import at the top, then declare local @font-face. */
 @import url('./tokens.css');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* Pretendard — self-hosted variable font (Korean + Latin).
    Source: fonts/PretendardVariable.woff2 (uploaded by user). */
@@ -65,14 +64,17 @@ h5, .text-h5 { font-size: var(--font-size-heading-5); line-height: 1.5; font-wei
 .text-body-lg { font-size: var(--font-size-body-lg); line-height: var(--line-height-normal); }
 .text-body-md { font-size: var(--font-size-body-md); line-height: var(--line-height-normal); }
 .text-body-sm { font-size: var(--font-size-body-sm); line-height: var(--line-height-normal); }
+.text-body-xs { font-size: var(--font-size-body-xs); line-height: var(--line-height-normal); }
 
 p { margin: 0 0 var(--space-8) 0; }
 p:last-child { margin-bottom: 0; }
 
-/* ── Mono / code ──────────────────────────────────────────────────── */
+/* ── Numerals / code ──────────────────────────────────────────────── */
+/* Single-typeface system: numerals & code reuse Pretendard. Tabular figures
+   keep digits column-aligned in tables/KPIs; ligatures off for code. */
 code, kbd, samp, pre, .text-mono {
   font-family: var(--font-family-mono);
-  font-feature-settings: 'liga' 0, 'calt' 0;
+  font-feature-settings: 'tnum' 1, 'liga' 0, 'calt' 0;
 }
 code {
   font-size: 0.92em;

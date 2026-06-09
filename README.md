@@ -4,8 +4,7 @@ A token-driven, dark-mode-ready design system for KIRBS — a B2B admin/console
 visual language built around a deep indigo primary (`#2D3378`), Pretendard Korean
 type, and a rigorously semantic token layer.
 
-This project repackages and visualises the upstream design tokens at
-**[github.com/dawooni0625/claude](https://github.com/dawooni0625/claude)** (W3C DTCG JSON
+This project repackages and visualises the upstream design tokens (W3C DTCG JSON
 + generated CSS/SCSS) into a browsable system: a fonts + semantic stylesheet,
 visual specimens, and a working UI kit that demonstrates how the tokens compose
 into a real product surface. See `tokens/UPSTREAM_README.md` and
@@ -20,7 +19,8 @@ into a real product surface. See `tokens/UPSTREAM_README.md` and
 | `tokens.css` | All CSS custom properties — primitives, semantic, **and the full `--component-*` layer** (435 vars across 33 components; component colours are light-mode literals). **The source of truth at runtime.** Imported by everything. |
 | `colors_and_type.css` | Semantic layer — webfont imports, `<h1>`/`<p>`/`<code>` defaults, `.text-*` colour helpers, the `.prose` long-form scope (lists, blockquote, hr, figure, tables), focus ring, selection. |
 | `tokens/` | Upstream JSON sources (W3C DTCG, 18 categories) + the generated `tokens.scss`. The build-time origin of `tokens.css`. |
-| `preview/` | One-concept-per-card design system specimens (Colors, Type, Spacing, Components, Brand). Component cards now cover every Figma guide page — table, breadcrumbs, large selector, date picker, accordion, banner, carousel, file upload, tag input, bottom app nav, circle progress / stepper, modal, tooltip, image guidelines. |
+| `preview/` | One-concept-per-card design system specimens (Colors, Type, Spacing, Components, Brand). Component cards now cover every Figma guide page — table, breadcrumbs, large selector, date picker, accordion, banner, carousel, file upload, tag input, bottom app nav, circle progress / stepper, modal, tooltip, image guidelines — plus interaction-state cards: **form input states** (default / focus / error / disabled / success), **table states** (loading / empty / sort / selected), and **skeleton loading**. |
+| `templates/` | Ready-to-use page starting points (the picker's **Pages** section), all built on a shared `_shell.css` (240px sidebar + 64px topbar): **login**, **dashboard** (KPI + chart + feed), **list** (filter + table + pagination), **report** (인적성검사 결과표), **form** (검사 배정 + validation states), **detail** (profile + tabs + timeline), **settings** (subnav + profile), and **error-404**. |
 | `icon/` | Full 113-icon set in 10 categories (`navigation`/`action`/`data`/`content`/`media`/`commerce`/`notification`/`user`/`system`/`social` — social has filled + `-line` variants). `currentColor`. |
 | `brand/` | Official logos — `kirbs-logo.svg` (full lockup) + `kirbs-wordmark.svg` (compact), each with a `*-mono.svg` `currentColor` variant for dark/inverse surfaces. |
 | `ui_kits/admin/` | Working UI kit — sidebar + topbar shell, login → dashboard / members / settings click-through, light/dark toggle. |
@@ -41,10 +41,10 @@ into a real product surface. See `tokens/UPSTREAM_README.md` and
 .btn-primary {
   background: var(--color-interactive-primary);
   color:      var(--color-text-inverse);
-  height:     56px;
+  height:     44px;
   padding:    0 var(--space-12);
   border:     0;
-  border-radius: var(--border-radius-md);
+  border-radius: var(--component-button-border-radius-square);
   font:       700 var(--font-size-body-md) var(--font-family-base);
   transition: var(--transition-color);
 }
@@ -87,7 +87,7 @@ This is enforced by convention, not by the cascade — a primary button built fr
 ## Brand principles
 
 - **Primary** `#2D3378` — deep indigo. Used for headlines, primary actions, brand surfaces.
-- **Type** Pretendard (UI body) + JetBrains Mono (code / numerals). Korean-first; Latin coverage via Pretendard's subset.
+- **Type** Pretendard — single typeface for the whole system. Korean-first; Latin coverage via Pretendard's subset. Numerals & code reuse Pretendard with tabular figures (`'tnum'`) for column alignment.
 - **Grid** 30px gutter, fixed. Margins: mobile 16 / tablet 24 / desktop 32.
 - **Spacing** `--space-{n}` = *n* × 2px. Component-scale runs `--space-1`…`--space-16` (32px); the extended scale `--space-20`…`--space-60` (40–120px) covers public-web section rhythm. For section padding prefer the semantic `--section-pad-{sm,md,lg}` (64/96/120px) + `--section-block-gap` / `--section-stack-gap`.
 - **Shadows** are indigo-tinted (`rgba(45,51,120,…)`), not neutral black. This is a signature.
@@ -113,7 +113,7 @@ friendly). Product copy in the UI kit follows the same convention.
 - **Numerals** Use Arabic numerals with thousands separator. Currency: `₩ 42.8M`, not `42,800,000원` in summaries.
 - **Casing** English UI strings sentence-case (`Continue`, `With icon`), not Title Case. Tokens are kebab-case.
 - **Emoji** Not used in product UI. The brand voice is professional.
-- **Code-style nouns** Token references appear in mono with the `--` prefix preserved: `--color-text-primary`.
+- **Code-style nouns** Token references appear in a code style (with tabular figures) with the `--` prefix preserved: `--color-text-primary`.
 
 ---
 
@@ -128,9 +128,9 @@ friendly). Product copy in the UI kit follows the same convention.
 
 ### Type
 
-- **Pretendard** Korean-first geometric sans. Self-hosted variable font (`fonts/PretendardVariable.woff2`), weights 400 + 700 in product use (variable axis 100–900 available for displays).
-- **JetBrains Mono** Code, token references, numerals in tables/KPIs.
-- **Scale** 13 sizes split into Display (5) for marketing, Heading (5) for h1–h5, Body (3) for everything else. Line-height is a flat `1.5` everywhere — even displays, which then get a tighter override (`1.1`) per the specimen.
+- **Pretendard** Korean-first geometric sans. Self-hosted variable font (`fonts/PretendardVariable.woff2`), weights 400 + 700 in product use (variable axis 100–900 available for displays). The single typeface across the system.
+- **Numerals & code** Reuse Pretendard with tabular figures (`font-feature-settings: 'tnum'`) so digits stay column-aligned in tables/KPIs — no separate monospace font.
+- **Scale** 14 sizes split into Display (5) for marketing, Heading (5) for h1–h5, Body (4) for everything else (`body-lg` 18 / `body-md` 16 / `body-sm` 14 / `body-xs` 12). Line-height is a flat `1.5` everywhere — even displays, which then get a tighter override (`1.1`) per the specimen.
 - **Weights** Only `400` (regular) and `700` (bold). No 500/600 in the token system.
 - **Letter spacing** `0em` globally. Large displays tighten to `−1.5%` to `−2.5%` (applied in `colors_and_type.css`, not a token).
 
@@ -150,7 +150,7 @@ friendly). Product copy in the UI kit follows the same convention.
 
 - **Border widths** `1px` / `2px` / `3px`. Form inputs use `1.5px` (component-token only — not a primitive).
 - **Radius scale** `0 / 2 / 4 / 8 / 12 / 16 / 9999`. Cards/inputs default to `8`, modals to `16`, badges/avatars to `9999`. Nothing in the system uses `xs` (2px) except focus-ring fallback.
-- **Pill vs square** Buttons offer both — `square` (8px) for forms and dense UI, `round` (99px) for marketing CTAs.
+- **Pill vs square** Buttons offer both — `square` (6px) for forms and dense UI, `round` (99px) for marketing CTAs.
 
 ### Motion
 
@@ -359,11 +359,8 @@ If you plan to **edit token JSON files** or **customize tokens.scss**:
 
 ### External fonts & CDNs
 
-- **Pretendard (Recommended — self-hosted):** `fonts/PretendardVariable.woff2` is loaded via `@font-face` in `colors_and_type.css`. No external CDN, no CSP issues. ✅
-- **JetBrains Mono (Code font):** Currently loaded from **Google Fonts** (`https://fonts.googleapis.com/…`) in `colors_and_type.css`. 
-  - **CSP concern:** If your production environment blocks third-party Google Fonts CDN, either:
-    - Download JetBrains Mono locally from [google.com/fonts](https://fonts.google.com/specimen/JetBrains+Mono) and self-host (recommended).
-    - Or use a system monospace fallback stack in `colors_and_type.css` (but loses the branded typography).
+- **Pretendard (self-hosted, the only typeface):** `fonts/PretendardVariable.woff2` is loaded via `@font-face` in `colors_and_type.css`. No external CDN, no CSP issues. ✅
+- **No other web fonts.** Numerals & code reuse Pretendard with tabular figures — nothing is fetched from a third-party CDN.
 
 ### Browser compatibility
 
@@ -398,13 +395,11 @@ If unpkg is blocked by CSP or network, either:
 
 2. **Logos** — ✅ Resolved. Official artwork lives in `brand/`: `kirbs-logo.svg` (full lockup — ring wordmark + 한글 회사명 + EN tagline, 362×56) and `kirbs-wordmark.svg` (compact ring + KIRBS, 130×42), plus `*-mono.svg` `currentColor` variants for dark/inverse surfaces. See `preview/brand-logo.html`. (KIRBS = **K**orean **I**ntegrated **R**eport & **B**usiness **S**ystem, per the Figma brand guide.)
 
-3. **Product surfaces** — The upstream repo is a pure-token system with no example product UI. The `ui_kits/admin/` here is the most plausible interpretation given the `component.json` shape (heavy emphasis on `table`, `nav-sidebar`, `dropdown`, `modal`) — i.e. a B2B admin/console. *Action: confirm or redirect.*
+3. **Product surfaces** — The upstream token set is a pure-token system with no example product UI. The `ui_kits/admin/` here is the most plausible interpretation given the `component.json` shape (heavy emphasis on `table`, `nav-sidebar`, `dropdown`, `modal`) — i.e. a B2B admin/console. *Action: confirm or redirect.*
 
-4. **Fonts** — **Status: Partial.** 
+4. **Fonts** — **Status: ✅ Resolved.**
    - ✅ **Pretendard** is self-hosted: `fonts/PretendardVariable.woff2` (variable weight axis 100–900, ~150KB). Loaded via `@font-face` in `colors_and_type.css`. No external dependency, no CSP concerns.
-   - ⚠️ **JetBrains Mono** is currently loaded from **Google Fonts** (`https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap`). If your environment blocks third-party CDNs or enforces strict CSP, you must either:
-     - Download JetBrains Mono locally from [fonts.google.com](https://fonts.google.com/specimen/JetBrains+Mono), add the woff2 file to `fonts/`, and update the `@font-face` declaration in `colors_and_type.css`.
-     - Or substitute with a system monospace stack (`monospace`, `Courier`, etc.) and update the CSS variable `--font-family-mono`.
+   - ✅ **Single typeface.** Numerals & code reuse Pretendard with tabular figures (`--font-family-mono` resolves to Pretendard); there is no monospace web font and nothing is loaded from a CDN.
 
 5. **Token build pipeline** — The upstream token JSON sources are maintained in `tokens/` but are **not automatically compiled in this repo**. The `tokens.scss` and `tokens.css` are pre-generated and committed. If you modify `tokens/*.json` files:
    - You must regenerate `tokens.scss` via the upstream build process (see `tokens/UPSTREAM_README.md`).
@@ -415,12 +410,10 @@ If unpkg is blocked by CSP or network, either:
 
 ## Further reading
 
-The upstream repo carries deep context this overview doesn't:
+Deeper context lives alongside the tokens in this project:
 
 - **Original Korean docs** — `tokens/UPSTREAM_README.md`, `tokens/UPSTREAM_CLAUDE.md`
 - **Per-category tokens** — `tokens/{color,spacing,typography,…}.json` (W3C DTCG)
-- **Component tokens** — `tokens/component.json` defines exact sizing/colour for 33 components (textfield, button, modal, table, breadcrumbs, large-selector, date-picker, accordion, banner, carousel, file-upload, tag-input, nav-app, progress-circle, stepper, image, footer, …). These are also compiled into `tokens.css` as `--component-{component}-{...path}` CSS variables (e.g. `var(--component-button-height-md)` → `56px`, `var(--component-table-row-height)` → `48px`), so you can reference them at runtime without reading the JSON. **Sizing/spacing component vars are theme-safe; colour component vars are light-mode literals** — for dark-mode-aware surfaces use the semantic `--color-*` tokens, which swap under `[data-theme="dark"]`. Reach for these *before* hardcoding any number.
-- **Live source** — [github.com/dawooni0625/dw](https://github.com/dawooni0625/dw)
+- **Component tokens** — `tokens/component.json` defines exact sizing/colour for 33 components (textfield, button, modal, table, breadcrumbs, large-selector, date-picker, accordion, banner, carousel, file-upload, tag-input, nav-app, progress-circle, stepper, image, footer, …). These are also compiled into `tokens.css` as `--component-{component}-{...path}` CSS variables (e.g. `var(--component-button-height-md)` → `44px`, `var(--component-table-row-height)` → `48px`), so you can reference them at runtime without reading the JSON. **Sizing/spacing component vars are theme-safe; colour component vars are light-mode literals** — for dark-mode-aware surfaces use the semantic `--color-*` tokens, which swap under `[data-theme="dark"]`. Reach for these *before* hardcoding any number.
 
-Browse the upstream repo for the design rationale and edge cases — this
-folder is an opinionated subset focused on getting designs out the door.
+This folder is an opinionated subset focused on getting designs out the door.

@@ -1,0 +1,147 @@
+<!-- @startingPoint section="Pages" subtitle="인적성검사 결과표 — 종합 점수 + 영역별 분석" viewport="1440x1024" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>검사 결과 리포트 — KIRBS</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .report-grid { display: grid; grid-template-columns: 320px 1fr; gap: 16px; }
+  /* summary card */
+  .summary { padding: 28px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .score-ring { position: relative; width: 168px; height: 168px; margin: 4px 0 8px; }
+  .score-ring .num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .score-ring .num b { font-size: 44px; font-weight: 700; line-height: 1; font-family: var(--font-family-mono); letter-spacing: -0.02em; }
+  .score-ring .num span { font-size: 12px; color: var(--color-text-tertiary); margin-top: 4px; }
+  .verdict { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 99px; font-weight: 700; font-size: 15px; background: var(--color-bg-success); color: var(--color-text-success); }
+  .summary .who { font-size: 18px; font-weight: 700; margin-top: 18px; }
+  .summary .meta { font-size: 13px; color: var(--color-text-tertiary); margin-top: 4px; }
+  .summary hr { width: 100%; border: 0; border-top: 1px solid var(--color-border-default); margin: 20px 0; }
+  .kv { display: flex; justify-content: space-between; width: 100%; font-size: 13px; padding: 5px 0; }
+  .kv .k { color: var(--color-text-tertiary); }
+  .kv .v { color: var(--color-text-primary); font-weight: 700; }
+  /* breakdown */
+  .panel-head { padding: 18px 24px; border-bottom: 1px solid var(--color-border-default); display: flex; justify-content: space-between; align-items: center; }
+  .panel-head h3 { margin: 0; font-size: 16px; font-weight: 700; }
+  .bar-row { display: grid; grid-template-columns: 120px 1fr 56px; gap: 16px; align-items: center; padding: 14px 24px; border-bottom: 1px solid var(--color-border-default); }
+  .bar-row:last-child { border-bottom: 0; }
+  .bar-row .name { font-size: 14px; font-weight: 700; color: var(--color-text-primary); }
+  .bar-track { height: 10px; border-radius: 99px; background: var(--color-bg-surface); overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 99px; background: var(--color-interactive-primary); }
+  .bar-fill.mid { background: var(--color-brand-secondary); }
+  .bar-fill.low { background: var(--color-state-warning); }
+  .bar-row .val { text-align: right; font-family: var(--font-family-mono); font-weight: 700; font-size: 14px; }
+  .bar-row .val small { display: block; font-size: 11px; color: var(--color-text-tertiary); font-weight: 400; }
+  /* detail table */
+  .detail-note { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" data-screen-label="Sidebar">
+    <div class="sidebar__brand"><span class="brand-mark">K</span><span class="brand-word">KIRBS</span></div>
+    <nav class="sidebar__nav">
+      <div class="nav-group">
+        <div class="nav-group__label">운영</div>
+        <a class="nav-item" href="dashboard.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="label">대시보드</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 7h5M16 12h5M16 17h5"/></svg></span><span class="label">응시자 관리</span><span class="count">14</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 10h7M8.5 14h5"/></svg></span><span class="label">검사 관리</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">리포트</div>
+        <a class="nav-item active" href="report.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z" stroke-linejoin="round"/><path d="M13 3v5h5"/><path d="M9 17v-3M12 17v-5M15 17v-2"/></svg></span><span class="label">결과 리포트</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">시스템</div>
+        <a class="nav-item" href="settings.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span class="label">설정</span></a>
+      </div>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="#"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2 2-2 3"/><path d="M12 17h.01"/></svg></span><span class="label">도움말</span></a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar" data-screen-label="Topbar">
+      <div class="crumbs"><a href="#">홈</a><span class="sep">/</span><a href="report.html">결과 리포트</a><span class="sep">/</span><span class="here">김민준</span></div>
+      <div class="topbar__spacer"></div>
+      <div class="topbar__search">검색…</div>
+      <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">관</div>
+    </header>
+
+    <main class="content" data-screen-label="Report content">
+      <div class="content-wrap">
+        <div class="page-head">
+          <div>
+            <h1 class="page-title">검사 결과 리포트</h1>
+            <p class="page-sub">인적성검사 · 응시일 2026. 06. 02 · 응시번호 <span class="mono">KIRBS-2026-0481</span></p>
+          </div>
+          <div class="head-actions">
+            <button class="btn btn-secondary btn-sm">인쇄</button>
+            <button class="btn btn-primary btn-sm">PDF 다운로드</button>
+          </div>
+        </div>
+
+        <div class="report-grid">
+          <!-- SUMMARY -->
+          <div class="card summary" data-screen-label="Score summary">
+            <div class="score-ring">
+              <svg width="168" height="168" viewBox="0 0 168 168">
+                <circle cx="84" cy="84" r="74" fill="none" stroke="var(--color-bg-surface)" stroke-width="14"/>
+                <circle cx="84" cy="84" r="74" fill="none" stroke="var(--color-interactive-primary)" stroke-width="14" stroke-linecap="round"
+                        stroke-dasharray="465" stroke-dashoffset="60" transform="rotate(-90 84 84)"/>
+              </svg>
+              <div class="num"><b>92</b><span>/ 100점</span></div>
+            </div>
+            <div class="verdict">종합 적합</div>
+            <div class="who">김민준</div>
+            <div class="meta">상위 8% · 백분위 92</div>
+            <hr>
+            <div class="kv"><span class="k">검사 유형</span><span class="v">인적성검사</span></div>
+            <div class="kv"><span class="k">소요 시간</span><span class="v mono">48분 12초</span></div>
+            <div class="kv"><span class="k">응시 상태</span><span class="v" style="color:var(--color-text-success)">완료</span></div>
+            <div class="kv"><span class="k">신뢰도 지수</span><span class="v mono">0.94</span></div>
+          </div>
+
+          <!-- BREAKDOWN + DETAIL -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card" style="padding:0;">
+              <div class="panel-head"><h3>영역별 점수</h3><span class="badge badge-neutral">5개 영역</span></div>
+              <div class="bar-row"><span class="name">언어이해</span><div class="bar-track"><div class="bar-fill" style="width:94%"></div></div><span class="val">94<small>우수</small></span></div>
+              <div class="bar-row"><span class="name">수리력</span><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div><span class="val">88<small>우수</small></span></div>
+              <div class="bar-row"><span class="name">추리력</span><div class="bar-track"><div class="bar-fill mid" style="width:79%"></div></div><span class="val">79<small>양호</small></span></div>
+              <div class="bar-row"><span class="name">상황판단</span><div class="bar-track"><div class="bar-fill mid" style="width:72%"></div></div><span class="val">72<small>양호</small></span></div>
+              <div class="bar-row"><span class="name">인성</span><div class="bar-track"><div class="bar-fill low" style="width:64%"></div></div><span class="val">64<small>보통</small></span></div>
+            </div>
+
+            <div class="card" style="padding:0;">
+              <div class="panel-head"><h3>세부 항목</h3></div>
+              <table class="tbl">
+                <thead><tr><th>항목</th><th>원점수</th><th>표준점수</th><th>백분위</th><th style="width:100px;">판정</th></tr></thead>
+                <tbody>
+                  <tr><td style="color:var(--color-text-primary);font-weight:700;">어휘력</td><td class="mono">46 / 50</td><td class="mono">68</td><td class="mono">95</td><td><span class="badge badge-done">적합</span></td></tr>
+                  <tr><td style="color:var(--color-text-primary);font-weight:700;">독해력</td><td class="mono">42 / 50</td><td class="mono">64</td><td class="mono">89</td><td><span class="badge badge-done">적합</span></td></tr>
+                  <tr><td style="color:var(--color-text-primary);font-weight:700;">자료해석</td><td class="mono">38 / 50</td><td class="mono">59</td><td class="mono">78</td><td><span class="badge badge-done">적합</span></td></tr>
+                  <tr><td style="color:var(--color-text-primary);font-weight:700;">대인관계</td><td class="mono">31 / 50</td><td class="mono">48</td><td class="mono">52</td><td><span class="badge badge-wait">검토</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="card card-pad">
+              <h3 style="margin:0 0 10px;font-size:16px;">종합 의견</h3>
+              <p class="detail-note">언어이해와 수리력 영역에서 상위권의 우수한 수행을 보였으며, 전반적 인지 능력이 직무 요구 수준을 충족합니다. 인성 영역의 대인관계 항목은 평균 범위로, 협업 비중이 높은 직무 배치 시 추가 면접을 통한 확인을 권장합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

@@ -95,7 +95,7 @@ Generate output that is visually 100% identical to the reference, with only cont
 
 ## Visual rules (the short version)
 
-- **Primary** `#2D3378` (deep indigo). **Type** Pretendard + JetBrains Mono. **Radius** 8px default, 12px modals, 9999 pills. **Shadow** indigo-tinted, never neutral black. **Motion** 100/200/300ms · `cubic-bezier(0,0,.2,1)` default. **Focus** 2px solid `#2F80ED` outline at 2px offset. **Korean copy** formal-polite (요/습니다). **No emoji** in product UI. **No glassmorphism, no gradients on surfaces, no parallax.**
+- **Primary** `#2D3378` (deep indigo). **Type** Pretendard (single typeface; numerals use tabular figures). **Radius** 8px default, 12px modals, 9999 pills. **Shadow** indigo-tinted, never neutral black. **Motion** 100/200/300ms · `cubic-bezier(0,0,.2,1)` default. **Focus** 2px solid `#2F80ED` outline at 2px offset. **Korean copy** formal-polite (요/습니다). **No emoji** in product UI. **No glassmorphism, no gradients on surfaces, no parallax.**
 
 ## File map
 

@@ -1,0 +1,141 @@
+<!-- @startingPoint section="Pages" subtitle="설정 — 좌측 서브내비 + 프로필 폼" viewport="1440x1024" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>설정 — KIRBS</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .settings-grid { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+  .subnav { display: flex; flex-direction: column; gap: 2px; position: sticky; top: 96px; }
+  .subnav a { padding: 10px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .subnav a:hover { background: var(--color-bg-surface); }
+  .subnav a.on { background: var(--color-brand-quaternary); color: var(--color-text-brand); font-weight: 700; }
+  .sec { padding: 24px; }
+  .sec + .sec { margin-top: 16px; }
+  .sec h2 { font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+  .sec .desc { font-size: 13px; color: var(--color-text-tertiary); margin: 0 0 20px; }
+  .avatar-row { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+  .avatar-row .big { width: 64px; height: 64px; border-radius: 50%; background: var(--color-brand-quaternary); color: var(--color-text-brand); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .switch-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--color-border-default); }
+  .switch-row:last-child { border-bottom: 0; }
+  .switch-row .lab { font-size: 14px; font-weight: 700; color: var(--color-text-primary); }
+  .switch-row .sub { font-size: 12px; color: var(--color-text-tertiary); margin-top: 2px; }
+  .track { width: 44px; height: 24px; border-radius: 99px; background: var(--color-gray-4); position: relative; cursor: pointer; flex-shrink: 0; }
+  .track.on { background: var(--color-interactive-primary); }
+  .track .knob { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; }
+  .track.on .knob { left: 23px; }
+  .danger-zone { border-color: var(--color-state-error); }
+  .danger-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .form-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" data-screen-label="Sidebar">
+    <div class="sidebar__brand"><span class="brand-mark">K</span><span class="brand-word">KIRBS</span></div>
+    <nav class="sidebar__nav">
+      <div class="nav-group">
+        <div class="nav-group__label">운영</div>
+        <a class="nav-item" href="dashboard.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="label">대시보드</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 7h5M16 12h5M16 17h5"/></svg></span><span class="label">응시자 관리</span><span class="count">14</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 10h7M8.5 14h5"/></svg></span><span class="label">검사 관리</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">리포트</div>
+        <a class="nav-item" href="report.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z" stroke-linejoin="round"/><path d="M13 3v5h5"/><path d="M9 17v-3M12 17v-5M15 17v-2"/></svg></span><span class="label">결과 리포트</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">시스템</div>
+        <a class="nav-item active" href="settings.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span class="label">설정</span></a>
+      </div>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="#"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2 2-2 3"/><path d="M12 17h.01"/></svg></span><span class="label">도움말</span></a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar" data-screen-label="Topbar">
+      <div class="crumbs"><a href="#">홈</a><span class="sep">/</span><span class="here">설정</span></div>
+      <div class="topbar__spacer"></div>
+      <div class="topbar__search">검색…</div>
+      <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">관</div>
+    </header>
+
+    <main class="content" data-screen-label="Settings content">
+      <div class="content-wrap">
+        <div class="page-head">
+          <div>
+            <h1 class="page-title">설정</h1>
+            <p class="page-sub">계정과 워크스페이스 환경을 관리합니다.</p>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+          <nav class="subnav" data-screen-label="Settings nav">
+            <a class="on" href="#">프로필</a>
+            <a href="#">계정 · 보안</a>
+            <a href="#">알림</a>
+            <a href="#">검사 기본값</a>
+            <a href="#">팀 · 권한</a>
+            <a href="#">청구</a>
+          </nav>
+
+          <div>
+            <!-- 프로필 -->
+            <div class="card sec" data-screen-label="프로필">
+              <h2>프로필</h2>
+              <p class="desc">다른 관리자에게 표시되는 정보입니다.</p>
+              <div class="avatar-row">
+                <span class="big">관</span>
+                <div style="display:flex;gap:10px;">
+                  <button class="btn btn-secondary btn-sm">이미지 변경</button>
+                  <button class="btn btn-tertiary btn-sm">삭제</button>
+                </div>
+              </div>
+              <div class="two">
+                <div class="field" style="margin-bottom:0;"><label>이름</label><input class="input" value="관리자"></div>
+                <div class="field" style="margin-bottom:0;"><label>직함</label><input class="input" value="검사 운영 담당"></div>
+              </div>
+              <div class="field" style="margin:16px 0 0;"><label>이메일</label><input class="input" type="email" value="admin@kirbs.kr"></div>
+            </div>
+
+            <!-- 알림 -->
+            <div class="card sec" data-screen-label="알림">
+              <h2>알림</h2>
+              <p class="desc">받을 알림 유형을 선택하세요.</p>
+              <div class="switch-row"><div><div class="lab">검사 완료 알림</div><div class="sub">응시자가 검사를 완료하면 알립니다.</div></div><div class="track on"><span class="knob"></span></div></div>
+              <div class="switch-row"><div><div class="lab">오류 발생 알림</div><div class="sub">검사 중 오류가 발생하면 즉시 알립니다.</div></div><div class="track on"><span class="knob"></span></div></div>
+              <div class="switch-row"><div><div class="lab">주간 요약 리포트</div><div class="sub">매주 월요일 운영 요약을 이메일로 받습니다.</div></div><div class="track"><span class="knob"></span></div></div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-tertiary">취소</button>
+              <button class="btn btn-primary">변경사항 저장</button>
+            </div>
+
+            <!-- danger zone -->
+            <div class="card sec danger-zone" style="margin-top:24px;">
+              <h2 style="color:var(--color-text-error);">계정 삭제</h2>
+              <p class="desc">계정을 삭제하면 모든 데이터가 영구적으로 제거되며 복구할 수 없습니다.</p>
+              <div class="danger-row">
+                <span style="font-size:13px;color:var(--color-text-secondary);">이 작업은 되돌릴 수 없습니다.</span>
+                <button class="btn btn-danger btn-sm">계정 삭제</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

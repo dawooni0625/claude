@@ -81,7 +81,9 @@
    * ================================================================ */
 
   --font-family-base: 'Pretendard', 'Noto Sans KR', sans-serif;
-  --font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+  /* Numerals & code reuse Pretendard (single-typeface system); tabular figures
+     for alignment are applied via font-feature-settings in colors_and_type.css. */
+  --font-family-mono: 'Pretendard', 'Noto Sans KR', sans-serif;
 
   --font-size-display-2xl: 64px;
   --font-size-display-xl:  48px;
@@ -96,6 +98,7 @@
   --font-size-body-lg:     18px;
   --font-size-body-md:     16px;
   --font-size-body-sm:     14px;
+  --font-size-body-xs:     12px;
 
   --font-weight-regular: 400;
   --font-weight-bold:    700;
@@ -363,10 +366,10 @@
   --component-textfield-color-text-success:   #27AE60;
 
   /* --- button --- */
-  --component-button-height-sm:                 45px;
-  --component-button-height-md:                 56px;
-  --component-button-height-lg:                 63px;
-  --component-button-height-xl:                 70px;
+  --component-button-height-sm:                 36px;
+  --component-button-height-md:                 44px;
+  --component-button-height-lg:                 52px;
+  --component-button-height-xl:                 60px;
   --component-button-min-width-sm:              70px;
   --component-button-min-width-md:              80px;
   --component-button-min-width-lg:              90px;
@@ -376,7 +379,7 @@
   --component-button-font-size-lg:              18px;
   --component-button-font-size-xl:              20px;
   --component-button-icon-gap:                  8px;
-  --component-button-border-radius-square:      8px;
+  --component-button-border-radius-square:      6px;
   --component-button-border-radius-round:       99px;
   --component-button-transition:                all 100ms cubic-bezier(0,0,0.2,1); /* @kind other */
   --component-button-color-primary-bg:          #2D3378;

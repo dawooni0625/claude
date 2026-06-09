@@ -1,0 +1,82 @@
+<!-- @startingPoint section="Pages" subtitle="좌측 브랜드 패널 + 우측 로그인 폼" viewport="1440x900" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로그인 — KIRBS</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  body { display: flex; min-height: 100vh; }
+  .brand-panel {
+    width: 46%; flex-shrink: 0;
+    background: var(--color-interactive-primary);
+    color: #fff; padding: 64px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .brand-panel .top { display: flex; align-items: center; gap: 12px; }
+  .brand-panel .mark {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: rgba(255,255,255,0.14);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 22px; letter-spacing: -0.04em;
+  }
+  .brand-panel h2 { font-size: 38px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; margin: 0; color: #fff; max-width: 14ch; }
+  .brand-panel .lead { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.78); margin-top: 16px; max-width: 38ch; }
+  .brand-panel .foot { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .form-panel { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px; }
+  .form-box { width: 100%; max-width: 380px; }
+  .form-box h1 { font-size: 28px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .form-box .sub { font-size: 14px; color: var(--color-text-tertiary); margin: 0 0 32px; }
+  .row-between { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .check { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-text-secondary); cursor: pointer; }
+  .check .box { width: 18px; height: 18px; border: 1.5px solid var(--color-gray-4); border-radius: 4px; }
+  .link { font-size: 13px; color: var(--color-text-link); text-decoration: none; }
+  .link:hover { color: var(--color-text-link-hover); text-decoration: underline; }
+  .btn-block { width: 100%; }
+  .signup { text-align: center; font-size: 13px; color: var(--color-text-tertiary); margin-top: 24px; }
+</style>
+</head>
+<body>
+
+  <section class="brand-panel" data-screen-label="Brand panel">
+    <div class="top">
+      <span class="mark">K</span>
+      <span style="font-weight:800;font-size:20px;letter-spacing:-0.025em;">KIRBS</span>
+    </div>
+    <div>
+      <h2>인적성검사 운영 콘솔</h2>
+      <p class="lead">응시 배정부터 결과 리포트까지, 검사 운영의 모든 과정을 한 곳에서 관리하세요.</p>
+    </div>
+    <div class="foot">© 2026 KIRBS. All rights reserved.</div>
+  </section>
+
+  <main class="form-panel" data-screen-label="Login form">
+    <div class="form-box">
+      <h1>로그인</h1>
+      <p class="sub">관리자 계정으로 콘솔에 접속합니다.</p>
+
+      <div class="field">
+        <label for="email">이메일</label>
+        <input id="email" class="input" type="email" placeholder="name@kirbs.kr">
+      </div>
+      <div class="field">
+        <label for="pw">비밀번호</label>
+        <input id="pw" class="input" type="password" placeholder="••••••••">
+      </div>
+
+      <div class="row-between">
+        <label class="check"><span class="box"></span> 로그인 상태 유지</label>
+        <a class="link" href="#">비밀번호 찾기</a>
+      </div>
+
+      <button class="btn btn-primary btn-block">로그인</button>
+
+      <p class="signup">계정이 없으신가요? <a class="link" href="#">관리자에게 문의</a></p>
+    </div>
+  </main>
+
+</body>
+</html>

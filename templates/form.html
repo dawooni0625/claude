@@ -1,0 +1,157 @@
+<!-- @startingPoint section="Pages" subtitle="검사 배정 입력 폼 — 섹션 + 검증 상태" viewport="1440x1024" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>검사 배정 — KIRBS</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .form-layout { display: grid; grid-template-columns: 1fr 300px; gap: 16px; align-items: start; }
+  .form-section { padding: 24px; }
+  .form-section + .form-section { margin-top: 16px; }
+  .section-title { font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+  .section-desc { font-size: 13px; color: var(--color-text-tertiary); margin: 0 0 20px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field.is-error .input { border-color: var(--color-state-error); }
+  .field.is-error .helper { color: var(--color-text-error); }
+  .field.is-success .input { border-color: var(--color-state-success); }
+  .field.is-success .helper { color: var(--color-text-success); }
+  /* radio cards */
+  .radio-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+  .rc { border: 1.5px solid var(--color-border-default); border-radius: 10px; padding: 14px; cursor: pointer; }
+  .rc.on { border-color: var(--color-interactive-primary); background: var(--color-brand-quaternary); }
+  .rc .t { font-size: 14px; font-weight: 700; color: var(--color-text-primary); display: flex; align-items: center; gap: 8px; }
+  .rc .d { font-size: 12px; color: var(--color-text-tertiary); margin-top: 4px; }
+  .dot { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--color-gray-4); flex-shrink: 0; }
+  .rc.on .dot { border-color: var(--color-interactive-primary); border-width: 5px; }
+  /* toggle */
+  .switch-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--color-border-default); }
+  .switch-row:last-child { border-bottom: 0; }
+  .switch-row .lab { font-size: 14px; font-weight: 700; color: var(--color-text-primary); }
+  .switch-row .sub { font-size: 12px; color: var(--color-text-tertiary); margin-top: 2px; }
+  .track { width: 44px; height: 24px; border-radius: 99px; background: var(--color-gray-4); position: relative; cursor: pointer; flex-shrink: 0; }
+  .track.on { background: var(--color-interactive-primary); }
+  .track .knob { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: left 120ms; }
+  .track.on .knob { left: 23px; }
+  /* aside summary */
+  .aside-card { padding: 20px; position: sticky; top: 96px; }
+  .aside-card h4 { margin: 0 0 14px; font-size: 14px; font-weight: 700; }
+  .form-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" data-screen-label="Sidebar">
+    <div class="sidebar__brand"><span class="brand-mark">K</span><span class="brand-word">KIRBS</span></div>
+    <nav class="sidebar__nav">
+      <div class="nav-group">
+        <div class="nav-group__label">운영</div>
+        <a class="nav-item" href="dashboard.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="label">대시보드</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 7h5M16 12h5M16 17h5"/></svg></span><span class="label">응시자 관리</span><span class="count">14</span></a>
+        <a class="nav-item active" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 10h7M8.5 14h5"/></svg></span><span class="label">검사 관리</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">리포트</div>
+        <a class="nav-item" href="report.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z" stroke-linejoin="round"/><path d="M13 3v5h5"/><path d="M9 17v-3M12 17v-5M15 17v-2"/></svg></span><span class="label">결과 리포트</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">시스템</div>
+        <a class="nav-item" href="settings.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span class="label">설정</span></a>
+      </div>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="#"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2 2-2 3"/><path d="M12 17h.01"/></svg></span><span class="label">도움말</span></a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar" data-screen-label="Topbar">
+      <div class="crumbs"><a href="#">홈</a><span class="sep">/</span><a href="#">검사 관리</a><span class="sep">/</span><span class="here">검사 배정</span></div>
+      <div class="topbar__spacer"></div>
+      <div class="topbar__search">검색…</div>
+      <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">관</div>
+    </header>
+
+    <main class="content" data-screen-label="Form content">
+      <div class="content-wrap">
+        <div class="page-head">
+          <div>
+            <h1 class="page-title">검사 배정</h1>
+            <p class="page-sub">응시자에게 새 검사를 배정합니다.</p>
+          </div>
+        </div>
+
+        <div class="form-layout">
+          <div>
+            <!-- 기본 정보 -->
+            <div class="card form-section" data-screen-label="기본 정보">
+              <h2 class="section-title">기본 정보</h2>
+              <p class="section-desc">응시자와 검사 기본 정보를 입력하세요.</p>
+              <div class="two">
+                <div class="field"><label>응시자 이름<span class="req">*</span></label><input class="input" value="김민준"></div>
+                <div class="field is-success"><label>응시 코드<span class="req">*</span></label><input class="input" value="KIRBS-2026-0481"><div class="helper">사용 가능한 코드입니다.</div></div>
+              </div>
+              <div class="two">
+                <div class="field"><label>이메일</label><input class="input" type="email" value="minjun.kim@example.com"></div>
+                <div class="field is-error"><label>연락처</label><input class="input" value="010-12"><div class="helper">유효하지 않은 전화번호입니다.</div></div>
+              </div>
+            </div>
+
+            <!-- 검사 설정 -->
+            <div class="card form-section" data-screen-label="검사 설정">
+              <h2 class="section-title">검사 설정</h2>
+              <p class="section-desc">배정할 검사 유형과 일정을 선택하세요.</p>
+              <div class="field">
+                <label>검사 유형<span class="req">*</span></label>
+                <div class="radio-cards">
+                  <div class="rc on"><div class="t"><span class="dot"></span>인적성검사</div><div class="d">종합 · 약 50분</div></div>
+                  <div class="rc"><div class="t"><span class="dot"></span>언어이해</div><div class="d">단일 · 약 20분</div></div>
+                  <div class="rc"><div class="t"><span class="dot"></span>상황판단</div><div class="d">단일 · 약 25분</div></div>
+                </div>
+              </div>
+              <div class="two">
+                <div class="field" style="margin-bottom:0;"><label>응시 시작일<span class="req">*</span></label><input class="input" value="2026. 06. 10"></div>
+                <div class="field" style="margin-bottom:0;"><label>응시 마감일<span class="req">*</span></label><input class="input" value="2026. 06. 17"></div>
+              </div>
+            </div>
+
+            <!-- 옵션 -->
+            <div class="card form-section" data-screen-label="옵션">
+              <h2 class="section-title">응시 옵션</h2>
+              <div class="switch-row"><div><div class="lab">자동 채점</div><div class="sub">응시 완료 즉시 점수를 계산합니다.</div></div><div class="track on"><span class="knob"></span></div></div>
+              <div class="switch-row"><div><div class="lab">결과 이메일 발송</div><div class="sub">응시자에게 결과 리포트를 자동 발송합니다.</div></div><div class="track"><span class="knob"></span></div></div>
+              <div class="switch-row"><div><div class="lab">부정행위 감지</div><div class="sub">화면 이탈·복사를 기록합니다.</div></div><div class="track on"><span class="knob"></span></div></div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-tertiary">취소</button>
+              <button class="btn btn-secondary">임시 저장</button>
+              <button class="btn btn-primary">검사 배정</button>
+            </div>
+          </div>
+
+          <!-- aside summary -->
+          <div class="card aside-card" data-screen-label="요약">
+            <h4>배정 요약</h4>
+            <div class="kv" style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;"><span style="color:var(--color-text-tertiary)">응시자</span><strong>김민준</strong></div>
+            <div class="kv" style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;"><span style="color:var(--color-text-tertiary)">검사</span><strong>인적성검사</strong></div>
+            <div class="kv" style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;"><span style="color:var(--color-text-tertiary)">기간</span><strong class="mono">06.10–06.17</strong></div>
+            <hr style="border:0;border-top:1px solid var(--color-border-default);margin:14px 0;">
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--color-text-tertiary);line-height:1.5;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+              배정 후 응시자에게 안내 메일이 발송되며, 마감일까지 응시하지 않으면 자동 만료됩니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

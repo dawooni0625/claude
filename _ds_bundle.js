@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"KIRBSDesignSystem_dc1229","components":[],"sourceHashes":{"ui_kits/admin/App.jsx":"409c1f87e983","ui_kits/admin/Atoms.jsx":"2f32da579ac8","ui_kits/admin/DashboardScreen.jsx":"97b7a52a755d","ui_kits/admin/Forms.jsx":"85965cb4fbf9","ui_kits/admin/Icons.jsx":"8d05eae554ad","ui_kits/admin/LoginScreen.jsx":"0b5670116ec4","ui_kits/admin/MembersScreen.jsx":"99a2a6129d03","ui_kits/admin/Responsive.jsx":"816c2978eefc","ui_kits/admin/SettingsScreen.jsx":"ad3b55006ac7","ui_kits/admin/Sidebar.jsx":"b368cde750c2","ui_kits/admin/Surfaces.jsx":"50f517c1693a","ui_kits/admin/TopBar.jsx":"698a0155fc63"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"KIRBSDesignSystem_dc1229","components":[],"sourceHashes":{"ui_kits/admin/App.jsx":"409c1f87e983","ui_kits/admin/Atoms.jsx":"1b95bf9c5149","ui_kits/admin/DashboardScreen.jsx":"97b7a52a755d","ui_kits/admin/Forms.jsx":"85965cb4fbf9","ui_kits/admin/Icons.jsx":"8d05eae554ad","ui_kits/admin/LoginScreen.jsx":"0b5670116ec4","ui_kits/admin/MembersScreen.jsx":"99a2a6129d03","ui_kits/admin/Responsive.jsx":"816c2978eefc","ui_kits/admin/SettingsScreen.jsx":"ad3b55006ac7","ui_kits/admin/Sidebar.jsx":"b368cde750c2","ui_kits/admin/Surfaces.jsx":"50f517c1693a","ui_kits/admin/TopBar.jsx":"698a0155fc63"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -252,25 +252,25 @@ const BTN_VARIANT = {
 };
 const BTN_SIZE = {
   sm: {
-    h: 45,
+    h: 36,
     min: 70,
     fs: 14,
     px: 14
   },
   md: {
-    h: 56,
+    h: 44,
     min: 80,
     fs: 16,
     px: 20
   },
   lg: {
-    h: 63,
+    h: 52,
     min: 90,
     fs: 18,
     px: 24
   },
   xl: {
-    h: 70,
+    h: 60,
     min: 100,
     fs: 20,
     px: 28
@@ -318,7 +318,7 @@ function Button({
       background: bg,
       color: disabled ? '#FFFFFF' : v.fg,
       border: v.border ? `1.5px solid ${v.border}` : 0,
-      borderRadius: shape === 'round' ? 99 : 'var(--border-radius-md)',
+      borderRadius: shape === 'round' ? 99 : 'var(--component-button-border-radius-square)',
       cursor: disabled ? 'not-allowed' : 'pointer',
       transition: 'background-color 100ms cubic-bezier(0,0,.2,1), color 100ms cubic-bezier(0,0,.2,1)',
       width: fullWidth ? '100%' : undefined,

@@ -1,0 +1,69 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Form input states" subtitle="Default · Focus · Error · Disabled · Success" viewport="700x520" -->
+<html lang="ko"><head><meta charset="utf-8"><title>Form input states</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .field { }
+  .field > label {
+    display:flex; align-items:center; gap:6px;
+    font-size:13px; font-weight:700; color:#333333; margin-bottom:6px;
+  }
+  .field input {
+    width:100%; height:48px; padding:8px 14px;
+    border:1.5px solid #E0E0E0; border-radius:8px;
+    font-size:14px; font-family:inherit; color:#1D1D1D;
+    background:#FFFFFF; outline:none;
+    transition: border-color 100ms cubic-bezier(0,0,0.2,1), box-shadow 100ms cubic-bezier(0,0,0.2,1);
+  }
+  .field .helper { font-size:12px; color:#4F4F4F; margin-top:5px; }
+  .state-tag {
+    font-family:var(--font-family-mono); font-size:10px; font-weight:400;
+    color:#828282; background:#F8F8FB; border:1px solid #E0E0E0;
+    border-radius:4px; padding:1px 6px; margin-left:auto;
+  }
+  /* state variants */
+  .is-focus input  { border-color:#2D3378; box-shadow:0 0 0 3px rgba(45,51,120,0.12); }
+  .is-error input  { border-color:#EB5757; }
+  .is-error .helper { color:#EB5757; }
+  .is-success input { border-color:#27AE60; }
+  .is-success .helper { color:#27AE60; }
+  .is-disabled input {
+    background:#F8F8FB; border-color:#E0E0E0; color:#BDBDBD; cursor:not-allowed;
+  }
+  .is-disabled > label { color:#BDBDBD; }
+</style>
+</head><body>
+<div class="stack-md">
+
+  <div class="field">
+    <label>이름 <span class="state-tag">default</span></label>
+    <input type="text" placeholder="홍길동">
+    <div class="helper">검사 응시자 이름을 입력해 주세요.</div>
+  </div>
+
+  <div class="field is-focus">
+    <label>이메일 <span class="state-tag">focus</span></label>
+    <input type="email" value="hong@example.com">
+    <div class="helper">회사 이메일을 입력해 주세요.</div>
+  </div>
+
+  <div class="field is-error">
+    <label>응시 코드 <span class="state-tag">error</span></label>
+    <input type="text" value="AB-12">
+    <div class="helper">유효하지 않은 입력입니다.</div>
+  </div>
+
+  <div class="field is-success">
+    <label>응시 코드 <span class="state-tag">success</span></label>
+    <input type="text" value="KIRBS-2026-0481">
+    <div class="helper">사용 가능한 코드입니다.</div>
+  </div>
+
+  <div class="field is-disabled">
+    <label>검사 유형 <span class="state-tag">disabled</span></label>
+    <input type="text" value="인적성검사 (고정)" disabled>
+    <div class="helper">관리자만 변경할 수 있습니다.</div>
+  </div>
+
+</div>
+</body></html>

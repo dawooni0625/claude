@@ -1,0 +1,160 @@
+<!-- @startingPoint section="Pages" subtitle="필터 바 + 데이터 테이블 + 페이지네이션" viewport="1440x1024" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>응시자 관리 — KIRBS</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .search-box { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; width: 300px; border: 1.5px solid var(--color-border-default); border-radius: 8px; background: var(--color-bg-elevated); color: var(--color-text-tertiary); font-size: 14px; }
+  .search-box input { border: 0; outline: 0; background: transparent; font: inherit; color: var(--color-text-primary); flex: 1; min-width: 0; }
+  .filter-chip { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border: 1.5px solid var(--color-border-default); border-radius: 6px; background: var(--color-bg-elevated); font-size: 14px; color: var(--color-text-secondary); cursor: pointer; }
+  .filter-chip.on { border-color: var(--color-interactive-primary); color: var(--color-text-brand); background: var(--color-brand-quaternary); font-weight: 700; }
+  .spacer { flex: 1; }
+  .ckbox { width: 18px; height: 18px; border-radius: 4px; border: 1.5px solid var(--color-gray-4); display: inline-block; vertical-align: middle; }
+  .ckbox.on { background: var(--color-interactive-primary); border-color: var(--color-interactive-primary); position: relative; }
+  .ckbox.on::after { content: "✓"; color: #fff; font-size: 12px; font-weight: 700; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .th-sort { cursor: pointer; user-select: none; }
+  .th-sort .arr { color: var(--color-gray-4); font-size: 11px; margin-left: 4px; }
+  .th-sort.active, .th-sort.active .arr { color: var(--color-text-brand); }
+  tr.sel { background: var(--color-brand-quaternary) !important; }
+  .row-actions { color: var(--color-text-link); cursor: pointer; }
+  .tbl-foot { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-top: 1px solid var(--color-border-default); font-size: 13px; color: var(--color-text-tertiary); }
+  .pager { display: flex; gap: 4px; align-items: center; }
+  .pg { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--color-border-default); border-radius: 8px; cursor: pointer; color: var(--color-text-secondary); }
+  .pg.on { background: var(--color-interactive-primary); color: #fff; border-color: var(--color-interactive-primary); }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" data-screen-label="Sidebar">
+    <div class="sidebar__brand"><span class="brand-mark">K</span><span class="brand-word">KIRBS</span></div>
+    <nav class="sidebar__nav">
+      <div class="nav-group">
+        <div class="nav-group__label">운영</div>
+        <a class="nav-item" href="dashboard.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span class="label">대시보드</span></a>
+        <a class="nav-item active" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 7h5M16 12h5M16 17h5"/></svg></span><span class="label">응시자 관리</span><span class="count">14</span></a>
+        <a class="nav-item" href="list.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 10h7M8.5 14h5"/></svg></span><span class="label">검사 관리</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">리포트</div>
+        <a class="nav-item" href="report.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z" stroke-linejoin="round"/><path d="M13 3v5h5"/><path d="M9 17v-3M12 17v-5M15 17v-2"/></svg></span><span class="label">결과 리포트</span></a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">시스템</div>
+        <a class="nav-item" href="settings.html"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span class="label">설정</span></a>
+      </div>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="#"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2 2-2 3"/><path d="M12 17h.01"/></svg></span><span class="label">도움말</span></a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar" data-screen-label="Topbar">
+      <div class="crumbs"><a href="#">홈</a><span class="sep">/</span><span class="here">응시자 관리</span></div>
+      <div class="topbar__spacer"></div>
+      <div class="topbar__search">검색…</div>
+      <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">관</div>
+    </header>
+
+    <main class="content" data-screen-label="List content">
+      <div class="content-wrap">
+        <div class="page-head">
+          <div>
+            <h1 class="page-title">응시자 관리</h1>
+            <p class="page-sub">전체 <strong style="color:var(--color-text-secondary)">1,284</strong>명의 응시자를 관리합니다.</p>
+          </div>
+          <div class="head-actions">
+            <button class="btn btn-secondary btn-sm">내보내기</button>
+            <button class="btn btn-primary btn-sm">+ 응시자 추가</button>
+          </div>
+        </div>
+
+        <!-- toolbar -->
+        <div class="toolbar">
+          <div class="search-box"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg><input placeholder="이름·이메일 검색"></div>
+          <div class="filter-chip on">상태: 전체</div>
+          <div class="filter-chip">검사 유형 ▾</div>
+          <div class="filter-chip">응시일 ▾</div>
+          <div class="spacer"></div>
+          <div class="filter-chip">정렬: 최신순 ▾</div>
+        </div>
+
+        <!-- table -->
+        <div class="card" style="padding:0;overflow:hidden;">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th style="width:48px;"><span class="ckbox"></span></th>
+                <th style="width:60px;">No</th>
+                <th>응시자</th>
+                <th>검사 유형</th>
+                <th class="th-sort active">응시일<span class="arr">▼</span></th>
+                <th class="th-sort">점수<span class="arr">▲▼</span></th>
+                <th style="width:110px;">상태</th>
+                <th style="width:90px;">관리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="sel">
+                <td><span class="ckbox on"></span></td><td class="mono" style="color:var(--color-text-tertiary)">001</td>
+                <td><strong style="color:var(--color-text-primary)">김민준</strong></td><td>인적성검사</td><td>2026. 06. 02</td><td class="mono">92</td>
+                <td><span class="badge badge-done">완료</span></td><td><span class="row-actions">상세</span></td>
+              </tr>
+              <tr>
+                <td><span class="ckbox"></span></td><td class="mono" style="color:var(--color-text-tertiary)">002</td>
+                <td><strong style="color:var(--color-text-primary)">이서연</strong></td><td>언어이해</td><td>2026. 06. 05</td><td class="mono">—</td>
+                <td><span class="badge badge-prog">진행중</span></td><td><span class="row-actions">상세</span></td>
+              </tr>
+              <tr>
+                <td><span class="ckbox"></span></td><td class="mono" style="color:var(--color-text-tertiary)">003</td>
+                <td><strong style="color:var(--color-text-primary)">박지후</strong></td><td>상황판단</td><td>2026. 06. 06</td><td class="mono">—</td>
+                <td><span class="badge badge-wait">대기</span></td><td><span class="row-actions">상세</span></td>
+              </tr>
+              <tr>
+                <td><span class="ckbox"></span></td><td class="mono" style="color:var(--color-text-tertiary)">004</td>
+                <td><strong style="color:var(--color-text-primary)">최예린</strong></td><td>인적성검사</td><td>2026. 06. 04</td><td class="mono">—</td>
+                <td><span class="badge badge-err">오류</span></td><td><span class="row-actions">상세</span></td>
+              </tr>
+              <tr>
+                <td><span class="ckbox"></span></td><td class="mono" style="color:var(--color-text-tertiary)">005</td>
+                <td><strong style="color:var(--color-text-primary)">정하늘</strong></td><td>언어이해</td><td>2026. 06. 03</td><td class="mono">88</td>
+                <td><span class="badge badge-done">완료</span></td><td><span class="row-actions">상세</span></td>
+              </tr>
+              <tr>
+                <td><span class="ckbox"></span></td><td class="mono" style="color:var(--color-text-tertiary)">006</td>
+                <td><strong style="color:var(--color-text-primary)">강도윤</strong></td><td>상황판단</td><td>2026. 06. 01</td><td class="mono">75</td>
+                <td><span class="badge badge-done">완료</span></td><td><span class="row-actions">상세</span></td>
+              </tr>
+              <tr>
+                <td><span class="ckbox"></span></td><td class="mono" style="color:var(--color-text-tertiary)">007</td>
+                <td><strong style="color:var(--color-text-primary)">윤서아</strong></td><td>인적성검사</td><td>2026. 05. 30</td><td class="mono">—</td>
+                <td><span class="badge badge-prog">진행중</span></td><td><span class="row-actions">상세</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tbl-foot">
+            <span>7개 표시 중 · 전체 1,284명 · <strong style="color:var(--color-text-secondary)">1명 선택됨</strong></span>
+            <div class="pager">
+              <span class="pg">‹</span>
+              <span class="pg on">1</span><span class="pg">2</span><span class="pg">3</span>
+              <span style="padding:0 4px;color:var(--color-text-tertiary)">···</span>
+              <span class="pg">184</span>
+              <span class="pg">›</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

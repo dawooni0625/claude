@@ -10,10 +10,10 @@ const BTN_VARIANT = {
   danger:    { bg: 'var(--color-interactive-danger)',          fg: '#FFFFFF',                          hov: 'var(--color-interactive-danger-hover)' },
 };
 const BTN_SIZE = {
-  sm: { h: 45, min: 70, fs: 14, px: 14 },
-  md: { h: 56, min: 80, fs: 16, px: 20 },
-  lg: { h: 63, min: 90, fs: 18, px: 24 },
-  xl: { h: 70, min: 100, fs: 20, px: 28 },
+  sm: { h: 36, min: 70, fs: 14, px: 14 },
+  md: { h: 44, min: 80, fs: 16, px: 20 },
+  lg: { h: 52, min: 90, fs: 18, px: 24 },
+  xl: { h: 60, min: 100, fs: 20, px: 28 },
 };
 function Button({ variant = 'primary', size = 'md', shape = 'square', icon, iconRight, children, disabled, onClick, fullWidth, style }) {
   const v = BTN_VARIANT[variant];
@@ -38,7 +38,7 @@ function Button({ variant = 'primary', size = 'md', shape = 'square', icon, icon
         fontFamily: 'var(--font-family-base)', fontSize: s.fs, fontWeight: 700, lineHeight: 1,
         background: bg, color: disabled ? '#FFFFFF' : v.fg,
         border: v.border ? `1.5px solid ${v.border}` : 0,
-        borderRadius: shape === 'round' ? 99 : 'var(--border-radius-md)',
+        borderRadius: shape === 'round' ? 99 : 'var(--component-button-border-radius-square)',
         cursor: disabled ? 'not-allowed' : 'pointer',
         transition: 'background-color 100ms cubic-bezier(0,0,.2,1), color 100ms cubic-bezier(0,0,.2,1)',
         width: fullWidth ? '100%' : undefined,

@@ -162,6 +162,6 @@ h1 { @include text-style(heading-1, bold); }
 ## 디자인 원칙
 
 - **브랜드 Primary:** `#2D3378` (남색 계열)
-- **기본 폰트:** Pretendard / **모노:** JetBrains Mono
+- **기본 폰트:** Pretendard (단일 서체 · 숫자는 tabular figures)
 - **그리드:** mobile 2col / tablet 6col / desktop 12col, gutter 30px 고정
 - **spacing 기준:** 키 숫자 × 2px (`--space-8` = 16px)
